@@ -1,0 +1,35 @@
+<!--
+  ~ This is free and unencumbered software released into the public domain.
+  -->
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="keywords"
+          content="wicket jquery, wicket jquery ui, autocomplete, dialog, draggable, droppable, progress bar, wizard, kendo ui, border layout, calendar"/>
+    <link rel="stylesheet" type="text/css" href="css/my-style.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.10.2.custom.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/kendo/kendo.common.min.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/kendo/kendo.default.min.css" media="all"/>
+    <title>SAML Sample</title>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+</head>
+<body>
+<div id="header">
+    <h3>
+        <a href="#" wicket:id="page1.link">PAGE1</a>
+        &nbsp
+        <a href="#" wicket:id="page2.link">PAGE2</a>
+        &nbsp
+        <a href="#" wicket:id="page3.link">PAGE3</a>
+        &nbsp
+        <a href="#" wicket:id="logout.link">LOGOUT</a>
+    </h3>
+</div>
+<div id="body">
+    <wicket:child />
+</div>
+<div id="footer">
+	<span wicket:id="footer"></span>
+</div>
+</body>
+</html>

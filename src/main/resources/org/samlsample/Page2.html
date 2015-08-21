@@ -1,0 +1,58 @@
+<!--
+  ~ This is free and unencumbered software released into the public domain.
+  -->
+<html>
+<head>
+    <wicket:head>
+        <title>SAML Sample2</title>
+    </wicket:head>
+</head>
+<body>
+<wicket:extend>
+    <h1>Page2</h1>
+
+    <form wicket:id="pageForm">
+        <span wicket:id="label2"></span>
+        <br>
+        <br>
+        <fieldset>
+            <legend>These buttons are secured by the following RBAC permissions</legend>
+
+            <table id="inputFormTable">
+                <tr>
+                    <td>
+                        <input type="button"
+                               class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                               wicket:id="page2.button1" value="page2.button1" name="page2.button1"/>
+                    </td>
+                    <td>
+                        <b>Object: Page2; Operation: Button1;</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button"
+                               class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                               wicket:id="page2.button2" value="page2.button2" name="page2.button2"/>
+                    </td>
+                    <td>
+                        <b>Object: Page2; Operation: Button2;</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button"
+                               class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                               wicket:id="page2.button3" value="page2.button3" name="page2.button3"/>
+                    </td>
+                    <td>
+                        <b>Object: Page2; Operation: Button3;</b>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</wicket:extend>
+This is free and unencumbered software released into the public domain.
+</body>
+</html>

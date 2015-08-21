@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  ~ This is free and unencumbered software released into the public domain.
+  -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <display-name>Wicket Sample Project</display-name>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/securityContext.xml
+        </param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>saml</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>saml</servlet-name>
+        <url-pattern>/saml/web/*</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>org.samlsample</filter-name>
+        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+        <init-param>
+            <param-name>applicationClassName</param-name>
+            <param-value>org.samlsample.WicketApplication</param-value>
+        </init-param>
+    </filter>
+
+    <!-- Needed for wicket framework to have control of things. -->
+    <filter-mapping>
+        <filter-name>org.samlsample</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/unauthorized.html</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pagenotfound.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/unexpected.html</location>
+    </error-page>
+
+</web-app>
