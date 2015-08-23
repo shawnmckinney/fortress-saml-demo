@@ -29,6 +29,10 @@ import org.apache.wicket.Component;
 import org.apache.directory.fortress.core.model.Permission;
 import org.apache.directory.fortress.core.model.Session;
 import org.apache.directory.fortress.core.model.User;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.providers.ExpiringUsernameAuthenticationToken;
+import org.springframework.security.saml.SAMLCredential;
+import org.springframework.security.saml.parser.SAMLCollection;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -60,6 +64,26 @@ public class SecUtils
         return ( ( FtSession ) component.getSession() ).getSession();
     }
 
+
+    private static String getUserId( SAMLCredential credential )
+    {
+        String userId = null;
+        //String[] attributeValues = credential.getAttributeAsStringArray("uid");
+        //if(attributeValues != null)
+        //    userId = attributeValues[0];
+        for ( org.opensaml.saml2.core.Attribute attr : credential.getAttributes())
+        {
+            String fname = attr.getFriendlyName();
+            if(fname.equals( "uid" ))
+            {
+                String vals[] = credential.getAttributeAsStringArray( attr.getName() );
+                userId = vals[0];
+                break;
+            }
+        }
+        return userId;
+    }
+
     /**
      * Enables fortress session on behalf of a java.security.Principal retrieved from the container.
      *
@@ -72,7 +96,7 @@ public class SecUtils
     public static void enableFortress( Component component, HttpServletRequest servletReq, J2eePolicyMgr j2eePolicyMgr, AccessMgr accessMgr ) throws SecurityException
     {
         // Get the principal from the container:
-        Principal principal = servletReq.getUserPrincipal();
+        ExpiringUsernameAuthenticationToken principal = (ExpiringUsernameAuthenticationToken)servletReq.getUserPrincipal();
         // Is this a secured page && has the User successfully authenticated already?
         boolean isSecured = principal != null;
         if(isSecured)
@@ -80,7 +104,42 @@ public class SecUtils
             // Only perform this step once per user web session:
             if( !isLoggedIn( component ) )
             {
-                String userId = principal.getName();
+                //String userId = principal.getName();
+                String userId = getUserId( (SAMLCredential)principal.getCredentials() );
+               SAMLCredential credential = (SAMLCredential)principal.getCredentials();
+
+                for ( org.opensaml.saml2.core.Attribute attr : credential.getAttributes())
+                {
+                    String fname = attr.getFriendlyName();
+                    String name = attr.getName();
+                    LOG.info( "fname; " + fname );
+                    String[] attributeValues = credential.getAttributeAsStringArray(name);
+                    for( String val : attributeValues )
+                    {
+                        LOG.info( "name:" + val );
+                    }
+                }
+                /*
+                <tr>
+                <td width="200">
+                <strong><c:out value="${attribute.name}"/></strong><c:if test="${not empty attribute.friendlyName}"> (<c:out value="${attribute.friendlyName}"/>)</c:if>
+                </td>
+                <td>
+                <%
+                Attribute a = (Attribute) pageContext.getAttribute("attribute");
+                String[] attributeValues = credential.getAttributeAsStringArray(a.getName());
+                pageContext.setAttribute("attributeValues", attributeValues);
+                %>
+                <c:forEach var="attributeValue" items="${attributeValues}">
+                <c:out value="${attributeValue}"/>&nbsp;
+                </c:forEach>
+                </td>
+                </tr>
+                </c:forEach>
+
+                */
+               //String userId = credential.getAttributeAsString("uid");
+
                 // Create the fortress session and assert into the Web app's session along with user's perms:
                 SecUtils.initializeFtSession( component, j2eePolicyMgr, accessMgr, userId );
             }
