@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ This is free and unencumbered software released into the public domain.
+  -->
+<project basedir="." default="all" name="Apache Fortress Policy">
+
+    <taskdef classname="org.apache.directory.fortress.core.ant.FortressAntTask" name="FortressAdmin" >
+        <classpath path="${java.class.path}"/>
+    </taskdef>
+
+
+    <target name="all">
+        <FortressAdmin>
+
+            <deluser>
+                <user userId="sssuperuser"/>
+                <user userId="ssuser1"/>
+                <user userId="ssuser2"/>
+                <user userId="ssuser3"/>
+            </deluser>
+
+            <adduser>
+                <user userId="sssuperuser" password="password" description="Wicket Sample Demo Super User" ou="org.samlsample.users" />
+                <user userId="ssuser1" password="password" description="Wicket Sample User 1" ou="org.samlsample.users" />
+                <user userId="ssuser2" password="password" description="Wicket Sample User 2" ou="org.samlsample.users" />
+                <user userId="ssuser3" password="password" description="Wicket Sample User 3" ou="org.samlsample.users" />
+                <user userId="smckinney@symas.com" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
+            </adduser>
+
+            <deluserrole>
+                <userrole userId="ssuser1" name="ssUsers1Role" />
+                <userrole userId="ssuser2" name="ssUsers2Role" />
+                <userrole userId="ssuser3" name="ssUsers3Role" />
+                <userrole userId="sssuperuser" name="ssSuperRole" />
+            </deluserrole>
+
+            <adduserrole>
+                <userrole userId="ssuser1" name="ssUsers1Role" />
+                <userrole userId="smckinney@symas.com" name="ssUsers1Role" />
+                <userrole userId="ssuser2" name="ssUsers2Role" />
+                <userrole userId="ssuser3" name="ssUsers3Role" />
+                <userrole userId="sssuperuser" name="ssSuperRole" />
+            </adduserrole>
+
+            <delrole>
+                <role name="ssBaseRole" />
+                <role name="ssUsers1Role" />
+                <role name="ssUsers2Role" />
+                <role name="ssUsers3Role" />
+                <role name="ssSuperRole" />
+            </delrole>
+
+            <addrole>
+                <role name="ssBaseRole" description="Base Role gets you into the sample web app"/>
+                <role name="ssUsers1Role" description="Grants access to page 1 and components"/>
+                <role name="ssUsers2Role" description="Grants access to page 2 and components"/>
+                <role name="ssUsers3Role" description="Grants access to page 3 and components"/>
+                <role name="ssSuperRole" description="Inherits from the page roles, grants user to all pages, components in app"/>
+            </addrole>
+
+            <delroleinheritance>
+                <relationship child="ssUsers1Role" parent="ssBaseRole"/>
+                <relationship child="ssUsers2Role" parent="ssBaseRole"/>
+                <relationship child="ssUsers3Role" parent="ssBaseRole"/>
+                <relationship child="ssSuperRole" parent="ssUsers1Role"/>
+                <relationship child="ssSuperRole" parent="ssUsers2Role"/>
+                <relationship child="ssSuperRole" parent="ssUsers3Role"/>
+            </delroleinheritance>
+
+            <addroleinheritance>
+                <relationship child="ssUsers1Role" parent="ssBaseRole"/>
+                <relationship child="ssUsers2Role" parent="ssBaseRole"/>
+                <relationship child="ssUsers3Role" parent="ssBaseRole"/>
+                <relationship child="ssSuperRole" parent="ssUsers1Role"/>
+                <relationship child="ssSuperRole" parent="ssUsers2Role"/>
+                <relationship child="ssSuperRole" parent="ssUsers3Role"/>
+            </addroleinheritance>
+
+            <delpermobj>
+                <permobj objName="Page1" />
+                <permobj objName="Page2" />
+                <permobj objName="Page3" />
+            </delpermobj>
+
+            <addpermobj>
+                <permobj objName="Page1" description="Wicket Sample Test Page 1" ou="org.samlsample.perms" />
+                <permobj objName="Page2" description="Wicket Sample Test Page 2" ou="org.samlsample.perms" />
+                <permobj objName="Page3" description="Wicket Sample Test Page 3" ou="org.samlsample.perms" />
+            </addpermobj>
+
+            <delpermop>
+                <permop objName="Page1" opName="link" type="Button"/>
+                <permop objName="Page2" opName="link" type="Button"/>
+                <permop objName="Page3" opName="link" type="Button"/>
+                <permop objName="Page1" opName="Button1"/>
+                <permop objName="Page1" opName="Button2"/>
+                <permop objName="Page1" opName="Button3"/>
+                <permop objName="Page2" opName="Button1"/>
+                <permop objName="Page2" opName="Button2"/>
+                <permop objName="Page2" opName="Button3"/>
+                <permop objName="Page3" opName="Button1"/>
+                <permop objName="Page3" opName="Button2"/>
+                <permop objName="Page3" opName="Button3"/>
+            </delpermop>
+
+            <addpermop>
+                <permop objName="Page1" opName="link" />
+                <permop objName="Page2" opName="link" />
+                <permop objName="Page3" opName="link" />
+                <permop objName="Page1" opName="Button1" />
+                <permop objName="Page1" opName="Button2" />
+                <permop objName="Page1" opName="Button3" />
+                <permop objName="Page2" opName="Button1" />
+                <permop objName="Page2" opName="Button2" />
+                <permop objName="Page2" opName="Button3" />
+                <permop objName="Page3" opName="Button1" />
+                <permop objName="Page3" opName="Button2" />
+                <permop objName="Page3" opName="Button3" />
+            </addpermop>
+
+            <delpermgrant>
+                <permgrant objName="Page1" opName="link" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page2" opName="link" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page3" opName="link" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page1" opName="Button1" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page1" opName="Button2" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page1" opName="Button3" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page2" opName="Button1" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page2" opName="Button2" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page2" opName="Button3" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page3" opName="Button1" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page3" opName="Button2" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page3" opName="Button3" roleNm="ssUsers3Role"/>
+            </delpermgrant>
+
+            <addpermgrant>
+                <permgrant objName="Page1" opName="link" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page2" opName="link" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page3" opName="link" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page1" opName="Button1" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page1" opName="Button2" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page1" opName="Button3" roleNm="ssUsers1Role"/>
+                <permgrant objName="Page2" opName="Button1" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page2" opName="Button2" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page2" opName="Button3" roleNm="ssUsers2Role"/>
+                <permgrant objName="Page3" opName="Button1" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page3" opName="Button2" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page3" opName="Button3" roleNm="ssUsers3Role"/>
+            </addpermgrant>
+
+            <delorgunit>
+                <orgunit name="org.samlsample.perms" typeName="PERM"/>
+                <orgunit name="org.samlsample.users" typeName="USER"/>
+            </delorgunit>
+
+            <addorgunit>
+                <orgunit name="org.samlsample.perms" typeName="PERM"/>
+                <orgunit name="org.samlsample.users" typeName="USER"/>
+            </addorgunit>
+
+        </FortressAdmin>
+    </target>
+</project>

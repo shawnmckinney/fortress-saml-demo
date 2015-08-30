@@ -379,7 +379,7 @@
                                     <sysproperty key="version" value="${project.version}"/>
                                     <sysproperty key="tenant" value="HOME"/>
                                     <arg value="-buildfile"/>
-                                    <arg file="./fortress-saml-sample-security-policy.xml"/>
+                                    <arg file="./src/main/resources/fortress-saml-sample-security-policy.xml"/>
                                 </java>
                             </target>
                         </configuration>
