@@ -1,8 +1,10 @@
-# fortress-saml-sample README-DEPLOY-SPRING-SAMPLE
+# fortress-saml-sample README-SPRING-SECURITY0SAML2-SAMPLE
 
  Last updated: August 31, 2015
 
- This document demonstrates how to download and install a spring security sample used to generate SP metadata.
+ This document demonstrates how to download and install a spring saml security sample.
+
+  It is used to generate metadata needed to register the spring saml SP with IdP.
 
 -------------------------------------------------------------------------------
 
@@ -15,7 +17,7 @@
 
 1. download package:
 
-https://github.com/UniconLabs/shibboleth-sample-java-sp/archive/master.zip
+ [https://github.com/UniconLabs/shibboleth-sample-java-sp/archive/master.zip](SSO Circle IdP)
 
 2. extract:
 
@@ -45,6 +47,18 @@ idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/id
 5. add corresponding file to folder
 
 6. deploy (follow readme.md instructions in shibboleth-sample-java-sp package )
+
+ ## Build
+
+```bash
+ gradle build
+```
+
+ ## Deploy
+ The build script is able to automatically deploy the sample to `$CATALINA_HOME`, via:
+
+ ```bash
+ gradle deploy
 
 7. hit the spring sample app:
 
