@@ -20,7 +20,7 @@
 
 3. fill in the info:
 
- ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "java EE loging page")
+ ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
 
  User Name [a-zA-Z.-]:
  this is the userid you will use to log into the IdP
@@ -46,13 +46,15 @@
 
 5. login into SSOCircle.com IdP
 
+ ![SSO Circle Login page](src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
+
 6. click on 'Manager Metadata'
 
 7. click on 'Add new Service Provider'
 
 8. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
 
-enter hostname for your tomcat machine
+ enter hostname for your tomcat machine
 
 9. enable the 'LastName' checkboxe:
 
