@@ -19,7 +19,9 @@
  */
 package org.samlsample.control;
 
+import com.ctc.wstx.util.StringUtil;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 import org.apache.directory.fortress.core.*;
 import org.apache.directory.fortress.core.SecurityException;
 import org.apache.directory.fortress.core.util.Config;
@@ -68,13 +70,14 @@ public class SecUtils
     private static String getUserId( SAMLCredential credential )
     {
         String userId = null;
-        //String[] attributeValues = credential.getAttributeAsStringArray("uid");
-        //if(attributeValues != null)
-        //    userId = attributeValues[0];
         for ( org.opensaml.saml2.core.Attribute attr : credential.getAttributes())
         {
             String fname = attr.getFriendlyName();
-            if(fname.equals( "uid" ))
+            if(StringUtils.isEmpty( fname ) )
+            {
+                break;
+            }
+            else if( fname.equals( "uid" ) )
             {
                 String vals[] = credential.getAttributeAsStringArray( attr.getName() );
                 userId = vals[0];
@@ -106,17 +109,23 @@ public class SecUtils
             {
                 //String userId = principal.getName();
                 String userId = getUserId( (SAMLCredential)principal.getCredentials() );
-               SAMLCredential credential = (SAMLCredential)principal.getCredentials();
-
-                for ( org.opensaml.saml2.core.Attribute attr : credential.getAttributes())
+                if( StringUtils.isEmpty( userId ))
                 {
-                    String fname = attr.getFriendlyName();
-                    String name = attr.getName();
-                    LOG.info( "fname; " + fname );
-                    String[] attributeValues = credential.getAttributeAsStringArray(name);
-                    for( String val : attributeValues )
+                    userId = principal.getName();
+                }
+                else
+                {
+                    SAMLCredential credential = (SAMLCredential)principal.getCredentials();
+                    for ( org.opensaml.saml2.core.Attribute attr : credential.getAttributes())
                     {
-                        LOG.info( "name:" + val );
+                        String fname = attr.getFriendlyName();
+                        String name = attr.getName();
+                        LOG.info( "fname; " + fname );
+                        String[] attributeValues = credential.getAttributeAsStringArray(name);
+                        for( String val : attributeValues )
+                        {
+                            LOG.info( "name:" + val );
+                        }
                     }
                 }
                 /*
