@@ -64,4 +64,4 @@
  e. click on 'Submit' button
 
  f. wait for the confirmation message (could take a couple of minutes)
- ![SSO Circle Successful Metadata Import page](src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png.png "Successful Import")
+ ![SSO Circle Successful Metadata Import page](src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
