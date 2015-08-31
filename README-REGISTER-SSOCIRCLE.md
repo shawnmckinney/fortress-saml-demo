@@ -12,7 +12,6 @@
 
 ## How to enable a new account on SSOCircle.com
 
-
 1. goto website:
 
 [http://www.ssocircle.com](SSO Circle IdP)
@@ -21,29 +20,27 @@
 
 3. fill in the info:
 
- ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "java EE loging page")
-![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Super User")
-   ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
+![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "java EE loging page")
 
-User Name [a-zA-Z.-]:
-this is the userid you will use to log into the IdP
+ User Name [a-zA-Z.-]:
+ this is the userid you will use to log into the IdP
 
-Required Field Password - at least 8 characters:
-this is the password you will use to log into the IdP
+ Required Field Password - at least 8 characters:
+ this is the password you will use to log into the IdP
 
-Required Field First Name:
-enter anything
+ Required Field First Name:
+ enter anything
 
-Required Field Last Name:
-enter: sssuperuser
+ Required Field Last Name:
+ enter: sssuperuser
 
-note: this field maps to the user name in fortress for security.  For now use 'sssuperuser'
+ note: this field maps to the user name in fortress for security.  For now use 'sssuperuser'
 
-Required Field Full Name:
-enter anything you want here
+ Required Field Full Name:
+ enter anything you want here
 
-Required Field Email Address:
-this email address must be valid.  it is needed for registration confirmation later.
+ Required Field Email Address:
+ this email address must be valid.  it is needed for registration confirmation later.
 
 4. complete the registration
 
