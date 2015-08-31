@@ -6,7 +6,7 @@
 
 -------------------------------------------------------------------------------
 ## Prerequisites
-1. Completion [README-DEPLOY-SPRING-SAMPLE.md](README-DEPLOY-SPRING-SAMPLE.md)
+ Completion [README-DEPLOY-SPRING-SAMPLE.md](README-DEPLOY-SPRING-SAMPLE.md)
 
 -------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@
 
 3. fill in the info:
 
-![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "java EE loging page")
+ ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "java EE loging page")
 
  User Name [a-zA-Z.-]:
  this is the userid you will use to log into the IdP
