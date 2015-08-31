@@ -127,76 +127,46 @@
         </property>
     </bean>
 
-    <!-- Filter automatically generates default SP metadata -->
-	<bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
-		<constructor-arg>
-			<bean class="org.springframework.security.saml.metadata.MetadataGenerator">
-				<property name="entityId" value="fortress-saml-demo"/>
-				<property name="extendedMetadata">
-					<bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
-						<property name="signMetadata" value="false"/>
-						<property name="idpDiscoveryEnabled" value="false"/>
-					</bean>
-				</property>
-			</bean>
-		</constructor-arg>
-	</bean>
-
-<!--
-	<bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
-		<constructor-arg>
-			<bean class="org.springframework.security.saml.metadata.MetadataGenerator">
-				<property name="entityId" value="urn:symas:smckinney:maumelle"/>
-				<property name="extendedMetadata">
-					<bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
-						<property name="signMetadata" value="false"/>
-						<property name="idpDiscoveryEnabled" value="false"/>
-					</bean>
-				</property>
-			</bean>
-		</constructor-arg>
-	</bean>
-
--->
-
-    <!-- The filter is waiting for connections on URL suffixed with filterSuffix and presents SP metadata there -->
     <bean id="metadataDisplayFilter" class="org.springframework.security.saml.metadata.MetadataDisplayFilter"/>
+
+    <!-- SSOCircle.com IDP Metadata configuration: -->
+    <bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
+        <constructor-arg>
+            <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
+                <property name="entityId" value="fortress-saml-demo"/>
+                <property name="extendedMetadata">
+                    <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+                        <property name="signMetadata" value="false"/>
+                        <property name="idpDiscoveryEnabled" value="false"/>
+                    </bean>
+                </property>
+            </bean>
+        </constructor-arg>
+    </bean>
 
     <!-- IDP Metadata configuration - paths to metadata of IDPs in circle of trust is here -->
 <!--
-	<bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
-		<constructor-arg>
-			<list>
-&lt;!&ndash;
-				<bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
-					<constructor-arg>
-						<value type="java.lang.String">http://idp.ssocircle.com/idp-meta.xml</value>
-					</constructor-arg>
-					<constructor-arg>
-						<value type="int">5000</value>
-					</constructor-arg>
-					<property name="parserPool" ref="parserPool"/>
-				</bean>
-&ndash;&gt;
+    <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
+        <constructor-arg>
+            <list>
                 <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
                     <constructor-arg>
-                        <value type="java.lang.String">https://il1scolidp102/idp/shibboleth</value>
+                        <value type="java.lang.String">http://idp.ssocircle.com/idp-meta.xml</value>
                     </constructor-arg>
                     <constructor-arg>
                         <value type="int">5000</value>
                     </constructor-arg>
                     <property name="parserPool" ref="parserPool"/>
                 </bean>
-			</list>
-		</constructor-arg>
-	</bean>
+            </list>
+        </constructor-arg>
+    </bean>
 -->
 
-    <!-- IDP Metadata configuration - paths to metadata of IDPs in circle of trust is here -->
+    <!-- Shibboleth IDP Metadata configuration: -->
     <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
         <constructor-arg>
             <list>
-                <!-- Example of classpath metadata with Extended Metadata -->
                 <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
                     <constructor-arg>
                         <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
@@ -206,7 +176,6 @@
                             <constructor-arg>
                                 <bean class="org.opensaml.util.resource.ClasspathResource">
                                     <constructor-arg value="/metadata/idp-symas-com-metadata.xml"/>
-<!--                                    <constructor-arg value="/metadata/idp-IL1SCOLIDP102-metadata.xml"/>-->
                                 </bean>
                             </constructor-arg>
                             <property name="parserPool" ref="parserPool"/>
@@ -218,8 +187,7 @@
                     </constructor-arg>
                 </bean>
 
-<!--
-                <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
+                <!--bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
                     <constructor-arg>
                         <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
                             <constructor-arg>
@@ -245,27 +213,12 @@
                             <property name="requireArtifactResolveSigned" value="true"/>
                             <property name="requireLogoutRequestSigned" value="true"/>
                             <property name="requireLogoutResponseSigned" value="false"/>
-&lt;!&ndash;
-                            <property name="idpDiscoveryEnabled" value="true"/>
-                            <property name="idpDiscoveryURL" value="sp2.symas.com/fortress-saml-demo/saml/discovery"/>
-                            <property name="idpDiscoveryResponseURL" value="sp2.symas.com/fortress-saml-demo/saml/login?disco=true"/>
-&ndash;&gt;
-&lt;!&ndash;
-                            <property name="idpDiscoveryURL" value="${host.name}/sp/saml/discovery"/>
-                            <property name="idpDiscoveryResponseURL" value="${host.name}/sp/saml/login?disco=true"/>
-&ndash;&gt;
                             <property name="ecpEnabled" value="true" />
                         </bean>
                     </constructor-arg>
-                </bean>
--->
-
+                </bean-->
             </list>
         </constructor-arg>
-        <!-- OPTIONAL used when one of the metadata files contains information about this service provider -->
-        <!-- <property name="hostedSPName" value=""/> -->
-        <!-- OPTIONAL property: can tell the system which IDP should be used for authenticating user by default. -->
-        <!-- <property name="defaultIDP" value="http://localhost:8080/opensso"/> -->
     </bean>
 
 
