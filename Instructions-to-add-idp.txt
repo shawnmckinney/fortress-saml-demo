@@ -13,7 +13,7 @@ http://IL1SCOLSP102:8080/fortress-saml-demo
 
 This does work:
 http://il1scolsp102:8080/fortress-saml-demo
-
+1
 
 1. cd src/main/resources/metadata
 
