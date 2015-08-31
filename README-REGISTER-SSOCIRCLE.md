@@ -14,7 +14,7 @@
 
 1. goto website:
 
-[http://www.ssocircle.com](SSO Circle IdP)
+ [http://www.ssocircle.com](SSO Circle IdP)
 
 2. click on Signin/Register->Register
 
