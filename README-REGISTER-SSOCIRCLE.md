@@ -48,14 +48,20 @@
 
  ![SSO Circle Login page](src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
 
-6. click on 'Manager Metadata'
+6. Add SP Metadata to SSOCircle.com
 
-7. click on 'Add new Service Provider'
+ a. click on 'Manager Metadata'
 
-8. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
+ b. click on 'Add new Service Provider'
+ ![SSO Circle Manage Metadata page](src/main/javadoc/doc-files/SSO-Circle-Metadata.png "Manager Metadata")
+
+ c. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
 
  enter hostname for your tomcat machine
 
-9. enable the 'LastName' checkboxe:
+ d. enable the 'LastName' checkboxe:
 
-10. click submit
+ e. click on 'Submit' button
+
+ f. wait for the confirmation message (could take a couple of minutes)
+ ![SSO Circle Successful Metadata Import page](src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png.png "Successful Import")
