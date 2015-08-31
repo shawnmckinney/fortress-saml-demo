@@ -41,7 +41,7 @@
 
 4. add to sp.properties:
 
-idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/idp-metadata.xml
+ idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/idp-metadata.xml
 
 5. add corresponding file to folder
 
@@ -49,7 +49,7 @@ idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/id
 
 7. hit the spring sample app:
 
-http://hostname:8080/sp
+ http://hostname:8080/sp
 
 8. Click on 'SAML LoginMetadata Administration'
 
@@ -59,15 +59,15 @@ http://hostname:8080/sp
 
 11. Entity Id
 
-enter a unique value
+ enter a unique value
 
-foo-fighters
+ foo-fighters
 
 12. Entity Base URL:
 
-http://host-name:8080/fortress-saml-demo
+ http://host-name:8080/fortress-saml-demo
 
-where host-name corresponds with your machine host name
+ where host-name corresponds with your machine host name
 
 13. Click on 'Generate Metadata' button at the bottom of the page
 
