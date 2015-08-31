@@ -23,6 +23,7 @@
 
  ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "java EE loging page")
 ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Super User")
+   ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
 
 User Name [a-zA-Z.-]:
 this is the userid you will use to log into the IdP
