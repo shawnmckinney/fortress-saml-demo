@@ -39,26 +39,13 @@
         </constructor-arg>
     </bean>
 
-
 4. add to sp.properties:
 
 idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/idp-metadata.xml
 
 5. add corresponding file to folder
 
-6. deploy (follow readme.md instructions in shibboleth-sample-java-sp package )
-
- ## Build
-
-```bash
- gradle build
-```
-
- ## Deploy
- The build script is able to automatically deploy the sample to `$CATALINA_HOME`, via:
-
- ```bash
- gradle deploy
+6. deploy (follow readme.md, run the build and deploy in shibboleth-sample-java-sp package )
 
 7. hit the spring sample app:
 
