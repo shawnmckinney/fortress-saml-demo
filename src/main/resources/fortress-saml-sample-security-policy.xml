@@ -17,6 +17,8 @@
                 <user userId="ssuser1"/>
                 <user userId="ssuser2"/>
                 <user userId="ssuser3"/>
+                <user userId="smckinney@symas.com" />
+                <user userId="foofighters" />
             </deluser>
 
             <adduser>
@@ -25,6 +27,7 @@
                 <user userId="ssuser2" password="password" description="Wicket Sample User 2" ou="org.samlsample.users" />
                 <user userId="ssuser3" password="password" description="Wicket Sample User 3" ou="org.samlsample.users" />
                 <user userId="smckinney@symas.com" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
+                <user userId="foofighters" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
             </adduser>
 
             <deluserrole>
@@ -32,6 +35,7 @@
                 <userrole userId="ssuser2" name="ssUsers2Role" />
                 <userrole userId="ssuser3" name="ssUsers3Role" />
                 <userrole userId="sssuperuser" name="ssSuperRole" />
+                <userrole userId="foofighters" name="ssSuperRole" />
             </deluserrole>
 
             <adduserrole>
@@ -40,6 +44,7 @@
                 <userrole userId="ssuser2" name="ssUsers2Role" />
                 <userrole userId="ssuser3" name="ssUsers3Role" />
                 <userrole userId="sssuperuser" name="ssSuperRole" />
+                <userrole userId="foofighters" name="ssSuperRole" />
             </adduserrole>
 
             <delrole>

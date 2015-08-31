@@ -31,13 +31,10 @@ import org.apache.wicket.Component;
 import org.apache.directory.fortress.core.model.Permission;
 import org.apache.directory.fortress.core.model.Session;
 import org.apache.directory.fortress.core.model.User;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.providers.ExpiringUsernameAuthenticationToken;
 import org.springframework.security.saml.SAMLCredential;
-import org.springframework.security.saml.parser.SAMLCollection;
 
 import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
 import java.util.List;
 
 /**
@@ -87,6 +84,26 @@ public class SecUtils
         return userId;
     }
 
+    private static String getSurName( SAMLCredential credential )
+    {
+        String userId = null;
+        for ( org.opensaml.saml2.core.Attribute attr : credential.getAttributes())
+        {
+            String name = attr.getName();
+            if(StringUtils.isEmpty( name ) )
+            {
+                break;
+            }
+            else if( name.equals( "LastName" ) )
+            {
+                String vals[] = credential.getAttributeAsStringArray( attr.getName() );
+                userId = vals[0];
+                break;
+            }
+        }
+        return userId;
+    }
+
     /**
      * Enables fortress session on behalf of a java.security.Principal retrieved from the container.
      *
@@ -111,8 +128,15 @@ public class SecUtils
                 String userId = getUserId( (SAMLCredential)principal.getCredentials() );
                 if( StringUtils.isEmpty( userId ))
                 {
-                    userId = principal.getName();
+                    // This is default where SSOCircle places email address:
+                    //userId = principal.getName();
+                    userId = getSurName( (SAMLCredential)principal.getCredentials() );
+                    if( StringUtils.isEmpty( userId ))
+                    {
+                        throw new RuntimeException( "No userid found in SAML assertion for principal" + principal.getName() );
+                    }
                 }
+/*
                 else
                 {
                     SAMLCredential credential = (SAMLCredential)principal.getCredentials();
@@ -120,34 +144,15 @@ public class SecUtils
                     {
                         String fname = attr.getFriendlyName();
                         String name = attr.getName();
-                        LOG.info( "fname; " + fname );
+                        LOG.info( "saml attribute name; " + name );
                         String[] attributeValues = credential.getAttributeAsStringArray(name);
                         for( String val : attributeValues )
                         {
-                            LOG.info( "name:" + val );
+                            LOG.info( "saml attribute value:" + val );
                         }
                     }
                 }
-                /*
-                <tr>
-                <td width="200">
-                <strong><c:out value="${attribute.name}"/></strong><c:if test="${not empty attribute.friendlyName}"> (<c:out value="${attribute.friendlyName}"/>)</c:if>
-                </td>
-                <td>
-                <%
-                Attribute a = (Attribute) pageContext.getAttribute("attribute");
-                String[] attributeValues = credential.getAttributeAsStringArray(a.getName());
-                pageContext.setAttribute("attributeValues", attributeValues);
-                %>
-                <c:forEach var="attributeValue" items="${attributeValues}">
-                <c:out value="${attributeValue}"/>&nbsp;
-                </c:forEach>
-                </td>
-                </tr>
-                </c:forEach>
-
-                */
-               //String userId = credential.getAttributeAsString("uid");
+                    */
 
                 // Create the fortress session and assert into the Web app's session along with user's perms:
                 SecUtils.initializeFtSession( component, j2eePolicyMgr, accessMgr, userId );
