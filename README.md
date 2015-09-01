@@ -4,10 +4,10 @@
  * It builds on two excellent references:
   * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample is the first place java developers should look for basic SAML 2.0 programming concepts..
   * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample is where ones goes to understand how to combine Spring SAML with Shibboleth IdP.
- * This sample is a third step.  It shows how to hook Apache Directory Fortress in with a common Identity Provider which provides SSO as-a-service.  This allows us to
- bypass the complexities of a full IdP setup in order to focus on the Service Provider side.
- * This project was not meant to illustrate the various SAML 2.0 use cases.  It does show how Apache Directory Fortress can be combined with a simple SAML use case and Spring Security.
- * Here we use the Apache Wicket web framework. To learn the details of combining Apache Wicket and Fortress, check out:
+ * This sample is a third step.  It hooks Apache Directory Fortress component with Spring Saml.  The use case connects with a common Identity Provider, SSO Circle.com.
+ * This allows us to bypass the complexities of the IdP setup to focus instead on the Service Provider side.
+ * This doesn't illustrate the various SAML 2.0 use cases.  It does show how Fortress can be combined with Spring Security to complete for simple SAML authN and RBAC authZ use case.
+ * We use the Apache Wicket web framework for app.  To learn the details of combining Apache Wicket and Fortress, check out:
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
