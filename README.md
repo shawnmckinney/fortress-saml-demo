@@ -119,5 +119,3 @@ ehcache.config.file=ehcache.xml
  4. click on the page links
 
  5. click on the buttons
-
- 6. Notice that security is now enabled, and how each user has different access rights.
