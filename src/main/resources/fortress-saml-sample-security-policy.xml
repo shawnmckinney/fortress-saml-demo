@@ -17,7 +17,6 @@
                 <user userId="sam1"/>
                 <user userId="sam2"/>
                 <user userId="sam3"/>
-                <user userId="smckinney@symas.com" />
                 <user userId="foofighters" />
             </deluser>
 
@@ -26,59 +25,57 @@
                 <user userId="sam1" password="password" description="Wicket Sample User 1" ou="org.samlsample.users" />
                 <user userId="sam2" password="password" description="Wicket Sample User 2" ou="org.samlsample.users" />
                 <user userId="sam3" password="password" description="Wicket Sample User 3" ou="org.samlsample.users" />
-                <user userId="smckinney@symas.com" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
                 <user userId="foofighters" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
             </adduser>
 
             <deluserrole>
-                <userrole userId="sam1" name="ssUsers1Role" />
-                <userrole userId="sam2" name="ssUsers2Role" />
-                <userrole userId="sam3" name="ssUsers3Role" />
-                <userrole userId="sam*" name="ssSuperRole" />
-                <userrole userId="foofighters" name="ssSuperRole" />
+                <userrole userId="sam1" name="samRole1" />
+                <userrole userId="sam2" name="samRole2" />
+                <userrole userId="sam3" name="samRole3" />
+                <userrole userId="sam*" name="samSuperRole" />
+                <userrole userId="foofighters" name="samSuperRole" />
             </deluserrole>
 
             <adduserrole>
-                <userrole userId="sam1" name="ssUsers1Role" />
-                <userrole userId="smckinney@symas.com" name="ssUsers1Role" />
-                <userrole userId="sam2" name="ssUsers2Role" />
-                <userrole userId="sam3" name="ssUsers3Role" />
-                <userrole userId="sam*" name="ssSuperRole" />
-                <userrole userId="foofighters" name="ssSuperRole" />
+                <userrole userId="sam1" name="samRole1" />
+                <userrole userId="sam2" name="samRole2" />
+                <userrole userId="sam3" name="samRole3" />
+                <userrole userId="sam*" name="samSuperRole" />
+                <userrole userId="foofighters" name="samSuperRole" />
             </adduserrole>
 
             <delrole>
-                <role name="ssBaseRole" />
-                <role name="ssUsers1Role" />
-                <role name="ssUsers2Role" />
-                <role name="ssUsers3Role" />
-                <role name="ssSuperRole" />
+                <role name="samBaseRole" />
+                <role name="samRole1" />
+                <role name="samRole2" />
+                <role name="samRole3" />
+                <role name="samSuperRole" />
             </delrole>
 
             <addrole>
-                <role name="ssBaseRole" description="Base Role gets you into the sample web app"/>
-                <role name="ssUsers1Role" description="Grants access to page 1 and components"/>
-                <role name="ssUsers2Role" description="Grants access to page 2 and components"/>
-                <role name="ssUsers3Role" description="Grants access to page 3 and components"/>
-                <role name="ssSuperRole" description="Inherits from the page roles, grants user to all pages, components in app"/>
+                <role name="samBaseRole" description="Base Role gets you into the sample web app"/>
+                <role name="samRole1" description="Grants access to page 1 and components"/>
+                <role name="samRole2" description="Grants access to page 2 and components"/>
+                <role name="samRole3" description="Grants access to page 3 and components"/>
+                <role name="samSuperRole" description="Inherits from the page roles, grants user to all pages, components in app"/>
             </addrole>
 
             <delroleinheritance>
-                <relationship child="ssUsers1Role" parent="ssBaseRole"/>
-                <relationship child="ssUsers2Role" parent="ssBaseRole"/>
-                <relationship child="ssUsers3Role" parent="ssBaseRole"/>
-                <relationship child="ssSuperRole" parent="ssUsers1Role"/>
-                <relationship child="ssSuperRole" parent="ssUsers2Role"/>
-                <relationship child="ssSuperRole" parent="ssUsers3Role"/>
+                <relationship child="samRole1" parent="samBaseRole"/>
+                <relationship child="samRole2" parent="samBaseRole"/>
+                <relationship child="samRole3" parent="samBaseRole"/>
+                <relationship child="samSuperRole" parent="samRole1"/>
+                <relationship child="samSuperRole" parent="samRole2"/>
+                <relationship child="samSuperRole" parent="samRole3"/>
             </delroleinheritance>
 
             <addroleinheritance>
-                <relationship child="ssUsers1Role" parent="ssBaseRole"/>
-                <relationship child="ssUsers2Role" parent="ssBaseRole"/>
-                <relationship child="ssUsers3Role" parent="ssBaseRole"/>
-                <relationship child="ssSuperRole" parent="ssUsers1Role"/>
-                <relationship child="ssSuperRole" parent="ssUsers2Role"/>
-                <relationship child="ssSuperRole" parent="ssUsers3Role"/>
+                <relationship child="samRole1" parent="samBaseRole"/>
+                <relationship child="samRole2" parent="samBaseRole"/>
+                <relationship child="samRole3" parent="samBaseRole"/>
+                <relationship child="samSuperRole" parent="samRole1"/>
+                <relationship child="samSuperRole" parent="samRole2"/>
+                <relationship child="samSuperRole" parent="samRole3"/>
             </addroleinheritance>
 
             <delpermobj>
@@ -124,33 +121,33 @@
             </addpermop>
 
             <delpermgrant>
-                <permgrant objName="Page1" opName="link" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page2" opName="link" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page3" opName="link" roleNm="ssUsers3Role"/>
-                <permgrant objName="Page1" opName="Button1" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page1" opName="Button2" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page1" opName="Button3" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page2" opName="Button1" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page2" opName="Button2" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page2" opName="Button3" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page3" opName="Button1" roleNm="ssUsers3Role"/>
-                <permgrant objName="Page3" opName="Button2" roleNm="ssUsers3Role"/>
-                <permgrant objName="Page3" opName="Button3" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page1" opName="link" roleNm="samRole1"/>
+                <permgrant objName="Page2" opName="link" roleNm="samRole2"/>
+                <permgrant objName="Page3" opName="link" roleNm="samRole3"/>
+                <permgrant objName="Page1" opName="Button1" roleNm="samRole1"/>
+                <permgrant objName="Page1" opName="Button2" roleNm="samRole1"/>
+                <permgrant objName="Page1" opName="Button3" roleNm="samRole1"/>
+                <permgrant objName="Page2" opName="Button1" roleNm="samRole2"/>
+                <permgrant objName="Page2" opName="Button2" roleNm="samRole2"/>
+                <permgrant objName="Page2" opName="Button3" roleNm="samRole2"/>
+                <permgrant objName="Page3" opName="Button1" roleNm="samRole3"/>
+                <permgrant objName="Page3" opName="Button2" roleNm="samRole3"/>
+                <permgrant objName="Page3" opName="Button3" roleNm="samRole3"/>
             </delpermgrant>
 
             <addpermgrant>
-                <permgrant objName="Page1" opName="link" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page2" opName="link" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page3" opName="link" roleNm="ssUsers3Role"/>
-                <permgrant objName="Page1" opName="Button1" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page1" opName="Button2" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page1" opName="Button3" roleNm="ssUsers1Role"/>
-                <permgrant objName="Page2" opName="Button1" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page2" opName="Button2" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page2" opName="Button3" roleNm="ssUsers2Role"/>
-                <permgrant objName="Page3" opName="Button1" roleNm="ssUsers3Role"/>
-                <permgrant objName="Page3" opName="Button2" roleNm="ssUsers3Role"/>
-                <permgrant objName="Page3" opName="Button3" roleNm="ssUsers3Role"/>
+                <permgrant objName="Page1" opName="link" roleNm="samRole1"/>
+                <permgrant objName="Page2" opName="link" roleNm="samRole2"/>
+                <permgrant objName="Page3" opName="link" roleNm="samRole3"/>
+                <permgrant objName="Page1" opName="Button1" roleNm="samRole1"/>
+                <permgrant objName="Page1" opName="Button2" roleNm="samRole1"/>
+                <permgrant objName="Page1" opName="Button3" roleNm="samRole1"/>
+                <permgrant objName="Page2" opName="Button1" roleNm="samRole2"/>
+                <permgrant objName="Page2" opName="Button2" roleNm="samRole2"/>
+                <permgrant objName="Page2" opName="Button3" roleNm="samRole2"/>
+                <permgrant objName="Page3" opName="Button1" roleNm="samRole3"/>
+                <permgrant objName="Page3" opName="Button2" roleNm="samRole3"/>
+                <permgrant objName="Page3" opName="Button3" roleNm="samRole3"/>
             </addpermgrant>
 
             <delorgunit>
