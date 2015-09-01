@@ -1,6 +1,6 @@
 # fortress-saml-sample SPRING-SECURITY-SAML2-SAMPLE
 
- This document describes how to download and install Unicon's [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) sample.  It is based on [spring-security-saml](https://github.com/spring-projects/spring-security-saml) sample.
+ This document describes how to download and install Unicon's [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) sample.
 
  The instructions that follow show how to use the shibboleth-sample-java-sp app to generate metadata needed to register the fortress-saml-demo *Service Provider* with the ssocircle.com *Identity Provider*.
 
