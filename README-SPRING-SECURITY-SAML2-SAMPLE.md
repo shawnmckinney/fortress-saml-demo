@@ -23,23 +23,23 @@
 2. extract:
 
 3. replace in securityContext.xml:
-
-    <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
-        <constructor-arg>
-            <list>
-                <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
-                    <constructor-arg>
-                        <value type="java.lang.String">http://idp.ssocircle.com/idp-meta.xml</value>
-                    </constructor-arg>
-                    <constructor-arg>
-                        <value type="int">5000</value>
-                    </constructor-arg>
-                    <property name="parserPool" ref="parserPool"/>
-                </bean>
-            </list>
-        </constructor-arg>
-    </bean>
-
+ ```
+ <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
+    <constructor-arg>
+        <list>
+            <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
+                <constructor-arg>
+                    <value type="java.lang.String">http://idp.ssocircle.com/idp-meta.xml</value>
+                </constructor-arg>
+                <constructor-arg>
+                    <value type="int">5000</value>
+                </constructor-arg>
+                <property name="parserPool" ref="parserPool"/>
+            </bean>
+        </list>
+    </constructor-arg>
+ </bean>
+ ```
 4. add to sp.properties:
 
  idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/idp-metadata.xml
