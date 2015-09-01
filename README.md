@@ -107,12 +107,12 @@ ehcache.config.file=ehcache.xml
 
  3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md).
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
- Click on **Continue SAML Single Sign On** button after the bot checks.
+ Click on **I'm not a robot** checkbox and answer the questions.  Afterwards you may click on the **Continue SAML Single Sign On** button.
 
- 4. If everything works, you will be redirected to the fortress-saml-sample web page.  The sam* user should see the following:
+ 4. If everything works the way it's supposed to, you'll next be redirected back to the fortress-saml-sample web page and the sam* user views:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
- 5. Try a different user.
+ 5. Try a different user...
   * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
   * Enter a new value for **Surname**.
   * Use one of these: sam1, sam2, sam3 or sam*.
