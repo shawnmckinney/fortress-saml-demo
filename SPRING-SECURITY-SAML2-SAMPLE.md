@@ -75,13 +75,13 @@
 
  enter a unique value
 
- e.g. *foofighters*
+ e.g. *fortress-saml-demo*
 
  **Remember this value**  It is used inside the ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file during the [fortress-saml-demo](README.md) setup and links SP with the IdP.
 
 11. Entity Base URL:
 
- e.g. *http://host-name:8080/fortress-saml-demo*    (where **host-name** corresponds with your machine's host name)
+ e.g. *http://host-name:8080/fortress-saml-demo*  (where **host-name** corresponds with your machine's host name)
 
  **Remember this value**: The host-name will be entered during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup.
 
