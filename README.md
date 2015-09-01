@@ -1,18 +1,18 @@
-# fortress-saml-sample README
+# Overview of the fortress-saml-sample README
 
- Last updated: August 31, 2015
+ * This document demonstrates how to build and deploy the fortress saml sample.
 
- This document demonstrates how to build and deploy the fortress saml sample.  It is built on top of two excellent references:
- * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample.
- * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample built on the spring saml sample, but shows how to hook into a Shibboleth IdP.
+ * It is built on top of two excellent references:
+  * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample.
+  * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample built on the spring saml sample, but shows how to hook into a Shibboleth IdP.
 
- Both of these projects are the first place developers should look to understand basic SAML 2.0 programming concepts.
+ * Both of the above mentioned projects are the first place java developers should look for basic SAML 2.0 programming concepts.
 
- The **fortress-saml-sample** is a secondary step taken only after Spring SAML development is understood.
+ * This sample is a secondary step.  To be taken only when Spring SAML development concepts are understood.
 
- This project does not provide or explain saml use cases.  It is meant to show how an Apache Directory Fortress runtime can be combined with a Spring SAML 2.0 Service Provider.
+ * This document and project are not meant to illustrate SAML 2.0 use cases specifically.  It does show how Apache Directory Fortress can be combined with Spring SAML.
 
- This project uses the Apache Wicket web framework although is not meant to be a tutorial for combining Apache Wicket and Fortress. For that check out:
+ * Uses the Apache Wicket web framework although is not meant to be a tutorial for combining Apache Wicket and Fortress. For that check out:
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
