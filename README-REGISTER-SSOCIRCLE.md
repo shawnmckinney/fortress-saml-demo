@@ -23,7 +23,7 @@
  ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
 
  User Name [a-zA-Z.-]:
- this is the userid you will use to log into the IdP
+ this is the userid you will use to log into the SSO Circle Identity Provider (IdP)
 
  Required Field Password - at least 8 characters:
  this is the password you will use to log into the IdP
@@ -46,15 +46,15 @@
 
 5. login into SSOCircle.com IdP
 
- Enter the 'User Name' and password from above.
+ Enter the *User Name* and *Password* from above.
 
  ![SSO Circle Login page](src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
 
 6. Add Service Provider Metadata to SSOCircle.com
 
- a. click on 'Manager Metadata'
+ a. click on *Manager Metadata
 
- b. click on 'Add new Service Provider'
+ b. click on *Add new Service Provider
  ![SSO Circle Manage Metadata page](src/main/javadoc/doc-files/SSO-Circle-Metadata.png "Manager Metadata")
 
  c. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
