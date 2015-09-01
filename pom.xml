@@ -9,6 +9,27 @@
     <version>1.0-RC41-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <licenses>
+        <license>
+            <name>UNLICENSE</name>
+            <url>http://unlicense.org/</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/shawnmckinney/fortress-saml-demo.git</connection>
+        <developerConnection>scm:git:https://github.com/shawnmckinney/fortress-saml-demo.git
+        </developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>smckinney</id>
+            <name>Shawn McKinney</name>
+            <email>smckinney 'at' symas.com</email>
+        </developer>
+    </developers>
+
     <properties>
         <wicket.version>6.19.0</wicket.version>
         <wicket.jquery.version>6.19.0</wicket.jquery.version>
@@ -24,18 +45,19 @@
     </properties>
 
     <dependencies>
+        <!--  FORTRESS -->
         <dependency>
             <groupId>org.apache.directory.fortress</groupId>
             <artifactId>fortress-realm-impl</artifactId>
             <version>1.0-RC41-SNAPSHOT</version>
         </dependency>
 
+        <!--  LOGGERS -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${version.log4j}</version>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -76,36 +98,24 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.security.extensions</groupId>
             <artifactId>spring-security-saml2-core</artifactId>
             <version>1.0.1.RELEASE</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
             <version>${spring.security.version}</version>
             <scope>compile</scope>
         </dependency>
-<!--
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring.security.version}</version>
-            <scope>compile</scope>
-        </dependency>
--->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -154,7 +164,6 @@
             <version>4.4</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
     <build>
