@@ -4,7 +4,7 @@
 
 -------------------------------------------------------------------------------
 ## Prerequisites
- Completion [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
+ Completion of the steps under [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) document.
 
 -------------------------------------------------------------------------------
 
