@@ -32,23 +32,25 @@
  enter anything
 
  Required Field Last Name:
- enter: sssuperuser
+ enter: sam*
 
- note: this field maps to the user name in fortress for security.  For now use 'sssuperuser'
+ note: this field maps to a fortress userid.  For now use 'sam*' will be given full access to fortress-saml-sample web app.
 
  Required Field Full Name:
- enter anything you want here
+ anything
 
  Required Field Email Address:
  this email address must be valid.  it is needed for registration confirmation later.
 
-4. complete the registration
+4. complete the registration via confirmation message sent to email address entered above.
 
 5. login into SSOCircle.com IdP
 
+ Enter the 'User Name' and password from above.
+
  ![SSO Circle Login page](src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
 
-6. Add SP Metadata to SSOCircle.com
+6. Add Service Provider Metadata to SSOCircle.com
 
  a. click on 'Manager Metadata'
 
