@@ -33,7 +33,7 @@
  Required Field Last Name:
  enter: sam*
 
- note: this field maps to a fortress *userId*.  For now the *sam** user will be allowed full access to fortress-saml-sample web app.
+ **Note**: this field maps to a fortress *userId*.  For now the *sam** user will be allowed full access to fortress-saml-sample web app.
 
  Required Field Full Name:
  anything

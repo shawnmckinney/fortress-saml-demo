@@ -116,7 +116,6 @@ ehcache.config.file=ehcache.xml
  mvn tomcat:redeploy
   ```
  **Note**: if problem  with tomcat auto-deploy, manually deploy fortress-saml-demo.war to webapps or change connection info used during tomcat:deploy in [pom.xml](pom.xml).
- maven tomcat deploy plugin config:
  ```
  <plugin>
      <groupId>org.codehaus.mojo</groupId>
