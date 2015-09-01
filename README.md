@@ -73,6 +73,26 @@ perms.cached=true
 ehcache.config.file=ehcache.xml
  ```
 
+5. Edit ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file, replace the **entityId** value with entityId from [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) step:
+
+ ```
+    <!-- SSOCircle.com IDP Metadata configuration: -->
+    <bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
+        <constructor-arg>
+            <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
+                <property name="entityId" value="fortress-saml-demo"/>
+                <property name="extendedMetadata">
+                    <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+                        <property name="signMetadata" value="false"/>
+                        <property name="idpDiscoveryEnabled" value="false"/>
+                    </bean>
+                </property>
+            </bean>
+        </constructor-arg>
+    </bean>
+ </bean>
+ ```
+
 -------------------------------------------------------------------------------
 ## Build and deploy fortress-saml-demo
 
