@@ -77,7 +77,7 @@
 
  e.g. *foofighters*
 
- **Remember this value**  It is needed during the [README.md](README.md) setup and links fortress-saml-demo SP-side with the IdP-side.
+ **Remember this value**  It is used inside the ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file during the [fortress-saml-demo](README.md) setup and links SP with the IdP.
 
 11. Entity Base URL:
 
