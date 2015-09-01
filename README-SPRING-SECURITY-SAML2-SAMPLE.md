@@ -49,28 +49,40 @@
 
 7. hit the spring sample app:
 
- http://hostname:8080/sp
+ [http://hostname:8080/sp](Spring Saml Landing Page)
+
+ ![Spring Saml Landing page](src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
 
 8. Click on 'SAML LoginMetadata Administration'
 
 9. Accept defaults and click on 'Login' button
 
+ ![Spring Saml Login page](src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
+
 10. Click on 'Generate new service provider metadata ' button
+
+ ![Spring Saml Generate SP Metadata page](src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata.png "Generate SP Metadata")
 
 11. Entity Id
 
  enter a unique value
 
- foo-fighters
+ e.g. foofighters
 
 12. Entity Base URL:
 
- http://host-name:8080/fortress-saml-demo
+ e.g. http://host-name:8080/fortress-saml-demo
 
- where host-name corresponds with your machine host name
+ where 'host-name' corresponds with your machine's host name
+
+ ![Spring Saml Generate SP Metadata page](src/main/javadoc/doc-files/Spring-Saml-Metadata-Generation-Page.png "Generate SP Metadata Page")
 
 13. Click on 'Generate Metadata' button at the bottom of the page
 
+ ![Spring Saml Generate SP Metadata button](src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata-Button.png "Generate SP Metadata Button")
+
 14. Copy the buffer
 
-15. Save it to file.  Will need it later during README-REGISTER-SSOCIRCLE.md
+ ![Spring Saml Generate SP Metadata copy](src/main/javadoc/doc-files/Spring-Saml-Copy-Metadata.png "Generate SP Metadata Copy")
+
+15. Save it to file.  Will need it later during [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
