@@ -83,7 +83,7 @@
 
  e.g. *http://host-name:8080/fortress-saml-demo*    (where **host-name** corresponds with your machine's host name)
 
- **Remember this value**  The host-name will be entered during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup.
+ **Remember this value**: The host-name will be entered during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup.
 
  ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Metadata-Generation-Page.png "Generate SP Metadata Page")
 
@@ -97,6 +97,6 @@
 
 14. Save it with an '.xml' extension.  We'll need it later on during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
 
- **Remember this value**  It is needed during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup.
+ **Save this file** It is needed during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup.
 
 15. Complete the steps under **How to enable a new account on SSOCircle.com** section of the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) doc.
