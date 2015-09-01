@@ -70,7 +70,7 @@
 
  e. click on **Submit** button
 
- f. wait for the confirmation message and complete instructions in the confirmation email received from the ssocircle website.
+ f. wait for the confirmation message.  This could take a minute or two.
  ![SSO Circle Successful Metadata Import page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
 
 7. The IdP should be ready for use.  Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc to complete this demo.
