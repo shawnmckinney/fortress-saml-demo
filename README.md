@@ -18,13 +18,13 @@
     * [Build Apache Fortress Web](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-web.html)
 
 -------------------------------------------------------------------------------
-## How to generate SP metadata and Register with IdP
+## How to generate SP metadata and register with IdP ssocircle.com
 
 1. Complete these steps first: [README-SPRING-SECURITY-SAML2-SAMPLE.md](README-SPRING-SECURITY-SAML2-SAMPLE.md)
 
 2. Complete these steps next: [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
 
-## How to prepare fortress saml package for use
+## How to prepare fortress saml package
 
 1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
 
