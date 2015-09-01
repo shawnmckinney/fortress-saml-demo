@@ -7,8 +7,8 @@
  * The fortress-saml-demo is a third step.  It hooks [Apache Directory Fortress](https://directory.apache.org/fortress/) with [Spring Security SAML](http://projects.spring.io/spring-security-saml/)
    and a common Identity Provider - [SSO Circle.com](http://www.ssocircle.com).
  * Using a common IdP allows focus on the Service Provider side initially.  Later, after we get more comfortable with how the metadata works, we can change to use another form of IdP, i.e. Shibboleth v3.
- * Here the focus is on showing how Fortress may be combined with Spring Security to complete basic SAML authN and RBAC authZ use cases.
- * This demo won't ever show the various SAML 2.0 use cases possible.  For that refer back to the spring saml sample.
+ * Here we show how Fortress may be combined with Spring Security to satisfy rudimentary SAML authentication and RBAC authorization requirements.
+ * This demo doesn't cover the various SAML 2.0 use cases possible.  For that refer back to the spring saml sample.
  * We use the Apache Wicket web framework for app.  To learn the details of combining Apache Wicket and Fortress, check out:
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
