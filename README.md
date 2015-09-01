@@ -3,7 +3,7 @@
  * This document demonstrates how to build and deploy the fortress saml sample.
  * It builds on two excellent references:
   * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample is the first place java developers should look for basic SAML 2.0 programming concepts..
-  * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample is where ones goes to understand how to combine Spring SAML with Shibboleth IdP.
+  * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample is where ones goes to understand how to combine Spring SAML's SP with Shibboleth's IdP.
  * The fortress-saml-demo is a third step.  It hooks [Apache Directory Fortress](https://directory.apache.org/fortress/) with [Spring Security SAML](http://projects.spring.io/spring-security-saml/)
    and a common Identity Provider - [SSO Circle.com](http://www.ssocircle.com).
  * We'll buypass the complexities of the IdP, using the SSO Circle.com, to focus instead on the Service Provider side.
