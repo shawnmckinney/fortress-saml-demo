@@ -106,23 +106,25 @@ ehcache.config.file=ehcache.xml
 
  2. You will be redirected to the Identity Provider's website.  Here' you'll enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
- * Next, click on the **I'm not a robot** checkbox and answer the questions.
- * Finally click on the **Continue SAML Single Sign On** button.
 
- 3. If everything works during login to IdP you'll be redirected back to the fortress-saml-sample web page.  The user, sam*, has all links enabled:
+ 3. Click on the **I'm not a robot** checkbox and answer the questions.
+
+ 4. Click on the **Continue SAML Single Sign On** button.
+
+ 5. If everything works during login to IdP you'll be redirected back to the fortress-saml-sample web page.  The user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
- 4. Try a different user...
+ 6. Try a different user...
   * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
   * Enter a new **Surname**.
   * Pick from one of these: sam1, sam2, sam3 or sam*.
   * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
   * Delete the cookies from browser corresponding with the IdP and SP websites.
-  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped in Step 4.
+  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
- 5. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
+ 7. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
   * sam1 - access to page one
   * sam2 - access to page two
   * sam3 - access to page three
