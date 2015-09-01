@@ -6,11 +6,11 @@
   * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's sample.
   * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample built on spring's, but showing how to hook into a Shibboleth IdP.
 
- Both of the above projects are the first place developers should look when wanting to understand how to use basic SAML 2.0 programming concepts inside the web apps.
+ Both of the above projects are the first place developers should look when wanting to understand how to use basic SAML 2.0 programming concepts.
 
- The **fortress-saml-sample** is intended as a secondary step.  Taken only after the developer has already mastered the saml building blocks.  It is not meant as an
- exhaustive set of use cases to show all the ways SAML can be used inside webapps.  Rather it shows how apache fortress authorization checks can be combined with SAML SSO
- checks.
+ The **fortress-saml-sample** is a secondary step.  Taken only after the developer has mastered the saml building blocks.  This project does not provide
+ an exhaustive set of use cases showing all the ways SAML can be used.  It does show how Apache Directory Fortress authorization checking can be combined with a SAML 2.0
+ authentication provider.
 
 -------------------------------------------------------------------------------
 ## Prerequisites
