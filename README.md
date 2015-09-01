@@ -91,29 +91,29 @@ ehcache.config.file=ehcache.xml
 
 -------------------------------------------------------------------------------
 
- ## How to test with security enabled
+## How to test with security enabled
 
  1. Here are the user to role assignments:
 
-  ![wicket-sample security policy](src/main/javadoc/doc-files/wicket-sample-security-policy.gif)
+  ![fortress-saml-sample security policy](src/main/resources/fortress-saml-sample-security-policy.xml)
 
- 2. Open link to [http://localhost:8080/wicket-sample](http://localhost:8080/wicket-sample)
+ 2. Open link to [http://localhost:8080/fortress-saml-sample](http://localhost:8080/fortress-saml-sample)
 
  3. Use the following creds:
 
-  * wssuperuser/password
-    ![SuperUser](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
+  * sam*/password
+    ![Sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
 
 
-  * wsuser1/password
+  * sam1/password
     ![WsUser1](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser1-small.png "WsUser1")
 
 
-  * wsuser2/password
+  * sam2/password
     ![WsUser2](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser2-small.png "WsUser2")
 
 
-  * wsuser3/password
+  * sam3/password
     ![WsUser3](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser3-small.png "WsUser3")
 
  4. click on the page links
