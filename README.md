@@ -122,7 +122,9 @@ ehcache.config.file=ehcache.xml
 
  To get understanding of security policy, check out ![fortress-saml-demo security policy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/resources/fortress-saml-sample-security-policy.xml).
 
+ excerpt from file
  ```
+ ...
  <adduserrole>
      <userrole userId="sam1" name="samRole1" />
      <userrole userId="sam2" name="samRole2" />
@@ -144,6 +146,7 @@ ehcache.config.file=ehcache.xml
      <permgrant objName="Page3" opName="Button2" roleNm="samRole3"/>
      <permgrant objName="Page3" opName="Button3" roleNm="samRole3"/>
  </addpermgrant>
+ ...
  ```
  There are three pages, each page has three buttons.  Page access is granted as follows:
 
