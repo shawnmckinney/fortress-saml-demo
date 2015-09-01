@@ -19,48 +19,97 @@
 
 -------------------------------------------------------------------------------
 ## How to build and deploy
-1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
 
-2. Extract the zip archive to your local machine.
+1. Complete these steps first: [README-SPRING-SECURITY-SAML2-SAMPLE.md](README-SPRING-SECURITY-SAML2-SAMPLE.md)
 
-3. cd fortress-saml-sample-master
+2. Complete these steps next: [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
 
-4.
+3. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
 
-5.
+4. Extract the zip archive to your local machine.
 
-6.
+5. cd fortress-saml-sample-master
 
-7.
+6. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
-8.
+ Prepare fortress for ldap server usage.
 
-9.
+ After completing the fortress ten minute guide, this step should be familiar to you.  It is how the fortress runtime gets hooked in with a remote ldap server.
+ ```properties
+# This param tells fortress what type of ldap server in use:
+ldap.server.type=apacheds
 
-10.
+# Use value from [Set Hostname Entry]:
+host=localhost
+
+# if ApacheDS is listening on TLS port:
+port=10389
+
+# These credentials are used for read/write access to all nodes under suffix:
+admin.user=uid=admin,ou=system
+admin.pw=secret
+
+# This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
+min.admin.conn=1
+max.admin.conn=10
+
+# This node contains fortress properties stored on behalf of connecting LDAP clients:
+config.realm=DEFAULT
+config.root=ou=Config,dc=example,dc=com
+
+# Used by application security components:
+perms.cached=true
+
+# Fortress uses a cache:
+ehcache.config.file=ehcache.xml
+ ```
+
+ 10. Build & Deploy (run from the command line):
+
+  Deploy to tomcat server:
+  ```maven
+ mvn clean tomcat:deploy -Dload.file
+  ```
+
+  Or if already deployed:
+  ```maven
+ mvn clean tomcat:redeploy -Dload.file
+  ```
+
+   -Dload.file tells maven to also load the wicket sample security policy into ldap.  Since the load needs to happen just once, you may drop it from future ops:
+  ```maven
+ mvn tomcat:redeploy
+  ```
+
+ -------------------------------------------------------------------------------
+
+ ## How to test with security enabled
+
+ 1. Here are the user to role assignments:
+
+  ![wicket-sample security policy](src/main/javadoc/doc-files/wicket-sample-security-policy.gif)
+
+ 2. Open link to [http://localhost:8080/wicket-sample](http://localhost:8080/wicket-sample)
+
+ 3. Use the following creds:
+
+  * wssuperuser/password
+    ![SuperUser](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
 
 
+  * wsuser1/password
+    ![WsUser1](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser1-small.png "WsUser1")
 
-4. Set java and maven home env variables.
 
-5. Run this command from the root package:
-```
-mvn clean tomcat:deploy
-```
- *Note: if problem  with auto-deploy, manually deploy wicket-sample.war to webapps*
+  * wsuser2/password
+    ![WsUser2](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser2-small.png "WsUser2")
 
--------------------------------------------------------------------------------
-## How to test
-1. Open link to [http://localhost:8080/wicket-sample](http://localhost:8080/wicket-sample)
 
- ![wicket sample no security](src/main/javadoc/doc-files/Screenshot-wicket-sample-nosecurity.png "No Security")
+  * wsuser3/password
+    ![WsUser3](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser3-small.png "WsUser3")
 
-2. click on the page links
+ 4. click on the page links
 
-3. click on the buttons
+ 5. click on the buttons
 
-4. *Notice that there is no security enabled for this app*
-
--------------------------------------------------------------------------------
-## How to enable security
- Follow the instructions here: [README-ENABLE-FORTRESS.md](README-ENABLE-FORTRESS.md)
+ 6. Notice that security is now enabled, and how each user has different access rights.

@@ -4,7 +4,8 @@
 
  This document demonstrates how to download and install a spring saml security sample.
 
-  It is used to generate metadata needed to register the spring saml SP with IdP.
+  It is used to generate metadata a metadata xml file needed to register with an IdP service.
+  For this tutorial we'll be using ssocircle.com
 
 -------------------------------------------------------------------------------
 
@@ -85,4 +86,4 @@
 
  ![Spring Saml Generate SP Metadata copy](src/main/javadoc/doc-files/Spring-Saml-Copy-Metadata.png "Generate SP Metadata Copy")
 
-15. Save it to file.  Will need it later during [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
+15. Save it with an '.xml' extension.  We'll need it later on during [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
