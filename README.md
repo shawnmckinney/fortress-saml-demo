@@ -110,7 +110,7 @@ ehcache.config.file=ehcache.xml
  3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
- 4. If everything works when redirecting back to the SP, you'll see the fortress-saml-sample **Lanuch Page**, where the user, sam*, has all links enabled:
+ 4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Lanuch Page**, where the user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
  5. Try a different user...
@@ -120,7 +120,7 @@ ehcache.config.file=ehcache.xml
   * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
   * Delete the cookies from browser corresponding with the IdP and SP websites.
-  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped.
+  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped when redirected to **Lanuch Page**.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
  6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
