@@ -81,9 +81,8 @@
 
 11. Entity Base URL:
 
- e.g. *http://host-name:8080/fortress-saml-demo*
+ e.g. *http://host-name:8080/fortress-saml-demo*    (where **host-name** corresponds with your machine's host name)
 
- where **host-name** corresponds with your machine's host name
  **Remember this value**  The host-name will be entered during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup.
 
  ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Metadata-Generation-Page.png "Generate SP Metadata Page")
