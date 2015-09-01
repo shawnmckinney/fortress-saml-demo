@@ -77,7 +77,7 @@
 
  e.g. *foofighters*
 
- **Remember this value**  It is needed during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) setup and provides unique id to link fortress-saml-demo SP-side with the IdP-side.
+ **Remember this value**  It is needed during the [README.md](README.md) setup and links fortress-saml-demo SP-side with the IdP-side.
 
 11. Entity Base URL:
 

@@ -50,26 +50,6 @@
         </security:filter-chain-map>
     </bean>
 
-
-<!--  tried it with spring 4:
-    <bean id="samlFilter" class="org.springframework.security.web.FilterChainProxy">
-        <constructor-arg>
-            <list>
-                <security:filter-chain pattern="/saml/login/**" filters="samlEntryPoint"/>
-                <security:filter-chain pattern="/saml/logout/**" filters="samlLogoutFilter"/>
-                <security:filter-chain pattern="/saml/metadata/**" filters="metadataDisplayFilter"/>
-                <security:filter-chain pattern="/saml/SSO/**" filters="samlWebSSOProcessingFilter"/>
-                <security:filter-chain pattern="/saml/SSOHoK/**" filters="samlWebSSOHoKProcessingFilter"/>
-                <security:filter-chain pattern="/saml/SingleLogout/**" filters="samlLogoutProcessingFilter"/>
-&lt;!&ndash;
-
-                <sec:filter-chain pattern="/**" filters="sif,j2eePreAuthFilter,logoutFilter,etf,fsi" />
-&ndash;&gt;
-            </list>
-        </constructor-arg>
-    </bean>
--->
-
     <!-- Handler deciding where to redirect user after successful login -->
     <bean id="successRedirectHandler"
           class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
@@ -135,6 +115,7 @@
             <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
                 <property name="entityId" value="fortress-saml-demo"/>
 <!--                <property name="entityId" value="fortress-saml-demo-2"/>-->
+<!--                <property name="entityId" value="foo-fighters"/>-->
                 <property name="extendedMetadata">
                     <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
                         <property name="signMetadata" value="false"/>
@@ -175,8 +156,8 @@
                             </constructor-arg>
                             <constructor-arg>
                                 <bean class="org.opensaml.util.resource.ClasspathResource">
-&lt;!&ndash;                                    <constructor-arg value="/metadata/idp-symas-com-metadata.xml"/>&ndash;&gt;
-                                    <constructor-arg value="/metadata/idp-[hostname]-metadata.xml"/>
+                                    <constructor-arg value="/metadata/idp-symas-com-metadata.xml"/>
+                                    &lt;!&ndash;<constructor-arg value="/metadata/idp-[hostname]-metadata.xml"/>&ndash;&gt;
                                 </bean>
                             </constructor-arg>
                             <property name="parserPool" ref="parserPool"/>
