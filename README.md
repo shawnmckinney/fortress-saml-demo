@@ -119,36 +119,12 @@ ehcache.config.file=ehcache.xml
   * Use one of the preset users: sam1, sam2, sam3 or sam*.
   * click on **Submit** button to save.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
+  * Delete the cookies from browser for IdP and SP websites.
+  * Do login sequence again.  This time the home page will have different authorizations for new user.
+  ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
-
-
-# [ Page](src/main/javadoc/doc-files/.png "IdP Page")
-# [ Page](src/main/javadoc/doc-files/.png "IdP Page")
-
-
- 5. That user, sam* has access to all pages/buttons.
-
-
-
- 7. Delete the cookies from browser for IdP and SP websites.
-
- 8. Hit the home page again, login with IdP using same creds entered in step above.
-
- 9. Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
+ 6. Each fortress user (mapped to **Last Name** field at IdP) has a slightly different access policy.
   * sam1 - access to page one
   * sam2 - access to page two
   * sam3 - access to page three
   * sam* - access to all pages
-
- 10. Screen shots:
-  * sam*
-    ![sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
-
-  * sam1
-    ![sam1](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser1-small.png "WsUser1")
-
-  * sam2
-    ![sam2](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser2-small.png "WsUser2")
-
-  * sam3
-    ![sam3](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser3-small.png "WsUser3")
