@@ -73,7 +73,7 @@ perms.cached=true
 ehcache.config.file=ehcache.xml
  ```
 
-5. Edit ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
+5. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
 
  ```
     <!-- SSOCircle.com IDP Metadata configuration: -->
@@ -120,7 +120,7 @@ ehcache.config.file=ehcache.xml
 
 ## Test fortress security with spring saml sso enabled
 
- To get understanding of security policy, check out ![fortress-saml-demo security policy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/resources/fortress-saml-sample-security-policy.xml).
+ To get understanding of security policy, check out ![fortress-saml-demo security policy](src/main/resources/fortress-saml-sample-security-policy.xml).
 
  excerpt from file:
  ```
@@ -162,7 +162,7 @@ ehcache.config.file=ehcache.xml
  1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
  2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
- ![IdP Login Page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-Login.png "IdP Login Page")
+ ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-Login.png "IdP Login Page")
 
  3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
