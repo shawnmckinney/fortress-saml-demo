@@ -46,10 +46,10 @@
 
  After completing the fortress ten minute guide, this step should be familiar to you.  It is how the fortress runtime gets hooked in with a remote ldap server.
  ```properties
-# This param tells fortress what type of ldap server in use:
+# Tells fortress what type of LDAP server in use:
 ldap.server.type=apacheds
 
-# Use value from [Set Hostname Entry]:
+# ApacheDS LDAP host name:
 host=localhost
 
 # ApacheDS default port:
@@ -63,7 +63,7 @@ admin.pw=secret
 min.admin.conn=1
 max.admin.conn=10
 
-# This node contains more fortress properties stored on ldap server:
+# This node contains more fortress properties stored on LDAP server:
 config.realm=DEFAULT
 config.root=ou=Config,dc=example,dc=com
 
