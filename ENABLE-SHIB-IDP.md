@@ -1,8 +1,6 @@
 # fortress-saml-sample ENABLE-SHIB-IDP
 
- Last updated: August 31, 2015
-
- DO NOT USE ! - This document is work in progress...
+ Work-in-progress **DO NOT USE**
 
 -------------------------------------------------------------------------------
 
@@ -17,10 +15,10 @@
     * [Build Apache Fortress Realm](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-realm.html)
     * [Setup Apache Tomcat Web Server](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-tomcat.html)
     * [Build Apache Fortress Web](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-web.html)
-5.
+5. Install Shibboleth IdP v3
 -------------------------------------------------------------------------------
 
-
+## Install Notes
 
 increase tomcat pergen space and memory:
 export CATALINA_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"
