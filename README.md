@@ -7,7 +7,7 @@
  * This sample is a third step.  It shows how to hook Apache Directory Fortress in with a common Identity Provider which provides SSO as-a-service.  This allows us to
  bypass the complexities of a full IdP setup in order to focus on the Service Provider side.
  * This project was not meant to illustrate the various SAML 2.0 use cases.  It does show how Apache Directory Fortress can be combined with a simple SAML use case and Spring Security.
- * Here we also use the Apache Wicket web framework but this sample is not intended as tutorial for that. To learn how to combine Apache Wicket and Fortress, check out:
+ * Here we use the Apache Wicket web framework. To learn the details of combining Apache Wicket and Fortress, check out:
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
