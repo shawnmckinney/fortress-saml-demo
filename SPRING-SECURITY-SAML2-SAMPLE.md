@@ -60,17 +60,17 @@
  a. Use this URL: [http://localhost:8080/sp](Spring Saml Landing Page)
  b. Looks like this:
 
- ![Spring Saml Landing page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
+ ![Spring Saml Landing page](src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
 
 7. Click on **Metadata Administration** link.
 
 8. Accept default uid/password, and click on **Login** button
 
- ![Spring Saml Login page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
+ ![Spring Saml Login page](src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
 
 9. Click on **Generate new service provider metadata** button
 
- ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata.png "Generate SP Metadata")
+ ![Spring Saml Generate SP Metadata page](src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata.png "Generate SP Metadata")
 
 10. Entity Id
 
