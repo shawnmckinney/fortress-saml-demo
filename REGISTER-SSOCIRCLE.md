@@ -69,4 +69,4 @@
  f. wait for the confirmation message (could take a couple of minutes)
  ![SSO Circle Successful Metadata Import page](src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
 
-6. Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc.
+7. Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc.
