@@ -120,7 +120,7 @@ ehcache.config.file=ehcache.xml
   * Enter IdP password and click on **Submit** to save and continue.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
   * Delete the cookies from browser corresponding with the IdP and SP websites.
-  * Perform login sequence again.  Now the home page will have different authorizations, pertaining to fortress userId mapped to IdP login.
+  * Perform login sequence again.  Now there are different authorizations, corresponding with different fortress userIds mapped.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
  6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
