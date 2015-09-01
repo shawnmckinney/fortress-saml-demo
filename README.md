@@ -34,7 +34,6 @@
 
 1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-demo/archive/master.zip)
 
-
 2. Extract the zip archive to your local machine.
 
 3. cd fortress-saml-demo-master

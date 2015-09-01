@@ -31,7 +31,7 @@
  enter anything
 
  Required Field Last Name:
- enter: **sam***
+ enter: sam*
 
  note: this field maps to a fortress *userId*.  For now the *sam** user will be allowed full access to fortress-saml-sample web app.
 
@@ -67,3 +67,5 @@
 
  f. wait for the confirmation message (could take a couple of minutes)
  ![SSO Circle Successful Metadata Import page](src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
+
+6. Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc.
