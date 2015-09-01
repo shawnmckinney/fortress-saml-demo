@@ -53,7 +53,7 @@
 
  ![Spring Saml Landing page](src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
 
-8. Click on 'SAML LoginMetadata Administration'
+8. Click on 'Metadata Administration'
 
 9. Accept defaults and click on 'Login' button
 
