@@ -1,4 +1,4 @@
-# fortress-saml-sample README-REGISTER-SSOCIRCLE
+# fortress-saml-sample REGISTER-SSOCIRCLE
 
  Last updated: August 31, 2015
 
@@ -6,7 +6,7 @@
 
 -------------------------------------------------------------------------------
 ## Prerequisites
- Completion [README-DEPLOY-SPRING-SAMPLE.md](README-DEPLOY-SPRING-SAMPLE.md)
+ Completion [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
 
 -------------------------------------------------------------------------------
 

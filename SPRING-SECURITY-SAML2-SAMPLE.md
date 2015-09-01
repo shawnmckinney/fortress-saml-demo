@@ -1,4 +1,4 @@
-# fortress-saml-sample README-SPRING-SECURITY0SAML2-SAMPLE
+# fortress-saml-sample SPRING-SECURITY0SAML2-SAMPLE
 
  Last updated: August 31, 2015
 
@@ -86,4 +86,4 @@
 
  ![Spring Saml Generate SP Metadata copy](src/main/javadoc/doc-files/Spring-Saml-Copy-Metadata.png "Generate SP Metadata Copy")
 
-15. Save it with an '.xml' extension.  We'll need it later on during [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
+15. Save it with an '.xml' extension.  We'll need it later on during [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)

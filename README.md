@@ -28,9 +28,9 @@
 -------------------------------------------------------------------------------
 ## How to generate SP metadata and register with IdP ssocircle.com
 
-1. Complete these steps first: [README-SPRING-SECURITY-SAML2-SAMPLE.md](README-SPRING-SECURITY-SAML2-SAMPLE.md)
+1. Complete these steps first: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
 
-2. Complete these steps next: [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
+2. Complete these steps next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
 
 ## How to prepare fortress saml package
 
@@ -107,7 +107,7 @@ ehcache.config.file=ehcache.xml
 
  2. Open link to [http://localhost:8080/fortress-saml-sample](http://localhost:8080/fortress-saml-sample)
 
- 3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md).
+ 3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md).
 
  4. That user, sam* has access to all pages/buttons.
 
@@ -128,13 +128,13 @@ ehcache.config.file=ehcache.xml
 
  9. Screen shots:
   * sam*
-    ![Sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
+    ![sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
 
   * sam1
-    ![WsUser1](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser1-small.png "WsUser1")
+    ![sam1](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser1-small.png "WsUser1")
 
   * sam2
-    ![WsUser2](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser2-small.png "WsUser2")
+    ![sam2](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser2-small.png "WsUser2")
 
   * sam3
-    ![WsUser3](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser3-small.png "WsUser3")
+    ![sam3](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser3-small.png "WsUser3")
