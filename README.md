@@ -108,6 +108,7 @@ ehcache.config.file=ehcache.xml
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
  3. Click on the **I'm not a robot** checkbox and answer the questions.
+ ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
  4. Click on the **Continue SAML Single Sign On** button.
 
