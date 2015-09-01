@@ -41,8 +41,7 @@
  Required Field Email Address:
  this email address must be valid.  it is needed for registration confirmation later.
  ```
- **Remember this value**: The **User Name** and **Password** will be used during testing.
- **Remember this value**: The **Last Name** maps to a userId in Fortress.  Later you will be asked to change this demonstrate authorization use cases.
+ **Remember these values**: The **User Name** and **Password** will be used during testing and serve as the IdP credentials.  The **Last Name** maps to a userId field in Fortress and will be used during authorization use cases.
 
 4. complete the registration via confirmation message sent to email address entered above.
 
