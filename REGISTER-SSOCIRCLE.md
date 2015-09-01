@@ -1,6 +1,6 @@
 # fortress-saml-sample REGISTER-SSOCIRCLE
 
- This document describes the steps to register for a new account with SSOCircle.com IdP.  It also explains how to load your service provider metadata.  This will be the *Identity Provider* **(IdP)** for fortress-saml-demo's *Service Provider* **(SP)**
+ This document describes the steps to register for a new account and load your service provider metadata at ssocircle.com.  This websute will act as the *Identity Provider* **(IdP)** with your fortress-saml-demo *Service Provider* **(SP)**
 
 -------------------------------------------------------------------------------
 ## Prerequisites
