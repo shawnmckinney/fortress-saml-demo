@@ -103,16 +103,18 @@ ehcache.config.file=ehcache.xml
 
  4. That user, sam* has access to all pages/buttons.
 
- 5. Try a different user.  For that you will need to go back to the ssocricle.com registration page.  Enter a new value for **Last Name**.  Use
- one of the preset users: sam1, sam2, sam3 or sam*..
+ 5. Try a different user.
 
- 6. Delete the cookies from browser for IdP and SP.  Hit the home page, login with IdP using same creds from above.
- Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
+   Map different users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
+   Enter a new value for **Last Name**.
+   Use one of the preset users: sam1, sam2, sam3 or sam*..
 
-  a. sam1 - access to page one
-  b. sam2 - access to page two
-  c. sam3 - access to page three
-  d. sam* - access to all pages
+ 6. Delete the cookies from browser for IdP and SP websites.  Hit the home page again, login with IdP using same creds entered in step above.
+  Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
+  sam1 - access to page one
+  sam2 - access to page two
+  sam3 - access to page three
+  sam* - access to all pages
 
  7. Screen shots:
 
