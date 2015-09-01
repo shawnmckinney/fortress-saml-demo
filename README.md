@@ -32,7 +32,7 @@
 
 2. Complete these steps next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
 
-## How to prepare fortress saml package
+## Prepare fortress-saml-sample package
 
 1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
 
