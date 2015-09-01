@@ -78,7 +78,7 @@
 
  e.g. *fortress-saml-demo*
 
- **Remember this value**  It is used inside the ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file during the [fortress-saml-demo](README.md) setup and links SP with the IdP.
+ **Remember this value**  It is used inside the ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file during the [fortress-saml-demo](README.md) setup and links SP with the IdP.
 
 11. Entity Base URL:
 
