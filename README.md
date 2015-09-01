@@ -73,7 +73,6 @@ perms.cached=true
 # Fortress uses a cache:
 ehcache.config.file=ehcache.xml
  ```
-
 -------------------------------------------------------------------------------
 ## How to build and deploy
 
@@ -116,14 +115,14 @@ ehcache.config.file=ehcache.xml
  5. Try a different user.
   * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
   * Enter a new value for **Surname**.
-  * Use one of the preset users: sam1, sam2, sam3 or sam*.
-  * click on **Submit** button to save.
+  * Use one of these: sam1, sam2, sam3 or sam*.
+  * Enter IdP password and click on **Submit** to save and continue.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
-  * Delete the cookies from browser for IdP and SP websites.
-  * Do login sequence again.  This time the home page will have different authorizations.
+  * Delete the cookies from browser corresponding with the IdP and SP websites.
+  * Perform login sequence again.  Now the home page will have different authorizations, pertaining to fortress userId mapped to IdP login.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
- 6. Each fortress user (mapped to **Last Name** field at IdP) has a slightly different access policy.
+ 6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
   * sam1 - access to page one
   * sam2 - access to page two
   * sam3 - access to page three
