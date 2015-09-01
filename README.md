@@ -157,7 +157,7 @@ ehcache.config.file=ehcache.xml
 | sam2          | false         | true          | false         |
 | sam3          | false         | false         | true          |
 
- If you followed the instructions, your IdP global user will be mapped to sam* user in fortress.  This allows access to all pages/buttons in the fortress-saml-demo app.
+ If you followed the instructions, your IdP global user will be mapped to sam* in fortress which grants access to all pages/buttons in the app.  This mapping can be changed, which we'll show you how later.
 
  1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
