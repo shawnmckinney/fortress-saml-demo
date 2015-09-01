@@ -109,7 +109,20 @@ ehcache.config.file=ehcache.xml
 
  3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md).
 
+ [IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
+
+ [sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
+
+ 
+ [ Page](src/main/javadoc/doc-files/.png "IdP Page")
+ [ Page](src/main/javadoc/doc-files/.png "IdP Page")
+ [ Page](src/main/javadoc/doc-files/.png "IdP Page")
+
+
+
  4. That user, sam* has access to all pages/buttons.
+
+
 
  5. Try a different user.
    * Map different users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
