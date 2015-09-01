@@ -120,7 +120,7 @@ ehcache.config.file=ehcache.xml
   * click on **Submit** button to save.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
   * Delete the cookies from browser for IdP and SP websites.
-  * Do login sequence again.  This time the home page will have different authorizations for new user.
+  * Do login sequence again.  This time the home page will have different authorizations.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
  6. Each fortress user (mapped to **Last Name** field at IdP) has a slightly different access policy.
