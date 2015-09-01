@@ -1,4 +1,4 @@
-# Overview of the fortress-saml-sample README
+# Overview of the fortress-saml-demo README
 
  * This document demonstrates how to build and deploy the fortress saml sample.
  * It builds on two excellent references:
@@ -11,7 +11,7 @@
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
-## fortress-sample-sample prerequisites
+## fortress-sample-demo prerequisites
 1. Java 7 (or greater) sdk
 2. Git
 3. Apache Maven 3
@@ -30,13 +30,14 @@
 
 2. Complete these steps next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
 
-## Prepare fortress-saml-sample package
+## Prepare fortress-saml-demo package
 
-1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
+1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-demo/archive/master.zip)
+
 
 2. Extract the zip archive to your local machine.
 
-3. cd fortress-saml-sample-master
+3. cd fortress-saml-demo-master
 
 4. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
@@ -73,7 +74,7 @@ ehcache.config.file=ehcache.xml
  ```
 
 -------------------------------------------------------------------------------
-## Build and deploy fortress-saml-sample
+## Build and deploy fortress-saml-demo
 
 1. Set java and maven home env variables.
 
@@ -100,9 +101,9 @@ ehcache.config.file=ehcache.xml
 ## Test fortress security with spring saml sso enabled
 
  1. Here are the user to role assignments:
- ![fortress-saml-sample security policy](src/main/javadoc/doc-files/fortress-saml-sample-security-policy.xml)
+ ![fortress-saml-demo security policy](src/main/javadoc/doc-files/fortress-saml-demo-security-policy.xml)
 
- 2. Open link to [http://localhost:8080/fortress-saml-sample](http://localhost:8080/fortress-saml-sample)
+ 2. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
  3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md).
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
