@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.apache.directory</groupId>
+    <groupId>org.samlsample</groupId>
     <artifactId>fortress-saml-demo</artifactId>
     <version>1.0-RC41-SNAPSHOT</version>
     <packaging>war</packaging>
@@ -17,44 +17,17 @@
         <version.slf4j.log4j12>1.7.7</version.slf4j.log4j12>
         <spring.version>3.2.3.RELEASE</spring.version>
         <spring.security.version>3.1.2.RELEASE</spring.security.version>
-<!--
-        <spring.version>4.2.0.RELEASE</spring.version>
-        <spring.security.version>4.0.2.RELEASE</spring.security.version>
--->
-<!--        <spring.security.version>3.2.4.RELEASE</spring.security.version>-->
-<!--        <spring.security.version>4.0.2.RELEASE</spring.security.version>-->
-
         <version.log4j>1.2.17</version.log4j>
         <version.junit>4.11</version.junit>
         <javadoc.version>2.9.1</javadoc.version>
         <title>${project.name} ${project.version}</title>
     </properties>
 
-
     <dependencies>
-        <!-- TODO STEP 3: uncomment for fortress security: -->
-<!--
-        <dependency>
-            <groupId>org.apache.directory.fortress</groupId>
-            <artifactId>fortress-web</artifactId>
-            <version>1.0-RC41-SNAPSHOT</version>
-            <classifier>classes</classifier>
-&lt;!&ndash;
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.security</groupId>
-                    <artifactId>spring-security-core</artifactId>
-
-                </exclusion>
-            </exclusions>
-&ndash;&gt;
-        </dependency>
--->
         <dependency>
             <groupId>org.apache.directory.fortress</groupId>
             <artifactId>fortress-realm-impl</artifactId>
             <version>1.0-RC41-SNAPSHOT</version>
-            <!--<classifier>classes</classifier>-->
         </dependency>
 
         <dependency>
@@ -115,18 +88,8 @@
         <dependency>
             <groupId>org.springframework.security.extensions</groupId>
             <artifactId>spring-security-saml2-core</artifactId>
-            <!--<version>1.0.2.BUILD-SNAPSHOT</version>-->
-<!--            <version>1.0.0.RELEASE</version>-->
             <version>1.0.1.RELEASE</version>
             <scope>compile</scope>
-<!--
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.security</groupId>
-                    <artifactId>spring-security-core</artifactId>
-                </exclusion>
-            </exclusions>
--->
         </dependency>
 
         <dependency>
