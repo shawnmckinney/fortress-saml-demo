@@ -26,9 +26,9 @@
 -------------------------------------------------------------------------------
 ## Generate SP metadata and register with IdP ssocircle.com
 
-1. Complete these steps first: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
+1. Complete first: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
 
-2. Complete these steps next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
+2. Complete next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
 
 ## Prepare fortress-saml-demo package
 
