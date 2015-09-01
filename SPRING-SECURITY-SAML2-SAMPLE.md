@@ -44,17 +44,19 @@
 
 5. add corresponding file to folder
 
-6. deploy (follow readme.md, run the build and deploy in shibboleth-sample-java-sp package )
+6. Deploy shibboleth-sample-java-sp package
+ follow the ![README.md](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/README.md) steps to build and deploy.
 
-7. hit the spring sample app:
+7. Pull up the shibboleth-sample-java-sp home page in the browser:
 
- [http://hostname:8080/sp](Spring Saml Landing Page)
+ a. Use this URL: [http://localhost:8080/sp](Spring Saml Landing Page)
+ b. Looks like this:
 
  ![Spring Saml Landing page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
 
-8. Click on **Metadata Administration**
+8. Click on **Metadata Administration** link.
 
-9. Accept defaults and click on **Login** button
+9. Accept default uid/password, and click on **Login** button
 
  ![Spring Saml Login page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
 
