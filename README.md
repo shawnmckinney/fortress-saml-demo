@@ -94,7 +94,7 @@ ehcache.config.file=ehcache.xml
   ```maven
  mvn tomcat:redeploy
   ```
- *Note: if problem  with auto-deploy, manually deploy wicket-sample.war to webapps*
+ *Note: if problem  with auto-deploy, manually deploy fortress-saml-demo.war to webapps*
 
 -------------------------------------------------------------------------------
 
