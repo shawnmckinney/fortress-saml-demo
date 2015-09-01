@@ -49,24 +49,26 @@
 
  Enter the **User Name** and **Password** from above.
 
- ![SSO Circle Login page](src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
+ ![SSO Circle Login page](./src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
 
 6. Add Service Provider Metadata to SSOCircle.com
 
  a. click on **Manage Metadata**
 
  b. click on **Add new Service Provider**
- ![SSO Circle Manage Metadata page](src/main/javadoc/doc-files/SSO-Circle-Metadata.png "Manager Metadata")
+ ![SSO Circle Manage Metadata page](./src/main/javadoc/doc-files/SSO-Circle-Metadata.png "Manager Metadata")
 
  c. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
 
  enter hostname for your tomcat machine
+
+ **Use previous value**: The host-name used here must match that created during SP metadata gen step here: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md).
 
  d. enable the **LastName** checkbox:
 
  e. click on **Submit** button
 
  f. wait for the confirmation message (could take a couple of minutes)
- ![SSO Circle Successful Metadata Import page](src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
+ ![SSO Circle Successful Metadata Import page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
 
 7. Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc.
