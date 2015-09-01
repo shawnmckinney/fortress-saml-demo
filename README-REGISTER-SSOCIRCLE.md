@@ -32,9 +32,9 @@
  enter anything
 
  Required Field Last Name:
- enter: sam*
+ enter: **sam***
 
- note: this field maps to a fortress userid.  For now use 'sam*' will be given full access to fortress-saml-sample web app.
+ note: this field maps to a fortress *userId*.  For now the *sam** user will be allowed full access to fortress-saml-sample web app.
 
  Required Field Full Name:
  anything
@@ -46,15 +46,15 @@
 
 5. login into SSOCircle.com IdP
 
- Enter the *User Name* and *Password* from above.
+ Enter the **User Name** and **Password** from above.
 
  ![SSO Circle Login page](src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
 
 6. Add Service Provider Metadata to SSOCircle.com
 
- a. click on *Manager Metadata
+ a. click on **Manager Metadata**
 
- b. click on *Add new Service Provider
+ b. click on **Add new Service Provider**
  ![SSO Circle Manage Metadata page](src/main/javadoc/doc-files/SSO-Circle-Metadata.png "Manager Metadata")
 
  c. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
