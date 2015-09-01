@@ -123,6 +123,13 @@ ehcache.config.file=ehcache.xml
  To get understanding of security policy, check out ![fortress-saml-demo security policy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/resources/fortress-saml-sample-security-policy.xml).
 
  ```
+ <adduserrole>
+     <userrole userId="sam1" name="samRole1" />
+     <userrole userId="sam2" name="samRole2" />
+     <userrole userId="sam3" name="samRole3" />
+     <userrole userId="sam*" name="samSuperRole" />
+ </adduserrole>
+
  <addpermgrant>
      <permgrant objName="Page1" opName="link" roleNm="samRole1"/>
      <permgrant objName="Page2" opName="link" roleNm="samRole2"/>
