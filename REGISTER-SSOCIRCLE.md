@@ -1,8 +1,6 @@
 # fortress-saml-sample REGISTER-SSOCIRCLE
 
- Last updated: August 31, 2015
-
- This document demonstrates how to register for a new account with SSOCircle.com IdP.
+ This document demonstrates how to register for a new account with SSOCircle.com IdP.  This website will servce as the *Identity Provider* **(IdP)** for fortress-saml-demo *Service Provider* **(SP)**
 
 -------------------------------------------------------------------------------
 ## Prerequisites
@@ -12,16 +10,17 @@
 
 ## How to enable a new account on SSOCircle.com
 
-1. goto website:
+1. Goto website:
 
  [http://www.ssocircle.com](SSO Circle IdP)
 
-2. click on Signin/Register->Register
+2. Click on **Signin/Register**->**Register** menu option.
 
-3. fill in the info:
+3. Fill in the info in the web form:
 
  ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
 
+ ```
  User Name [a-zA-Z.-]:
  this is the userid you will use to log into the SSO Circle Identity Provider (IdP)
 
@@ -41,6 +40,7 @@
 
  Required Field Email Address:
  this email address must be valid.  it is needed for registration confirmation later.
+ ```
 
 4. complete the registration via confirmation message sent to email address entered above.
 
