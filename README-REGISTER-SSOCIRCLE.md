@@ -61,7 +61,7 @@
 
  enter hostname for your tomcat machine
 
- d. enable the **LastName** checkboxe:
+ d. enable the **LastName** checkbox:
 
  e. click on **Submit** button
 
