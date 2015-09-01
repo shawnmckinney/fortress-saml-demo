@@ -12,7 +12,7 @@
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
-## fortress-sample-demo prerequisites
+## fortress-saml-demo prerequisites
 1. Java 7 (or greater) sdk
 2. Git
 3. Apache Maven 3
