@@ -111,11 +111,27 @@ ehcache.config.file=ehcache.xml
  mvn clean tomcat:redeploy -Dload.file
   ```
 
-   -Dload.file tells maven to also load the wicket sample security policy into ldap.  Since the load needs to happen just once, you may drop it from future ops:
+   -Dload.file tells maven to automatically load the fortress-saml-demo security policy into ldap.  Since the load needs to happen just once, you may drop the arg from future ops:
   ```maven
  mvn tomcat:redeploy
   ```
- *Note: if problem  with auto-deploy, manually deploy fortress-saml-demo.war to webapps*
+ *Note: if problem  with tomcat auto-deploy, manually deploy fortress-saml-demo.war to webapps*
+ *Note: change connection info used during tomcat:deploy in [pom.xml](pom.xml).
+ ```
+ <plugin>
+     <groupId>org.codehaus.mojo</groupId>
+     <artifactId>tomcat-maven-plugin</artifactId>
+     <version>1.0-beta-1</version>
+     <configuration>
+     ...
+         <url>http://localhost:8080/manager/text</url>
+         <path>/${project.artifactId}</path>
+         <!-- Warning the tomcat manager creds here are for deploying into a demo environment only. -->
+         <username>tcmanager</username>
+         <password>m@nager123</password>
+     </configuration>
+ </plugin>
+ ```
 
 -------------------------------------------------------------------------------
 
