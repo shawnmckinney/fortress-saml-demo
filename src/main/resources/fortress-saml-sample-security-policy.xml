@@ -13,37 +13,37 @@
         <FortressAdmin>
 
             <deluser>
-                <user userId="sssuperuser"/>
-                <user userId="ssuser1"/>
-                <user userId="ssuser2"/>
-                <user userId="ssuser3"/>
+                <user userId="sam*"/>
+                <user userId="sam1"/>
+                <user userId="sam2"/>
+                <user userId="sam3"/>
                 <user userId="smckinney@symas.com" />
                 <user userId="foofighters" />
             </deluser>
 
             <adduser>
-                <user userId="sssuperuser" password="password" description="Wicket Sample Demo Super User" ou="org.samlsample.users" />
-                <user userId="ssuser1" password="password" description="Wicket Sample User 1" ou="org.samlsample.users" />
-                <user userId="ssuser2" password="password" description="Wicket Sample User 2" ou="org.samlsample.users" />
-                <user userId="ssuser3" password="password" description="Wicket Sample User 3" ou="org.samlsample.users" />
+                <user userId="sam*" password="password" description="Wicket Sample Demo Super User" ou="org.samlsample.users" />
+                <user userId="sam1" password="password" description="Wicket Sample User 1" ou="org.samlsample.users" />
+                <user userId="sam2" password="password" description="Wicket Sample User 2" ou="org.samlsample.users" />
+                <user userId="sam3" password="password" description="Wicket Sample User 3" ou="org.samlsample.users" />
                 <user userId="smckinney@symas.com" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
                 <user userId="foofighters" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
             </adduser>
 
             <deluserrole>
-                <userrole userId="ssuser1" name="ssUsers1Role" />
-                <userrole userId="ssuser2" name="ssUsers2Role" />
-                <userrole userId="ssuser3" name="ssUsers3Role" />
-                <userrole userId="sssuperuser" name="ssSuperRole" />
+                <userrole userId="sam1" name="ssUsers1Role" />
+                <userrole userId="sam2" name="ssUsers2Role" />
+                <userrole userId="sam3" name="ssUsers3Role" />
+                <userrole userId="sam*" name="ssSuperRole" />
                 <userrole userId="foofighters" name="ssSuperRole" />
             </deluserrole>
 
             <adduserrole>
-                <userrole userId="ssuser1" name="ssUsers1Role" />
+                <userrole userId="sam1" name="ssUsers1Role" />
                 <userrole userId="smckinney@symas.com" name="ssUsers1Role" />
-                <userrole userId="ssuser2" name="ssUsers2Role" />
-                <userrole userId="ssuser3" name="ssUsers3Role" />
-                <userrole userId="sssuperuser" name="ssSuperRole" />
+                <userrole userId="sam2" name="ssUsers2Role" />
+                <userrole userId="sam3" name="ssUsers3Role" />
+                <userrole userId="sam*" name="ssSuperRole" />
                 <userrole userId="foofighters" name="ssSuperRole" />
             </adduserrole>
 
