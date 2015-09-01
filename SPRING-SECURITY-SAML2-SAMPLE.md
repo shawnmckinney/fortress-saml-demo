@@ -1,10 +1,8 @@
 # fortress-saml-sample SPRING-SECURITY-SAML2-SAMPLE
 
- Last updated: August 31, 2015
-
  This document describes how to download and install the shibboleth-sample-java-sp web app.
 
- It is used to generate metadata needed to register the fortress-saml-sample with the ssocircle.com Identity Provider.
+ It is required to generate metadata to register the fortress-saml-sample Service Provider with the ssocircle.com Identity Provider.
 
 -------------------------------------------------------------------------------
 
@@ -15,13 +13,14 @@
 
 -------------------------------------------------------------------------------
 
-1. download package:
+1. Download package:
 
  [https://github.com/UniconLabs/shibboleth-sample-java-sp/archive/master.zip](SSO Circle IdP)
 
-2. extract:
+2. Extract:
 
-3. replace in securityContext.xml:
+3. Replace the **metadata** bean declaration inside the ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file.
+
  ```
  <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
     <constructor-arg>
@@ -51,17 +50,17 @@
 
  [http://hostname:8080/sp](Spring Saml Landing Page)
 
- ![Spring Saml Landing page](src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
+ ![Spring Saml Landing page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
 
 8. Click on 'Metadata Administration'
 
 9. Accept defaults and click on 'Login' button
 
- ![Spring Saml Login page](src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
+ ![Spring Saml Login page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
 
 10. Click on 'Generate new service provider metadata ' button
 
- ![Spring Saml Generate SP Metadata page](src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata.png "Generate SP Metadata")
+ ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata.png "Generate SP Metadata")
 
 11. Entity Id
 
@@ -75,14 +74,14 @@
 
  where 'host-name' corresponds with your machine's host name
 
- ![Spring Saml Generate SP Metadata page](src/main/javadoc/doc-files/Spring-Saml-Metadata-Generation-Page.png "Generate SP Metadata Page")
+ ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Metadata-Generation-Page.png "Generate SP Metadata Page")
 
 13. Click on 'Generate Metadata' button at the bottom of the page
 
- ![Spring Saml Generate SP Metadata button](src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata-Button.png "Generate SP Metadata Button")
+ ![Spring Saml Generate SP Metadata button](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata-Button.png "Generate SP Metadata Button")
 
 14. Copy the buffer
 
- ![Spring Saml Generate SP Metadata copy](src/main/javadoc/doc-files/Spring-Saml-Copy-Metadata.png "Generate SP Metadata Copy")
+ ![Spring Saml Generate SP Metadata copy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Copy-Metadata.png "Generate SP Metadata Copy")
 
 15. Save it with an '.xml' extension.  We'll need it later on during [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
