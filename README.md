@@ -101,7 +101,7 @@ ehcache.config.file=ehcache.xml
 
  3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md).
 
- 4. That user, **sam* has access to all pages/buttons.
+ 4. That user, sam* has access to all pages/buttons.
 
  5. Try a different user.  For that you will need to go back to the ssocricle.com registration page.  Enter a new value for **Last Name**.  Use
  one of the preset users: sam1, sam2, sam3 or sam*..
