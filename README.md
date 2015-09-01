@@ -103,7 +103,10 @@ ehcache.config.file=ehcache.xml
 
  1. Here are the user to role assignments:
 
-  ![fortress-saml-sample security policy](src/main/resources/fortress-saml-sample-security-policy.xml)
+
+ ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
+
+  ![fortress-saml-sample security policy](src/main/javadoc/doc-files/fortress-saml-sample-security-policy.xml)
 
  2. Open link to [http://localhost:8080/fortress-saml-sample](http://localhost:8080/fortress-saml-sample)
 
@@ -113,7 +116,7 @@ ehcache.config.file=ehcache.xml
 
  [sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
- 
+
  [ Page](src/main/javadoc/doc-files/.png "IdP Page")
  [ Page](src/main/javadoc/doc-files/.png "IdP Page")
  [ Page](src/main/javadoc/doc-files/.png "IdP Page")
