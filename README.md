@@ -113,8 +113,15 @@ ehcache.config.file=ehcache.xml
  4. If everything works, you will be redirected to the fortress-saml-sample web page.  The sam* user should see the following:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
+ 5. Try a different user.
+  * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
+  * Enter a new value for **Last Name**.
+  * Use one of the preset users: sam1, sam2, sam3 or sam*.
+  * click on **Submit** button to save.
+  ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
 
-# [ Page](src/main/javadoc/doc-files/.png "IdP Page")
+
+
 # [ Page](src/main/javadoc/doc-files/.png "IdP Page")
 # [ Page](src/main/javadoc/doc-files/.png "IdP Page")
 
@@ -122,11 +129,6 @@ ehcache.config.file=ehcache.xml
  5. That user, sam* has access to all pages/buttons.
 
 
-
- 6. Try a different user.
-   * Map different users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
-   * Enter a new value for **Last Name**.
-   * Use one of the preset users: sam1, sam2, sam3 or sam*..
 
  7. Delete the cookies from browser for IdP and SP websites.
 
