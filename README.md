@@ -2,17 +2,16 @@
 
  * This document demonstrates how to build and deploy the fortress saml sample.
 
- * It is built on top of two excellent references:
-  * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample.
-  * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample built on the spring saml sample, but shows how to hook into a Shibboleth IdP.
+ * It builds on two excellent references:
+  * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample is the first place java developers should look for basic SAML 2.0 programming concepts..
+  * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample is where ones goes to understand how to combine Spring SAML with Shibboleth IdP.
 
- * Both of the above mentioned projects are the first place java developers should look for basic SAML 2.0 programming concepts.
+ * This sample is a third step.  It shows how to hook Apache Directory Fortress in with a common Identity Provider called SSOCircle which provides SSO as a service.  This allows us to
+ bypass the complexities of IdP setup focusing only on the Service Provider side.
 
- * This sample is a secondary step.  To be taken only when Spring SAML development concepts are understood.
+ * This project was not meant to illustrate the various SAML 2.0 use cases.  It does show how Apache Directory Fortress can be combined with a single SAML 2.0 use case using Spring SAML.
 
- * This document and project are not meant to illustrate SAML 2.0 use cases specifically.  It does show how Apache Directory Fortress can be combined with Spring SAML.
-
- * Uses the Apache Wicket web framework although is not meant to be a tutorial for combining Apache Wicket and Fortress. For that check out:
+ * It uses Apache Wicket web framework but is not intended as tutorial for combining with Fortress. For that check out:
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
