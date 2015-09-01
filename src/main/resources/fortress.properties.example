@@ -8,10 +8,10 @@ ldap.server.type=apacheds
 # ldap host name
 host=localhost
 
-# if ApacheDS is listening on
+# ApacheDS default port:
 port=10389
 
-# If ApacheDS, these credentials are used for read/write to fortress DIT
+# If ApacheDS default, these credentials are used
 admin.user=uid=admin,ou=system
 admin.pw=secret
 

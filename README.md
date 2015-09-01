@@ -52,26 +52,26 @@ ldap.server.type=apacheds
 # Use value from [Set Hostname Entry]:
 host=localhost
 
-# if ApacheDS is listening on TLS port:
+# ApacheDS default port:
 port=10389
 
-# These credentials are used for read/write access to all nodes under suffix:
+# ApacheDS default:
 admin.user=uid=admin,ou=system
 admin.pw=secret
 
-# This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
+# This is min/max settings for LDAP connections:
 min.admin.conn=1
 max.admin.conn=10
 
-# This node contains fortress properties stored on behalf of connecting LDAP clients:
+# This node contains more fortress properties stored on ldap server:
 config.realm=DEFAULT
 config.root=ou=Config,dc=example,dc=com
 
-# Used by application security components:
-perms.cached=true
-
-# Fortress uses a cache:
+# Fortress uses ehcache:
 ehcache.config.file=ehcache.xml
+
+# Fortress web will cache perms in session:
+perms.cached=true
  ```
 
 5. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
