@@ -41,9 +41,9 @@
 
 4. Pull down IdP metadata from ssocircle.com
 
-```
-wget http://idp.ssocircle.com/idp-meta.xml -o /tmp/idp-metadata.xml
-```
+ ```
+ wget http://idp.ssocircle.com/idp-meta.xml -o /tmp/idp-metadata.xml
+ ```
 
 5. Edit the ![sp.properties](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/src/main/webapp/WEB-INF/sp.properties) file.
  a. replace the **idp.metadata* tag with a pointer to file just downloaded to local harddrive:
