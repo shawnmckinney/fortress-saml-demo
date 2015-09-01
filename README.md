@@ -102,27 +102,27 @@ ehcache.config.file=ehcache.xml
 
  To get understanding of security policy, check out ![fortress-saml-demo security policy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/resources/fortress-saml-sample-security-policy.xml).
 
- 2. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
+ 1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
- 3. You will be redirected to the Identity Provider's website.  Here' you'll enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
+ 2. You will be redirected to the Identity Provider's website.  Here' you'll enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
  * Next, click on the **I'm not a robot** checkbox and answer the questions.
  * Finally click on the **Continue SAML Single Sign On** button.
 
- 4. If everything works during login to IdP you'll be redirected back to the fortress-saml-sample web page.  The user, sam*, has all links enabled:
+ 3. If everything works during login to IdP you'll be redirected back to the fortress-saml-sample web page.  The user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
- 5. Try a different user...
+ 4. Try a different user...
   * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
   * Enter a new **Surname**.
   * Pick from one of these: sam1, sam2, sam3 or sam*.
-  * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** form to save your changes.
+  * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
   * Delete the cookies from browser corresponding with the IdP and SP websites.
-  * Perform login sequence again.  Now there are different authorizations, corresponding with other userIds.
+  * Now, go back to Step 1 and login again.  Now there are different authorizations, corresponding with other userIds.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
- 6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
+ 5. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
   * sam1 - access to page one
   * sam2 - access to page two
   * sam3 - access to page three
