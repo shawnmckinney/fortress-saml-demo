@@ -1,4 +1,4 @@
-# wicket-sample README-ENABLE-SHIB-IDP
+# fortress-saml-sample ENABLE-SHIB-IDP
 
  Last updated: August 31, 2015
 
