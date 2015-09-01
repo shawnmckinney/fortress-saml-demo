@@ -52,13 +52,13 @@
 
  ![Spring Saml Landing page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Landing-Page.png "Landing Page")
 
-8. Click on 'Metadata Administration'
+8. Click on **Metadata Administration**
 
-9. Accept defaults and click on 'Login' button
+9. Accept defaults and click on **Login** button
 
  ![Spring Saml Login page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Login-Page.png "Login Page")
 
-10. Click on 'Generate new service provider metadata ' button
+10. Click on **Generate new service provider metadata** button
 
  ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata.png "Generate SP Metadata")
 
@@ -66,17 +66,17 @@
 
  enter a unique value
 
- e.g. foofighters
+ e.g. *foofighters*
 
 12. Entity Base URL:
 
- e.g. http://host-name:8080/fortress-saml-demo
+ e.g. *http://host-name:8080/fortress-saml-demo*
 
- where 'host-name' corresponds with your machine's host name
+ where **host-name** corresponds with your machine's host name
 
  ![Spring Saml Generate SP Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Metadata-Generation-Page.png "Generate SP Metadata Page")
 
-13. Click on 'Generate Metadata' button at the bottom of the page
+13. Click on **Generate Metadata** button at the bottom of the page
 
  ![Spring Saml Generate SP Metadata button](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Generate-Metadata-Button.png "Generate SP Metadata Button")
 
@@ -84,4 +84,4 @@
 
  ![Spring Saml Generate SP Metadata copy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/Spring-Saml-Copy-Metadata.png "Generate SP Metadata Copy")
 
-15. Save it with an '.xml' extension.  We'll need it later on during [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
+15. Save it with an '.xml' extension.  We'll need it later on during the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
