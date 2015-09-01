@@ -102,15 +102,15 @@ ehcache.config.file=ehcache.xml
 ## Test fortress security with spring saml sso enabled
 
  1. Here are the user to role assignments:
-
  ![fortress-saml-sample security policy](src/main/javadoc/doc-files/fortress-saml-sample-security-policy.xml)
 
  2. Open link to [http://localhost:8080/fortress-saml-sample](http://localhost:8080/fortress-saml-sample)
 
  3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md).
-
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
+ Click on **Continue SAML Single Sign On** button after the bot checks.
 
+ 4. If everything works, you will be redirected to the fortress-saml-sample web page.  The sam* user should see the following:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
 
@@ -119,27 +119,26 @@ ehcache.config.file=ehcache.xml
 # [ Page](src/main/javadoc/doc-files/.png "IdP Page")
 
 
-
- 4. That user, sam* has access to all pages/buttons.
-
+ 5. That user, sam* has access to all pages/buttons.
 
 
- 5. Try a different user.
+
+ 6. Try a different user.
    * Map different users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
    * Enter a new value for **Last Name**.
    * Use one of the preset users: sam1, sam2, sam3 or sam*..
 
- 6. Delete the cookies from browser for IdP and SP websites.
+ 7. Delete the cookies from browser for IdP and SP websites.
 
- 7. Hit the home page again, login with IdP using same creds entered in step above.
+ 8. Hit the home page again, login with IdP using same creds entered in step above.
 
- 8. Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
+ 9. Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
   * sam1 - access to page one
   * sam2 - access to page two
   * sam3 - access to page three
   * sam* - access to all pages
 
- 9. Screen shots:
+ 10. Screen shots:
   * sam*
     ![sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
 
