@@ -100,8 +100,9 @@ ehcache.config.file=ehcache.xml
 
 ## Test fortress security with spring saml sso enabled
 
- 1. Here are the user to role assignments:
+ 1. Take a look at the fortress security policy file:
  ![fortress-saml-demo security policy](src/main/javadoc/doc-files/fortress-saml-demo-security-policy.xml)
+ It shows how users, roles and permissions are mapped for this application.
 
  2. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
