@@ -107,15 +107,13 @@ ehcache.config.file=ehcache.xml
  2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
  ![IdP Login Page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-Login.png "IdP Login Page")
 
- 3. Click on the **I'm not a robot** checkbox and answer the questions.
+ 3. Click on the **I'm not a robot** checkbox and answer the questions and click on the **Continue SAML Single Sign On** button.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
- 4. Click on the **Continue SAML Single Sign On** button.
-
- 5. If everything works during login to IdP you'll be redirected back to the fortress-saml-sample web page.  The user, sam*, has all links enabled:
+ 4. If everything works during login to IdP you'll be redirected back to the fortress-saml-sample web page.  The user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
- 6. Try a different user...
+ 5. Try a different user...
   * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
   * Enter a new **Surname**.
   * Pick from one of these: sam1, sam2, sam3 or sam*.
@@ -125,7 +123,7 @@ ehcache.config.file=ehcache.xml
   * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped.
   ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
- 7. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
+ 6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
   * sam1 - access to page one
   * sam2 - access to page two
   * sam3 - access to page three
