@@ -42,6 +42,7 @@
  this email address must be valid.  it is needed for registration confirmation later.
  ```
  **Remember these values**: The **User Name**, **Password** and **Last Name**.
+ 
  **Note**: the *Last Name* at ssocircle.com maps to a fortress *userId* in ldap (and will be sent in the saml assertion).  The sam* user will be allowed full access to fortress-saml-sample web app.
 
 4. complete the registration via confirmation message sent to email address entered above.
