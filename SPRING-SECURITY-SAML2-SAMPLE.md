@@ -46,7 +46,7 @@
  ```
 
 5. Edit the ![sp.properties](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/src/main/webapp/WEB-INF/sp.properties) file.
- a. replace the **idp.metadata* tag with a pointer to file just downloaded to local harddrive:
+ replace the *idp.metadata* tag with a pointer to file just downloaded to local harddrive:
 
  ```
  idp.metadata=/tmp/idp-metadata.xml
