@@ -2,17 +2,16 @@
 
  Last updated: August 31, 2015
 
- This document demonstrates how to download and install a spring saml security sample.
+ This document demonstrates how to download and install shibboleth-sample-java-sp
 
-  It is used to generate metadata a metadata xml file needed to register with an IdP service.
-  For this tutorial we'll be using ssocircle.com
+ It is used here to generate metadata to register fortress-saml-sample service provider with the ssocircle.com Identity Provider.
 
 -------------------------------------------------------------------------------
 
 ## Prerequisites
 1. Java 7 (or greater) sdk
-2. Gradle
-3. Tomcat7
+2. Gradle - to build shibboleth-sample-java-sp
+3. Tomcat7 - to deploy shibboleth-sample-java-sp
 
 -------------------------------------------------------------------------------
 
