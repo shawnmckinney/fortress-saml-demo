@@ -113,10 +113,10 @@ ehcache.config.file=ehcache.xml
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
  5. Try a different user...
-  * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
-  * Enter a new value for **Surname**.
-  * Use one of these: sam1, sam2, sam3 or sam*.
-  * Enter IdP password and click on **Submit** to save and continue.
+  * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
+  * Enter a new **Surname**.
+  * Pick from one of these: sam1, sam2, sam3 or sam*.
+  * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** form to save your changes.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
   * Delete the cookies from browser corresponding with the IdP and SP websites.
   * Perform login sequence again.  Now there are different authorizations, corresponding with other userIds.
