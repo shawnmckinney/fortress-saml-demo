@@ -110,7 +110,7 @@ ehcache.config.file=ehcache.xml
  3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
- 4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Lanuch Page**, where the user, sam*, has all links enabled:
+ 4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Launch Page**, where the user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
  5. Try a different user...
