@@ -140,12 +140,12 @@ ehcache.config.file=ehcache.xml
  ```
  There are three pages, each page has three buttons.  Page access is granted as follows:
 
- | user          | page1         | page2         | page3         |
- | ------------- | ------------- | ------------- | ------------- |
- | sam*          | true          | true          | true          |
- | sam1          | true          | false         | true          |
- | sam2          | false         | true          | false         |
- | sam3          | false         | false         | true          |
+| user          | page1         | page2         | page3         |
+| ------------- | ------------- | ------------- | ------------- |
+| sam*          | true          | true          | true          |
+| sam1          | true          | false         | true          |
+| sam2          | false         | true          | false         |
+| sam3          | false         | false         | true          |
 
  1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
