@@ -115,7 +115,7 @@ ehcache.config.file=ehcache.xml
 
  5. Try a different user.
   * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) at ssocircle.com.
-  * Enter a new value for **Last Name**.
+  * Enter a new value for **Surname**.
   * Use one of the preset users: sam1, sam2, sam3 or sam*.
   * click on **Submit** button to save.
   ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
