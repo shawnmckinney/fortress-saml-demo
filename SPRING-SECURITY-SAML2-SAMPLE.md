@@ -19,7 +19,7 @@
 
 2. Extract:
 
-3. Replace the **metadata** bean declaration inside the ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file.
+3. Replace the **metadata** bean declaration inside the ![securityContext.xml](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file.
 
  ```
  <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
@@ -38,11 +38,19 @@
     </constructor-arg>
  </bean>
  ```
-4. add to sp.properties:
 
- idp.metadata=/home/smckinn/tmp/spring-saml/1/shibboleth-sample-java-sp-master/idp-metadata.xml
+4. Pull down IdP metadata from ssocircle.com
 
-5. add corresponding file to folder
+```
+wget http://idp.ssocircle.com/idp-meta.xml -o /tmp/idp-metadata.xml
+```
+
+5. Edit the ![sp.properties](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/src/main/webapp/WEB-INF/sp.properties) file.
+ a. replace the **idp.metadata* tag with a pointer to file just downloaded to local harddrive:
+
+ ```
+ idp.metadata=/tmp/idp-metadata.xml
+ ```
 
 6. Deploy shibboleth-sample-java-sp package
  follow the ![README.md](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/README.md) steps to build and deploy.
