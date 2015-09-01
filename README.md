@@ -73,6 +73,7 @@ perms.cached=true
 # Fortress uses a cache:
 ehcache.config.file=ehcache.xml
  ```
+ 
 -------------------------------------------------------------------------------
 ## Build and deploy fortress-saml-sample
 
