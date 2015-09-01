@@ -74,7 +74,7 @@ perms.cached=true
 ehcache.config.file=ehcache.xml
  ```
 
-5. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
+5. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
 
  ```
     <!-- SSOCircle.com IDP Metadata configuration: -->
@@ -93,6 +93,28 @@ ehcache.config.file=ehcache.xml
     </bean>
  </bean>
  ```
+
+6. View (don't change) ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadata**, check out the url to idp.ssocircle.com.  This is one way to enable an IdP's metadata:
+
+ ```
+ <!-- SSOCircle.com IDP Metadata configuration - paths to metadata of IDPs in circle of trust is here -->
+ <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
+     <constructor-arg>
+         <list>
+             <bean class="org.opensaml.saml2.metadata.provider.HTTPMetadataProvider">
+                 <constructor-arg>
+                     <value type="java.lang.String">http://idp.ssocircle.com/idp-meta.xml</value>
+                 </constructor-arg>
+                 <constructor-arg>
+                     <value type="int">5000</value>
+                 </constructor-arg>
+                 <property name="parserPool" ref="parserPool"/>
+             </bean>
+         </list>
+     </constructor-arg>
+ </bean>
+ ```
+ **TODO**: enable another IdP in future, for example Shibboleth.
 
 -------------------------------------------------------------------------------
 ## Build and deploy fortress-saml-demo
