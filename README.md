@@ -3,14 +3,11 @@
  Last updated: August 31, 2015
 
  This document demonstrates how to build and deploy the fortress saml sample.  It is built on top of two excellent references:
-  * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample.
-  * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample built on the spring saml sample, but shows how to hook into a Shibboleth IdP.
-
+ * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample.
+ * [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp) - Unicon's sample built on the spring saml sample, but shows how to hook into a Shibboleth IdP.
  * Both of these projects are the first place developers should look to understand basic SAML 2.0 programming concepts.
-
  * The **fortress-saml-sample** is a secondary step taken only after Spring SAML development is understood.
  This project does not provide or explain saml use cases.  It is meant to show how an Apache Directory Fortress runtime can be combined with a Spring SAML 2.0 Service Provider.
-
  * This project uses the Apache Wicket web framework although is not meant to be a tutorial for combining Apache Wicket and Fortress. For that check out:
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
