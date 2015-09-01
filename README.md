@@ -122,6 +122,32 @@ ehcache.config.file=ehcache.xml
 
  To get understanding of security policy, check out ![fortress-saml-demo security policy](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/resources/fortress-saml-sample-security-policy.xml).
 
+ ```
+ <addpermgrant>
+     <permgrant objName="Page1" opName="link" roleNm="samRole1"/>
+     <permgrant objName="Page2" opName="link" roleNm="samRole2"/>
+     <permgrant objName="Page3" opName="link" roleNm="samRole3"/>
+     <permgrant objName="Page1" opName="Button1" roleNm="samRole1"/>
+     <permgrant objName="Page1" opName="Button2" roleNm="samRole1"/>
+     <permgrant objName="Page1" opName="Button3" roleNm="samRole1"/>
+     <permgrant objName="Page2" opName="Button1" roleNm="samRole2"/>
+     <permgrant objName="Page2" opName="Button2" roleNm="samRole2"/>
+     <permgrant objName="Page2" opName="Button3" roleNm="samRole2"/>
+     <permgrant objName="Page3" opName="Button1" roleNm="samRole3"/>
+     <permgrant objName="Page3" opName="Button2" roleNm="samRole3"/>
+     <permgrant objName="Page3" opName="Button3" roleNm="samRole3"/>
+ </addpermgrant>
+ ```
+ There are three pages, each page has three buttons.  Page access is granted as follows:
+
+ | user          | page1         | page2         | page3         |
+ | ------------- |:-------------:|:-------------:|:-------------:|
+ | sam*          | true          | true          | true          |
+ | sam1          | true          | false         | true          |
+ | sam2          | false         | true          | false         |
+ | sam3          | false         | false         | true          |
+
+
  1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
  2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
