@@ -91,7 +91,7 @@ ehcache.config.file=ehcache.xml
 
 -------------------------------------------------------------------------------
 
-## How to test with security enabled
+## How to test fortress security with saml sso enabled
 
  1. Here are the user to role assignments:
 
@@ -99,23 +99,34 @@ ehcache.config.file=ehcache.xml
 
  2. Open link to [http://localhost:8080/fortress-saml-sample](http://localhost:8080/fortress-saml-sample)
 
- 3. Use the following creds:
+ 3. You will be rerouted to IdP.  Enter the **User Name**, **Password** values from [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md).
 
-  * sam*/password
+ 4. That user, **sam* has access to all pages/buttons.
+
+ 5. Try a different user.  For that you will need to go back to the ssocricle.com registration page.  Enter a new value for **Last Name**.  Use
+ one of the preset users: sam1, sam2, sam3 or sam*..
+
+ 6. Delete the cookies from browser for IdP and SP.  Hit the home page, login with IdP using same creds from above.
+ Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
+
+ sam1 : access to page one
+ sam2 : access to page two
+ sam3 : access to page three
+ sam* : access to all pages
+
+ 7. Screen shots:
+
+  * sam*
     ![Sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
 
 
-  * sam1/password
+  * sam1
     ![WsUser1](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser1-small.png "WsUser1")
 
 
-  * sam2/password
+  * sam2
     ![WsUser2](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser2-small.png "WsUser2")
 
 
-  * sam3/password
+  * sam3
     ![WsUser3](src/main/javadoc/doc-files/Screenshot-wicket-sample-wsuser3-small.png "WsUser3")
-
- 4. click on the page links
-
- 5. click on the buttons
