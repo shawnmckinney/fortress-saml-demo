@@ -13,7 +13,7 @@
  authentication provider.
 
 -------------------------------------------------------------------------------
-## Prerequisites
+## fortress-sampl-sample prerequisites
 1. Java 7 (or greater) sdk
 2. Git
 3. Apache Maven 3
@@ -26,7 +26,7 @@
     * [Build Apache Fortress Web](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-web.html)
 
 -------------------------------------------------------------------------------
-## How to generate SP metadata and register with IdP ssocircle.com
+## Generate SP metadata and register with IdP ssocircle.com
 
 1. Complete these steps first: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
 
@@ -74,7 +74,7 @@ perms.cached=true
 ehcache.config.file=ehcache.xml
  ```
 -------------------------------------------------------------------------------
-## How to build and deploy
+## Build and deploy fortress-saml-sample
 
 1. Set java and maven home env variables.
 
