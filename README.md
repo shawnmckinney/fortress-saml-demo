@@ -18,19 +18,21 @@
     * [Build Apache Fortress Web](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-web.html)
 
 -------------------------------------------------------------------------------
-## How to build and deploy
+## How to generate SP metadata and Register with IdP
 
 1. Complete these steps first: [README-SPRING-SECURITY-SAML2-SAMPLE.md](README-SPRING-SECURITY-SAML2-SAMPLE.md)
 
 2. Complete these steps next: [README-REGISTER-SSOCIRCLE.md](README-REGISTER-SSOCIRCLE.md)
 
-3. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
+## How to prepare fortress saml package for use
 
-4. Extract the zip archive to your local machine.
+1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-sample/archive/master.zip)
 
-5. cd fortress-saml-sample-master
+2. Extract the zip archive to your local machine.
 
-6. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
+3. cd fortress-saml-sample-master
+
+4. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
  Prepare fortress for ldap server usage.
 
@@ -64,7 +66,12 @@ perms.cached=true
 ehcache.config.file=ehcache.xml
  ```
 
- 10. Build & Deploy (run from the command line):
+-------------------------------------------------------------------------------
+## How to build and deploy
+
+1. Set java and maven home env variables.
+
+2. Run this command from the root package:
 
   Deploy to tomcat server:
   ```maven
@@ -80,8 +87,9 @@ ehcache.config.file=ehcache.xml
   ```maven
  mvn tomcat:redeploy
   ```
+ *Note: if problem  with auto-deploy, manually deploy wicket-sample.war to webapps*
 
- -------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
  ## How to test with security enabled
 
