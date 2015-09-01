@@ -33,7 +33,7 @@
  Required Field Last Name:
  enter: sam*
 
- **Note**: this field maps to a fortress *userId*.  For now the *sam** user will be allowed full access to fortress-saml-sample web app.
+ this field maps to a fortress userId.  For now enter 'sam*' who will be allowed full access to fortress-saml-sample web app.
 
  Required Field Full Name:
  anything
@@ -41,7 +41,8 @@
  Required Field Email Address:
  this email address must be valid.  it is needed for registration confirmation later.
  ```
- **Remember these values**: The **User Name** and **Password** will be used during testing and serve as the IdP credentials.  The **Last Name** maps to a userId field in Fortress and will be used during authorization use cases.
+ **Remember these values**: The **User Name**, **Password** and **Last Name**.
+ **Note**: the *Last Name* at ssocircle.com maps to a fortress *userId* in ldap (and will be sent in the saml assertion).  The sam* user will be allowed full access to fortress-saml-sample web app.
 
 4. complete the registration via confirmation message sent to email address entered above.
 
