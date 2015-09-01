@@ -111,13 +111,14 @@ ehcache.config.file=ehcache.xml
  6. Delete the cookies from browser for IdP and SP websites.
 
  7. Hit the home page again, login with IdP using same creds entered in step above.
-  Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
+
+ 8. Each user mapped to **Last Name** field in SSOCircle.com has a slightly different access policy.
   sam1 - access to page one
   sam2 - access to page two
   sam3 - access to page three
   sam* - access to all pages
 
- 7. Screen shots:
+ 9. Screen shots:
   * sam*
     ![Sam*](src/main/javadoc/doc-files/Screenshot-wicket-sample-wssuperuser-small.png "Super User")
 
