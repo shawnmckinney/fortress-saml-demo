@@ -2,9 +2,9 @@
 
  Last updated: August 31, 2015
 
- This document demonstrates how to download and install shibboleth-sample-java-sp
+ This document describes how to download and install the shibboleth-sample-java-sp web app.
 
- It is used here to generate metadata to register fortress-saml-sample service provider with the ssocircle.com Identity Provider.
+ It is used to generate metadata needed to register the fortress-saml-sample with the ssocircle.com Identity Provider.
 
 -------------------------------------------------------------------------------
 
