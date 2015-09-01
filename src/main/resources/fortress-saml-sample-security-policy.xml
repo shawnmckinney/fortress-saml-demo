@@ -21,11 +21,11 @@
             </deluser>
 
             <adduser>
-                <user userId="sam*" password="password" description="Wicket Sample Demo Super User" ou="org.samlsample.users" />
-                <user userId="sam1" password="password" description="Wicket Sample User 1" ou="org.samlsample.users" />
-                <user userId="sam2" password="password" description="Wicket Sample User 2" ou="org.samlsample.users" />
-                <user userId="sam3" password="password" description="Wicket Sample User 3" ou="org.samlsample.users" />
-                <user userId="foofighters" password="password" description="Wicket Sample User" ou="org.samlsample.users" />
+                <user userId="sam*" password="password" description="Fortress SAML Demo Super User" ou="org.samlsample.users" />
+                <user userId="sam1" password="password" description="Fortress SAML Demo User 1" ou="org.samlsample.users" />
+                <user userId="sam2" password="password" description="Fortress SAML Demo User 2" ou="org.samlsample.users" />
+                <user userId="sam3" password="password" description="Fortress SAML Demo User 3" ou="org.samlsample.users" />
+                <user userId="foofighters" password="password" description="Fortress SAML Demo User" ou="org.samlsample.users" />
             </adduser>
 
             <deluserrole>
@@ -85,9 +85,9 @@
             </delpermobj>
 
             <addpermobj>
-                <permobj objName="Page1" description="Wicket Sample Test Page 1" ou="org.samlsample.perms" />
-                <permobj objName="Page2" description="Wicket Sample Test Page 2" ou="org.samlsample.perms" />
-                <permobj objName="Page3" description="Wicket Sample Test Page 3" ou="org.samlsample.perms" />
+                <permobj objName="Page1" description="Fortress SAML Demo Test Page 1" ou="org.samlsample.perms" />
+                <permobj objName="Page2" description="Fortress SAML Demo Test Page 2" ou="org.samlsample.perms" />
+                <permobj objName="Page3" description="Fortress SAML Demo Test Page 3" ou="org.samlsample.perms" />
             </addpermobj>
 
             <delpermop>
