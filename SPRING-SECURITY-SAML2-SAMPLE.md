@@ -1,4 +1,4 @@
-# fortress-saml-sample SPRING-SECURITY0SAML2-SAMPLE
+# fortress-saml-sample SPRING-SECURITY-SAML2-SAMPLE
 
  Last updated: August 31, 2015
 
