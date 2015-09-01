@@ -4,7 +4,7 @@
 
  This document also describes how to use the shibboleth-sample-java-sp app to generate metadata needed later to register the fortress-saml-demo *Service Provider* with the ssocircle.com *Identity Provider*.
 
- Alternatively may use the [spring-security-saml-sample](https://github.com/spring-projects/spring-security-saml/tree/master/sample) to do the same thing but those steps are not described here.
+ Alternatively, the [spring-security-saml-sample](https://github.com/spring-projects/spring-security-saml/tree/master/sample) may be used to do the same thing (generate SP metadata) but those steps are not here.
 
 -------------------------------------------------------------------------------
 
