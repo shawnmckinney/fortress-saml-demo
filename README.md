@@ -73,7 +73,7 @@ perms.cached=true
 ehcache.config.file=ehcache.xml
  ```
 
-5. Edit ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file, replace the **entityId** value with entityId from [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) step:
+5. Edit ![securityContext.xml](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
 
  ```
     <!-- SSOCircle.com IDP Metadata configuration: -->
