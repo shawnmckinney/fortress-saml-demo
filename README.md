@@ -213,7 +213,7 @@ perms.cached=true
   * Enter a new **Surname**.  (Originally called **Last Name** when profile first created - both refer to same field)
   * Pick from one of these: sam1, sam2, sam3 or sam*.
   * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
- ![User Profile Page](src/main/javadoc/doc-files/SSO-Circle-Change-Sam1-User.png "User Profile Page")
+ ![User Profile Page](src/main/javadoc/doc-files/Sso-Circle-MyProfile.png "User Profile Page")
   * Delete the cookies from browser corresponding with the IdP and SP websites.
   * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped when redirected to **Launch Page**.
  ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
