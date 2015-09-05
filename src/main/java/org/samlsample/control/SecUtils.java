@@ -159,6 +159,10 @@ public class SecUtils
                 // Create the fortress session and assert into the Web app's session along with user's perms:
                 result = SecUtils.initializeFtSession( component, j2eePolicyMgr, accessMgr, userId );
             }
+            else
+            {
+                result = true;
+            }
         }
         else
         {
@@ -246,7 +250,7 @@ public class SecUtils
                 throw new RuntimeException( error );
             }
         }
-        if(realmSession != null)
+        if( result )
         {
             synchronized ( ( FtSession ) FtSession.get() )
             {
