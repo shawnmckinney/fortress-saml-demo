@@ -21,7 +21,8 @@ package org.samlsample.control;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.directory.fortress.core.*;
+import org.apache.directory.fortress.core.AccessMgr;
+import org.apache.directory.fortress.core.GlobalErrIds;
 import org.apache.directory.fortress.core.SecurityException;
 import org.apache.directory.fortress.core.util.Config;
 import org.apache.directory.fortress.realm.*;
@@ -232,9 +233,18 @@ public class SecUtils
             realmSession = j2eePolicyMgr.createSession( new User( userId ), true );
             result = true;
         }
-        catch( SecurityException se )
+        catch( org.apache.directory.fortress.core.SecurityException se )
         {
-            LOG.info( "CreateSession failed for user: " + userId + ", error=" + se.getMessage());
+            if( se.getErrorId() == GlobalErrIds.USER_NOT_FOUND )
+            {
+                LOG.info( "initializeFtSession User: " + userId + ", not found, terminate login");
+            }
+            else
+            {
+                String error = "initializeFtSession exception during createSession for user: " + userId + ", error=" + se.getMessage();
+                LOG.info( error );
+                throw new RuntimeException( error );
+            }
         }
         if(realmSession != null)
         {
