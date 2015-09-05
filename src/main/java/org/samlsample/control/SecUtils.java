@@ -50,7 +50,7 @@ public class SecUtils
         .getProperty( PERMS_CACHED ).equalsIgnoreCase( "true" ) ) );
 
     public static String FORTRESS_SAML_DEMO_LOGOUT_URL = "/fortress-saml-demo/saml/logout?local=true";
-    public static String FORTRESS_SAML_UNAUTHORIZED_URL = "/fortress-saml-demo/unauthorized";
+    public static String FORTRESS_SAML_UNAUTHORIZED_URL = "/fortress-saml-demo/unauthorized.html";
 
     /**
      * Return the fortress session that is cached within the wicket session object.
