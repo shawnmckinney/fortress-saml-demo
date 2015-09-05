@@ -58,6 +58,7 @@
  a. click on **Manage Metadata**
 
  b. click on **Add new Service Provider**
+
  ![SSO Circle Manage Metadata page](./src/main/javadoc/doc-files/SSO-Circle-Metadata.png "Manager Metadata")
 
  c. Enter the FQDN of the ServiceProvider ex.: sp.cohos.de
