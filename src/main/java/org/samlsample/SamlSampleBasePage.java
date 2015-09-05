@@ -37,7 +37,10 @@ public abstract class SamlSampleBasePage extends WebPage
         // TODO STEP 8b: uncomment call to enableFortress:
         try
         {
-            SecUtils.enableFortress( this, ( HttpServletRequest ) getRequest().getContainerRequest(), j2eePolicyMgr, accessMgr );
+            if(!SecUtils.enableFortress( this, ( HttpServletRequest ) getRequest().getContainerRequest(), j2eePolicyMgr, accessMgr ))
+            {
+                setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_UNAUTHORIZED_URL ) );
+            }
         }
         catch (org.apache.directory.fortress.core.SecurityException se)
         {

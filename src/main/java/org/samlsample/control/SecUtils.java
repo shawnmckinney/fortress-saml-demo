@@ -50,6 +50,7 @@ public class SecUtils
         .getProperty( PERMS_CACHED ).equalsIgnoreCase( "true" ) ) );
 
     public static String FORTRESS_SAML_DEMO_LOGOUT_URL = "/fortress-saml-demo/saml/logout?local=true";
+    public static String FORTRESS_SAML_UNAUTHORIZED_URL = "/fortress-saml-demo/unauthorized";
 
     /**
      * Return the fortress session that is cached within the wicket session object.
@@ -112,8 +113,9 @@ public class SecUtils
      * @param accessMgr
      * @throws SecurityException
      */
-    public static void enableFortress( Component component, HttpServletRequest servletReq, J2eePolicyMgr j2eePolicyMgr, AccessMgr accessMgr ) throws SecurityException
+    public static boolean enableFortress( Component component, HttpServletRequest servletReq, J2eePolicyMgr j2eePolicyMgr, AccessMgr accessMgr ) throws SecurityException
     {
+        boolean result = false;
         // Get the principal from the container:
         ExpiringUsernameAuthenticationToken principal = (ExpiringUsernameAuthenticationToken)servletReq.getUserPrincipal();
         // Is this a secured page && has the User successfully authenticated already?
@@ -154,7 +156,7 @@ public class SecUtils
                     */
 
                 // Create the fortress session and assert into the Web app's session along with user's perms:
-                SecUtils.initializeFtSession( component, j2eePolicyMgr, accessMgr, userId );
+                result = SecUtils.initializeFtSession( component, j2eePolicyMgr, accessMgr, userId );
             }
         }
         else
@@ -162,6 +164,7 @@ public class SecUtils
             LOG.warn( "Unsecured request: " + servletReq.getRequestURL() );
             throw new RuntimeException( "Unauthenticated user detected for request:" + servletReq.getRequestURL() );
         }
+        return result;
     }
 
     /**
@@ -219,17 +222,19 @@ public class SecUtils
      * @param accessMgr used to call fortress api for role op
      * @param userId contains the instance of fortress session deserialized.
      */
-    static void initializeFtSession(Component component, J2eePolicyMgr j2eePolicyMgr, AccessMgr accessMgr, String
+    static boolean initializeFtSession(Component component, J2eePolicyMgr j2eePolicyMgr, AccessMgr accessMgr, String
         userId) throws SecurityException
     {
+        boolean result = false;
         Session realmSession = null;
         try
         {
             realmSession = j2eePolicyMgr.createSession( new User( userId ), true );
+            result = true;
         }
         catch( SecurityException se )
         {
-            throw new RuntimeException( se );
+            LOG.info( "CreateSession failed for user: " + userId + ", error=" + se.getMessage());
         }
         if(realmSession != null)
         {
@@ -244,6 +249,7 @@ public class SecUtils
                 }
             }
         }
+        return result;
     }
 
     /**
