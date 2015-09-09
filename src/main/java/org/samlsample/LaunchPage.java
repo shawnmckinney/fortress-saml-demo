@@ -18,6 +18,6 @@ public class LaunchPage extends SamlSampleBasePage
     private static final Logger LOG = Logger.getLogger( LaunchPage.class.getName() );
     public LaunchPage()
     {
-        add(new Label("label1", "Welcome " + getUserId() + ", you have access to the link(s) above."));
+        add(new Label("label1", "Welcome " + getUserId() + " you have access to the link(s) above."));
     }
 }

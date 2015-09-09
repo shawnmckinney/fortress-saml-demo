@@ -32,7 +32,7 @@ public class Page3 extends SamlSampleBasePage
         public Page3Form( String id )
         {
             super( id );
-            add( new Label( "label3", "This is Page3." ) );
+            add( new Label( "label3", "This is " + getUserId() + "'s Page3" ) );
 
             // Maps to Permission: obj: page3, operation: button1
             add( new FtIndicatingAjaxButton( "page3.button1" )

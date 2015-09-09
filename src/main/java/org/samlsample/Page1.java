@@ -38,8 +38,7 @@ public class Page1 extends SamlSampleBasePage
         public Page1Form( String id )
         {
             super( id );
-
-            add( new Label( "label1", "This is Page1" ) );
+            add( new Label( "label1", "This is " + getUserId() + "'s Page1" ) );
 
             // Maps to Permission: obj: page1, operation: button1
             add( new FtIndicatingAjaxButton( "page1.button1" )
