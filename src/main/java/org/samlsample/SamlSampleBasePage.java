@@ -57,6 +57,8 @@ public abstract class SamlSampleBasePage extends WebPage
             @Override
             public void onClick()
             {
+                // logout of application:
+                getSession().invalidate();
                 // logout out of SAML SP:
                 setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOGOUT_URL ) );
             }
