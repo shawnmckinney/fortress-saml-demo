@@ -67,8 +67,11 @@ public class SecUtils
 
     public static String getUserId(Component component)
     {
+        String userId = null;
         Session session = ( ( FtSession ) component.getSession() ).getSession();
-        return session.getUserId();
+        if(session != null)
+            userId = session.getUserId();
+        return userId;
     }
 
 
