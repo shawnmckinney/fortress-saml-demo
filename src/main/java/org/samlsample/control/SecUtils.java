@@ -65,6 +65,13 @@ public class SecUtils
     }
 
 
+    public static String getUserId(Component component)
+    {
+        Session session = ( ( FtSession ) component.getSession() ).getSession();
+        return session.getUserId();
+    }
+
+
     private static String getUserId( SAMLCredential credential )
     {
         String userId = null;

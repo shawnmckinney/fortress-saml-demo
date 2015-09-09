@@ -78,5 +78,10 @@ public abstract class SamlSampleBasePage extends WebPage
         target.appendJavaScript(";alert('" + msg + "');");
     }
 
+    protected String getUserId()
+    {
+        return SecUtils.getUserId( this );
+    }
+
     protected static final Logger LOG = Logger.getLogger( SamlSampleBasePage.class.getName() );
 }
