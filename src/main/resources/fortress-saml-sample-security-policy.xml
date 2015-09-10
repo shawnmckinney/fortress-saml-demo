@@ -17,15 +17,13 @@
                 <user userId="sam1"/>
                 <user userId="sam2"/>
                 <user userId="sam3"/>
-                <user userId="foofighters" />
             </deluser>
 
             <adduser>
-                <user userId="sam*" password="password" description="Fortress SAML Demo Super User" ou="org.samlsample.users" />
-                <user userId="sam1" password="password" description="Fortress SAML Demo User 1" ou="org.samlsample.users" />
-                <user userId="sam2" password="password" description="Fortress SAML Demo User 2" ou="org.samlsample.users" />
-                <user userId="sam3" password="password" description="Fortress SAML Demo User 3" ou="org.samlsample.users" />
-                <user userId="foofighters" password="password" description="Fortress SAML Demo User" ou="org.samlsample.users" />
+                <user userId="sam*" password="password" description="Fortress SAML Demo Super User" ou="org.samlsample.users" cn="Sam Super" sn="Super" />
+                <user userId="sam1" password="password" description="Fortress SAML Demo User 1" ou="org.samlsample.users" cn="Sam One" sn="One" />
+                <user userId="sam2" password="password" description="Fortress SAML Demo User 2" ou="org.samlsample.users" cn="Sam Twor" sn="Two" />
+                <user userId="sam3" password="password" description="Fortress SAML Demo User 3" ou="org.samlsample.users" cn="Sam Three" sn="Three" />
             </adduser>
 
             <deluserrole>
@@ -33,7 +31,6 @@
                 <userrole userId="sam2" name="samRole2" />
                 <userrole userId="sam3" name="samRole3" />
                 <userrole userId="sam*" name="samSuperRole" />
-                <userrole userId="foofighters" name="samSuperRole" />
             </deluserrole>
 
             <adduserrole>
@@ -41,7 +38,6 @@
                 <userrole userId="sam2" name="samRole2" />
                 <userrole userId="sam3" name="samRole3" />
                 <userrole userId="sam*" name="samSuperRole" />
-                <userrole userId="foofighters" name="samSuperRole" />
             </adduserrole>
 
             <delrole>
