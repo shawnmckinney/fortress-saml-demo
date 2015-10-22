@@ -113,9 +113,8 @@
     <bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
         <constructor-arg>
             <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
-                <property name="entityId" value="fortress-saml-demo"/>
-<!--                <property name="entityId" value="fortress-saml-demo-2"/>-->
-<!--                <property name="entityId" value="foo-fighters"/>-->
+                <!--property name="entityId" value="fortress-saml-demo"/-->
+                <property name="entityId" value="fortress-saml-demo-6"/>
                 <property name="extendedMetadata">
                     <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
                         <property name="signMetadata" value="false"/>
@@ -144,8 +143,7 @@
     </bean>
 
     <!-- Shibboleth IDP Metadata configuration: -->
-<!--
-    <bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
+    <!--bean id="metadata" class="org.springframework.security.saml.metadata.CachingMetadataManager">
         <constructor-arg>
             <list>
                 <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
@@ -156,8 +154,7 @@
                             </constructor-arg>
                             <constructor-arg>
                                 <bean class="org.opensaml.util.resource.ClasspathResource">
-                                    <constructor-arg value="/metadata/idp-symas-com-metadata.xml"/>
-                                    &lt;!&ndash;<constructor-arg value="/metadata/idp-[hostname]-metadata.xml"/>&ndash;&gt;
+                                   <constructor-arg value="/metadata/idp-IL1SCOLIDP103-metadata.xml"/>
                                 </bean>
                             </constructor-arg>
                             <property name="parserPool" ref="parserPool"/>
@@ -172,7 +169,37 @@
             </list>
         </constructor-arg>
     </bean>
--->
+
+    <bean class="org.springframework.security.saml.metadata.ExtendedMetadataDelegate">
+        <constructor-arg>
+            <bean class="org.opensaml.saml2.metadata.provider.ResourceBackedMetadataProvider">
+                <constructor-arg>
+                    <bean class="java.util.Timer"/>
+                </constructor-arg>
+                <constructor-arg>
+                    <bean class="org.opensaml.util.resource.ClasspathResource">
+                        <constructor-arg value="/metadata/idp-IL1SCOLIDP103-metadata.xml"/>
+                    </bean>
+                </constructor-arg>
+                <property name="parserPool" ref="parserPool"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
+                <property name="local" value="true"/>
+                <property name="securityProfile" value="metaiop"/>
+                <property name="sslSecurityProfile" value="pkix"/>
+                <property name="sslHostnameVerification" value="default"/>
+                <property name="signMetadata" value="false"/>
+                <property name="signingKey" value="apollo"/>
+                <property name="encryptionKey" value="apollo"/>
+                <property name="requireArtifactResolveSigned" value="true"/>
+                <property name="requireLogoutRequestSigned" value="true"/>
+                <property name="requireLogoutResponseSigned" value="false"/>
+                <property name="ecpEnabled" value="true" />
+            </bean>
+        </constructor-arg>
+    </bean-->
 
     <!-- SAML Authentication Provider responsible for validating of received SAML messages -->
     <bean id="samlAuthenticationProvider" class="org.springframework.security.saml.SAMLAuthenticationProvider">
