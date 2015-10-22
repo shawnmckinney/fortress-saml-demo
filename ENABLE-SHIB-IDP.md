@@ -1,21 +1,3 @@
-# fortress-saml-sample ENABLE-SHIB-IDP
-
- Work-in-progress **DO NOT USE**
-
--------------------------------------------------------------------------------
-
-## Prerequisites
-
-1. Java 7 (or greater) sdk
-2. Git
-3. Apache Maven 3
-4. Install Shibboleth IdP v3
--------------------------------------------------------------------------------
-
-## Install Notes
-
-increase tomcat pergen space and memory:
-export CATALINA_OPTS="-Xms256m -Xmx1024m -XX:MaxPermSize=512m"
 
 0. logonto http://localhost:8080/sp
 
@@ -49,7 +31,10 @@ scp /home/smckinn/Development/fortress-saml-demo/src/main/resources/metadata/for
 
 scp /home/smckinn/Development/fortress-saml-demo/src/main/resources/metadata/fortress-saml-demo-sp.xml root@idp.symas.com:/opt/shibboleth-idp/metadata
 
-scp /usr/local/fortress/fortress-saml-demo/src/main/resources/metadata/fortress-saml-demo-sp.xml root@IL1SCOLIDP103:/opt/shibboleth-idp/metadata
+scp /usr/local/fortress/fortress-saml-demo/src/main/resources/metadata/fortress-saml-demo-sp.xml root@IL1SCOLIDP103:/opt/shibboleth-idp/metadata  
+
+scp /home/smckinn/Development/fortress-saml-demo/src/main/resources/metadata/fortress-saml-demo-sp-il1scolsp102.xml root@IL1SCOLIDP103:/opt/shibboleth-idp/metadata/fortress-saml-demo-sp.xml  
+
 
 4. update IdP Files:
 
@@ -58,7 +43,7 @@ a. relying-party.xml
 add:
 
    <bean parent="RelyingPartyByName" c:relyingPartyIds="fortress-saml-demo">
-          <property name="profileConfigurations">
+          <property name="profileConfigurations">	
           <list>
           <!-- Your refs or beans here. -->
               <bean parent="SAML2.SSO" p:encryptAssertions="false" />
@@ -123,12 +108,12 @@ a. pull it down:
  ls -l /etc/ssl/certs/IL1SCOLIDP103.crt
 
 scp root@IL1SCOLIDP102:/etc/ssl/certs/IL1SCOLIDP102.crt /home/smckinn/Development/fortress-saml-demo/src/main/resources
-scp root@IL1SCOLIDP103:/etc/ssl/certs/IL1SCOLIDP103.crt /usr/local/fortress/fortress-saml-demo/src/main/resources
+scp root@IL1SCOLIDP103:/etc/ssl/certs/IL1SCOLIDP103.crt /usr/local/fortress/fortress-saml-demo/src/main/resources  
 
-b. import:
+b. import:1
 
 keytool -import -alias symas-idp -file /home/smckinn/Development/fortress-saml-demo/src/main/resources/IL1SCOLIDP102.crt -keystore cacerts -storepass changeit
-
+ 
 keytool -import -alias symas-idp -file /home/smckinn/Development/fortress-saml-demo/src/main/resources/IL1SCOLIDP102.crt -keystore /home/smckinn/JavaTools/apache-tomcat-8.0.21/conf/mykeystore -storepass changeit
 
 keytool -import -alias symas-idp -file /usr/local/fortress/fortress-saml-demo/src/main/resources/IL1SCOLIDP103.crt -keystore /usr/local/tomcat7/conf/mykeystore -storepass changeit
@@ -142,6 +127,21 @@ http://IL1SCOLSP102:8080/fortress-saml-demo
 http://IL1SCOLSP102:8080/fortress-saml-demo
 http://il1scolsp102:8080/fortress-saml-demo
 
+# If using tomcat TLS, the URL in the SP metadata must be like this or ssocircle/shibboleth idp will reject (if like this https://il1scolsp102):
+https://il1scolsp102:443/fortress-saml-demo
+
 
 principal
 AAdzZWNyZXQxlL3coTmKXEDXK8CjrdGVFHATLEQcVOYdnHLF1BLRtA+aKLVNwO/Skrmaok2f0IwVVxcwu075WFIo+AyhezhjlU6Q7+0qdRe85OWVjqUc1ZNJtiaGhlAVOOb/zWZ3o6AAtWruRg==
+
+
+-------------------------------------------
+Important Tip Troubleshooting Tip:
+-------------------------------------------
+
+Anytime the SP metadata is regenned, 
+
+1. it has to be SCP over to IdP.  
+2. Next IdP must be restarted.  
+3. Next the IdP metadata must be repulled to SP with wget.  
+4. Finally the SP must be redeployed.  
