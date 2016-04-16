@@ -49,7 +49,7 @@
         <dependency>
             <groupId>org.apache.directory.fortress</groupId>
             <artifactId>fortress-realm-impl</artifactId>
-            <version>1.0-RC41-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
 
         <!--  SPRING SAML SECURITY FRAMEWORK DEPENDENCIES -->

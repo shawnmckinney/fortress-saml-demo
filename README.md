@@ -13,17 +13,13 @@
  [wicket-sample](https://github.com/shawnmckinney/wicket-sample)
 
 -------------------------------------------------------------------------------
-## fortress-saml-demo prerequisites
-1. Java 7 (or greater) sdk
-2. Git
-3. Apache Maven 3
-4. Completion of these steps under the [Apache Fortress Ten Minute Guide](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/ten-minute-guide.html):
-    * [Setup Apache Directory Server](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-directory-server.html)
-    * [Setup Apache Directory Studio](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-directory-studio.html)
-    * [Build Apache Fortress Core](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-core.html)
-    * [Build Apache Fortress Realm](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-realm.html)
-    * [Setup Apache Tomcat Web Server](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-tomcat.html)
-    * [Build Apache Fortress Web](http://directory.apache.org/fortress/gen-docs/latest/apidocs/org/apache/directory/fortress/core/doc-files/apache-fortress-web.html)
+## Prerequisites
+1. Java 7++
+2. Apache Maven 3++
+3. Apache Tomcat 7++
+4. Completed either section in Apache Fortress Core Quickstart:
+    * *SECTION 3. Apache Fortress Core Integration Test* in [README-QUICKSTART-SLAPD.md](https://github.com/apache/directory-fortress-core/blob/master/README-QUICKSTART-SLAPD.md)
+    * *SECTION 4. Apache Fortress Core Integration Test* in [README-QUICKSTART-APACHEDS.md](https://github.com/apache/directory-fortress-core/blob/master/README-QUICKSTART-APACHEDS.md)
 
 -------------------------------------------------------------------------------
 ## Generate SP metadata and register with IdP ssocircle.com
@@ -42,42 +38,74 @@
 
 4. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
- Prepare fortress for ldap server usage.
+ Pick One:
 
- After completing the fortress ten minute guide, this step should be familiar to you.  It is how the fortress runtime gets hooked in with a remote ldap server.
+ a. Prepare fortress for apacheds usage:
+
  ```properties
-# Tells fortress what type of LDAP server in use:
-ldap.server.type=apacheds
+ # This param tells fortress what type of ldap server in use:
+ ldap.server.type=apacheds
 
-# ApacheDS LDAP host name:
-host=localhost
+ # Use value from [Set Hostname Entry]:
+ host=localhost
 
-# ApacheDS default port:
-port=10389
+ # ApacheDS defaults to this:
+ port=10389
 
-# ApacheDS default:
-admin.user=uid=admin,ou=system
-admin.pw=secret
+ # These credentials are used for read/write access to all nodes under suffix:
+ admin.user=uid=admin,ou=system
+ admin.pw=secret
 
-# This is min/max settings for LDAP connections:
-min.admin.conn=1
-max.admin.conn=10
+ # This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
+ min.admin.conn=1
+ max.admin.conn=10
 
-# This node contains more fortress properties stored on LDAP server:
-config.realm=DEFAULT
-config.root=ou=Config,dc=example,dc=com
+ # This node contains fortress properties stored on behalf of connecting LDAP clients:
+ config.realm=DEFAULT
+ config.root=ou=Config,dc=example,dc=com
 
-# Fortress uses ehcache:
-ehcache.config.file=ehcache.xml
+ # Used by application security components:
+ perms.cached=true
 
-# Fortress web will cache perms in session:
-perms.cached=true
+ # Fortress uses a cache:
+ ehcache.config.file=ehcache.xml
+ ```
+
+ b. Prepare fortress for openldap usage:
+
+ ```properties
+ # This param tells fortress what type of ldap server in use:
+ ldap.server.type=openldap
+
+ # Use value from [Set Hostname Entry]:
+ host=localhost
+
+ # OpenLDAP defaults to this:
+ port=389
+
+ # These credentials are used for read/write access to all nodes under suffix:
+ admin.user=cn=Manager,dc=example,dc=com
+ admin.pw=secret
+
+ # This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
+ min.admin.conn=1
+ max.admin.conn=10
+
+ # This node contains fortress properties stored on behalf of connecting LDAP clients:
+ config.realm=DEFAULT
+ config.root=ou=Config,dc=example,dc=com
+
+ # Used by application security components:
+ perms.cached=true
+
+ # Fortress uses a cache:
+ ehcache.config.file=ehcache.xml
  ```
 
 5. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
 
  ```
-    <!-- SSOCircle.com IDP Metadata configuration: -->
+ <!-- SSOCircle.com IDP Metadata configuration: -->
     <bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
         <constructor-arg>
             <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
@@ -91,7 +119,6 @@ perms.cached=true
             </bean>
         </constructor-arg>
     </bean>
- </bean>
  ```
 
 6. View (don't change) ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadata**, check out the url to idp.ssocircle.com.  This is one way to enable an IdP's metadata:
@@ -124,20 +151,25 @@ perms.cached=true
 2. Run this command from the root package:
 
   Deploy to tomcat server:
+
   ```maven
  mvn clean tomcat:deploy -Dload.file
   ```
 
   Or if already deployed:
+
   ```maven
  mvn clean tomcat:redeploy -Dload.file
   ```
 
    -Dload.file tells maven to automatically load the fortress-saml-demo security policy into ldap.  Since the load needs to happen just once, you may drop the arg from future ops:
+
   ```maven
  mvn tomcat:redeploy
   ```
+
  **Note**: if problem  with tomcat auto-deploy, manually deploy fortress-saml-demo.war to webapps or change connection info used during tomcat:deploy in [pom.xml](pom.xml).
+
  ```
  <plugin>
      <groupId>org.codehaus.mojo</groupId>
@@ -161,6 +193,7 @@ perms.cached=true
  To get understanding of security policy, check out ![fortress-saml-demo security policy](src/main/resources/fortress-saml-sample-security-policy.xml).
 
  excerpt from file:
+
  ```
  ...
  <adduserrole>
@@ -186,6 +219,7 @@ perms.cached=true
  </addpermgrant>
  ...
  ```
+
  There are three pages, each page has three buttons.  Page access is granted as follows:
 
 | user          | page1         | page2         | page3         |
