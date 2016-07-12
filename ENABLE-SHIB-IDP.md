@@ -1,3 +1,5 @@
+### TODO: Convert these notes into a proper how-to guide
+
 
 0. logonto http://localhost:8080/sp
 
