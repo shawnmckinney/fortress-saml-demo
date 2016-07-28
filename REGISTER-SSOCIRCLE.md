@@ -12,7 +12,7 @@
 
 1. Goto website:
 
- [http://www.ssocircle.com](SSO Circle IdP)
+ [http://www.ssocircle.com](http://www.ssocircle.com)
 
 2. Click on **Signin/Register**->**Register** menu option.
 
