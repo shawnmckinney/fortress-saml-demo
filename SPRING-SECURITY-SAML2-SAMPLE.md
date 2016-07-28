@@ -17,7 +17,7 @@
 
 1. Download package and extract:
 
- [https://github.com/UniconLabs/shibboleth-sample-java-sp/archive/master.zip](SSO Circle IdP)
+ [shibboleth-sample-java-sp](https://github.com/UniconLabs/shibboleth-sample-java-sp/archive/master.zip)
 
 2. Edit ![securityContext.xml](https://github.com/UniconLabs/shibboleth-sample-java-sp/blob/master/src/main/webapp/WEB-INF/securityContext.xml) file, replace the **metadata** bean declaration with:
 
