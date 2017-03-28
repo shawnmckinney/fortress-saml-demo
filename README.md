@@ -247,6 +247,7 @@
  * Enter a new **Surname**.  (Originally called **Last Name** when profile first created - both refer to same field)
  * Pick from one of these: sam1, sam2, sam3 or sam*.
  * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
+
  ![User Profile Page](src/main/javadoc/doc-files/Sso-Circle-MyProfile.png "User Profile Page")
  * Delete the cookies from browser corresponding with the IdP and SP websites.
  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped when redirected to **Launch Page**.
@@ -258,6 +259,8 @@
  * sam3 - access to page three
  * sam* - access to all pages
 
-7. Common Errors:
- a. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
+
+## Common Errors During Testing
+
+1. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
  ![SSO Circle Invalid Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-invalid-entityid.png "Unsuccessful Redirect")
