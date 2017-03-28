@@ -231,35 +231,33 @@
 
  If you followed the instructions, your IdP global user will be mapped to sam* in fortress which grants access to all pages/buttons in the app.  This mapping can be changed, which we'll show you how later.
 
- 1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
+1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
- 2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
+2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-Login.png "IdP Login Page")
 
- 3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
+3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
- 4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Launch Page**, where the user, sam*, has all links enabled:
+4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Launch Page**, where the user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
- 5. Try a different user...
-  * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
-  * Enter a new **Surname**.  (Originally called **Last Name** when profile first created - both refer to same field)
-  * Pick from one of these: sam1, sam2, sam3 or sam*.
-  * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
+5. Try a different user...
+ * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
+ * Enter a new **Surname**.  (Originally called **Last Name** when profile first created - both refer to same field)
+ * Pick from one of these: sam1, sam2, sam3 or sam*.
+ * Be sure to enter the original IdP password in **Old password** field before clicking on the **Submit** button to save your changes.
  ![User Profile Page](src/main/javadoc/doc-files/Sso-Circle-MyProfile.png "User Profile Page")
-  * Delete the cookies from browser corresponding with the IdP and SP websites.
-  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped when redirected to **Launch Page**.
- ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
+ * Delete the cookies from browser corresponding with the IdP and SP websites.
+ * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped when redirected to **Launch Page**.
+![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
- 6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
-  * sam1 - access to page one
-  * sam2 - access to page two
-  * sam3 - access to page three
-  * sam* - access to all pages
+6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
+ * sam1 - access to page one
+ * sam2 - access to page two
+ * sam3 - access to page three
+ * sam* - access to all pages
 
- 7. Common Errors:
-
-  a. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
-  
+7. Common Errors:
+ a. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
  ![SSO Circle Invalid Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-invalid-entityid.png "Unsuccessful Redirect")
