@@ -69,9 +69,11 @@
 
  d. enable the **LastName** checkbox:
 
- e. click on **Submit** button
+ e. paste the same metadata saved from before during SP metadata gen step here: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md).
 
- f. wait for the confirmation message.  This could take a minute or two.
+ f. click on **Submit** button
+
+ g. wait for the confirmation message.  This could take a minute or two.
  ![SSO Circle Successful Metadata Import page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
 
 7. The IdP should be ready for use.  Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc to complete this demo.
