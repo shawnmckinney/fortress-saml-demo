@@ -9,9 +9,9 @@
 -------------------------------------------------------------------------------
 
 ## Prerequisites
-1. Java 7 (or greater) sdk
+1. Java 8 sdk
 2. Gradle - to build shibboleth-sample-java-sp
-3. Tomcat7 - to deploy shibboleth-sample-java-sp
+3. Tomcat8 - to deploy shibboleth-sample-java-sp
 
 -------------------------------------------------------------------------------
 
