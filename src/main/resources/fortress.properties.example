@@ -29,10 +29,26 @@ perms.cached=true
 # Fortress uses a cache:
 ehcache.config.file=ehcache.xml
 
+# This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
+min.admin.conn=1
+max.admin.conn=10
+
 # Default for pool reconnect flag is false:
 enable.pool.reconnect=true
 
-# Used when connecting with Fortress Rest instead of LDAP:
+# (Optional Settings) Use if SSL Connection to LDAP Server needed:
+#enable.ldap.ssl=true
+#enable.ldap.ssl.debug=true
+# for SSL hostname must match common name on server certificate:
+# host=fortressdemo2.com
+# OpenLDAP default LDAPS port:
+# port=636
+# Truststore needed to store certificate matching the hostname of server machine.
+#trust.store=/path/to/my/mytruststore
+#trust.store.password=changeit
+#trust.store.onclasspath=false
+
+# (Optional settings) Used if connecting with Fortress Rest needed instead of LDAPv3:
 #enable.mgr.impl.rest=true
 # If using EnMasse, these parameters needed:
 #http.user=demouser4
