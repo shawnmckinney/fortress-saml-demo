@@ -1,5 +1,7 @@
 # Overview of the fortress-saml-demo README
 
+ ![Fortress SAML Demo Security Layers](src/main/javadoc/doc-files/saml-demo-block-diagram-master.png  "Fortress SAML Demo")
+
  * This document demonstrates how to build and deploy the fortress saml sample.
  * It builds on two excellent references:
   * [spring-security-saml](https://github.com/spring-projects/spring-security-saml) - Spring's SAML sample is the first place java developers should look for basic SAML 2.0 programming concepts..
