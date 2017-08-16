@@ -167,23 +167,23 @@
 
 5. Run this command from the root package:
 
-  Deploy to tomcat server:
+ Deploy to tomcat server:
 
-  ```maven
+ ```maven
  mvn clean tomcat:deploy -Dload.file
-  ```
+ ```
 
-  Or if already deployed:
+ Or if already deployed:
 
-  ```maven
+ ```maven
  mvn clean tomcat:redeploy -Dload.file
-  ```
+ ```
 
-   -Dload.file tells maven to automatically load the fortress-saml-demo security policy into ldap.  Since the load needs to happen just once, you may drop the arg from future ops:
+ -Dload.file tells maven to automatically load the fortress-saml-demo security policy into ldap.  Since the load needs to happen just once, you may drop the arg from future ops:
 
-  ```maven
- mvn tomcat:redeploy
-  ```
+ ```maven
+mvn tomcat:redeploy
+ ```
 
  **Note**: if problem  with tomcat auto-deploy, manually deploy fortress-saml-demo.war to webapps or change connection info used during tomcat:deploy in [pom.xml](pom.xml).
 
