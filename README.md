@@ -165,7 +165,7 @@
  <user username="tcmanagergui" password="m@nager123" roles="manager-gui"/>
  ```
 
-4. Save and exit tomcat-users.xml file
+4. Save and exit tomcat-users.xml file and restart tomcat.
 
 5. Run this command from the root package:
 
