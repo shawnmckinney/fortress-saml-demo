@@ -150,7 +150,24 @@
 
 1. Set java and maven home env variables.
 
-2. Run this command from the root package:
+2. Prepare tomcat to allow autodeploy of fortress-saml-demo web app:
+
+ ```
+ sudo vi /usr/local/tomcat8/conf/tomcat-users.xml
+ ```
+
+3. Add tomcat user to deploy wicketsample:
+
+ ```
+ <role rolename="manager-script"/>
+ <role rolename="manager-gui"/>
+ <user username="tcmanager" password="m@nager123" roles="manager-script"/>
+ <user username="tcmanagergui" password="m@nager123" roles="manager-gui"/>
+ ```
+
+4. Save and exit tomcat-users.xml file
+
+5. Run this command from the root package:
 
   Deploy to tomcat server:
 
