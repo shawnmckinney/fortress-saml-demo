@@ -59,10 +59,6 @@ public abstract class SamlSampleBasePage extends WebPage
             {
                 HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
                 LOG.info( "route user " + getUserId() + " to SAML logout" );
-                // invalidate the http session:
-                servletReq.getSession().invalidate();
-                // logout of wicket:
-                getSession().invalidate();
                 // logout out of SAML SP:
                 setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOGOUT_URL ) );
             }
