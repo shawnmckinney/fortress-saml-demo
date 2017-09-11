@@ -51,6 +51,7 @@ public class SecUtils
         .getProperty( PERMS_CACHED ).equalsIgnoreCase( "true" ) ) );
 
     public static String FORTRESS_SAML_DEMO_LOGOUT_URL = "/fortress-saml-demo/saml/logout";
+    public static String FORTRESS_SAML_DEMO_LOCAL_LOGOUT_URL = "/fortress-saml-demo/saml/logout?local=true";
     public static String FORTRESS_SAML_UNAUTHORIZED_URL = "/fortress-saml-demo/unauthorized.html";
 
     /**

@@ -52,18 +52,34 @@ public abstract class SamlSampleBasePage extends WebPage
         add( new FtBookmarkablePageLink( "page1.link", Page1.class ) );
         add( new FtBookmarkablePageLink( "page2.link", Page2.class ) );
         add( new FtBookmarkablePageLink( "page3.link", Page3.class ) );
-        final Link actionLink = new Link( "logout.link" )
+
+        // Add link to logout SAML SP only:
+        final Link localLink = new Link( "logoutLocal.link" )
         {
             @Override
             public void onClick()
             {
                 HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
-                LOG.info( "route user " + getUserId() + " to SAML logout" );
-                // logout out of SAML SP:
+                LOG.info( "route user " + getUserId() + " to SAML local logout" );
+                // logout out of SAML SP only:
+                setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOCAL_LOGOUT_URL ) );
+            }
+        };
+        add( localLink );
+
+        // Add link to logout both SP and IdP:
+        final Link globalLink = new Link( "logout.link" )
+        {
+            @Override
+            public void onClick()
+            {
+                HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
+                LOG.info( "route user " + getUserId() + " to SAML global logout" );
+                // logout out of SAML SP and IdP:
                 setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOGOUT_URL ) );
             }
         };
-        add( actionLink );
+        add( globalLink );
         add( new Label( "footer", "This is free and unencumbered software released into the public domain." ) );
     }
 
