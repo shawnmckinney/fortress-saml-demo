@@ -61,13 +61,20 @@ public abstract class SamlSampleBasePage extends WebPage
             {
                 HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
                 LOG.info( "route user " + getUserId() + " to SAML local logout" );
+
+                // invalidate the session and force the user to log back on:
+                servletReq.getSession().invalidate();
+                getSession().invalidate();
+
                 // logout out of SAML SP only:
-                setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOCAL_LOGOUT_URL ) );
+                setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOGOUT_URL ) );
+                //setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOCAL_LOGOUT_URL ) );
             }
         };
         add( localLink );
 
         // Add link to logout both SP and IdP:
+/*
         final Link globalLink = new Link( "logout.link" )
         {
             @Override
@@ -75,11 +82,16 @@ public abstract class SamlSampleBasePage extends WebPage
             {
                 HttpServletRequest servletReq = (HttpServletRequest)getRequest().getContainerRequest();
                 LOG.info( "route user " + getUserId() + " to SAML global logout" );
-                // logout out of SAML SP and IdP:
+
+                // invalidate the session and force the user to log back on:
+                servletReq.getSession().invalidate();
+                getSession().invalidate();
+
                 setResponsePage( new RedirectPage( SecUtils.FORTRESS_SAML_DEMO_LOGOUT_URL ) );
             }
         };
         add( globalLink );
+*/
         add( new Label( "footer", "This is free and unencumbered software released into the public domain." ) );
     }
 
