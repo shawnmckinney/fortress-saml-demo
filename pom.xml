@@ -39,6 +39,7 @@
         <version.slf4j.log4j12>1.7.7</version.slf4j.log4j12>
         <spring.version>4.3.1.RELEASE</spring.version>
         <spring.security.version>3.1.2.RELEASE</spring.security.version>
+        <spring.saml.version>1.0.3.RELEASE</spring.saml.version>
         <version.log4j>1.2.17</version.log4j>
         <version.junit>4.11</version.junit>
         <javadoc.version>2.9.1</javadoc.version>
@@ -57,7 +58,7 @@
         <dependency>
             <groupId>org.springframework.security.extensions</groupId>
             <artifactId>spring-security-saml2-core</artifactId>
-            <version>1.0.1.RELEASE</version>
+			<version>${spring.saml.version}</version>
             <scope>compile</scope>
         </dependency>
 
