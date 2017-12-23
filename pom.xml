@@ -32,14 +32,14 @@
     </developers>
 
     <properties>
-        <wicket.version>7.8.0</wicket.version>
-        <wicket.jquery.version>7.7.0</wicket.jquery.version>
+        <wicket.version>7.9.0</wicket.version>
+        <wicket.jquery.version>7.9.0</wicket.jquery.version>
+        <spring.saml.version>1.0.3.RELEASE</spring.saml.version>
         <ant.version>1.8.1</ant.version>
         <slf4j.version>1.5.11</slf4j.version>
         <version.slf4j.log4j12>1.7.7</version.slf4j.log4j12>
-        <spring.version>4.3.1.RELEASE</spring.version>
+        <spring.version>5.0.0.RELEASE</spring.version>
         <spring.security.version>3.1.2.RELEASE</spring.security.version>
-        <spring.saml.version>1.0.3.RELEASE</spring.saml.version>
         <version.log4j>1.2.17</version.log4j>
         <version.junit>4.11</version.junit>
         <javadoc.version>2.9.1</javadoc.version>
@@ -115,44 +115,14 @@
             <version>${wicket.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.wicket-jquery-ui</groupId>
-            <artifactId>wicket-jquery-ui</artifactId>
-            <version>${wicket.jquery.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
             <version>${wicket.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-extensions</artifactId>
-            <version>${wicket.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.wicketstuff</groupId>
-            <artifactId>wicketstuff-inmethod-grid</artifactId>
+            <groupId>com.googlecode.wicket-jquery-ui</groupId>
+            <artifactId>wicket-jquery-ui</artifactId>
             <version>${wicket.jquery.version}</version>
-        </dependency>
-
-        <!-- Servlet API DEPENDENCIES -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
         </dependency>
 
         <!--  MISC/LOGGERS/TEST DEPENDENCIES -->
