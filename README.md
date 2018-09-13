@@ -26,13 +26,13 @@
 -------------------------------------------------------------------------------
 ## Generate SP metadata and register with IdP ssocircle.com
 
-1. Complete first: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
+#### 1. Complete first: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md)
 
-2. Complete next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
+#### 2. Complete next: [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md)
 
 ## Prepare fortress-saml-demo package
 
-1. Get the project source:
+#### 1. Get the project source:
 
  a. Download zip from project:
 
@@ -50,7 +50,7 @@
  cd fortress-saml-demo
  ```
 
-3. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
+#### 3. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
  Pick One:
 
@@ -116,7 +116,7 @@
  ehcache.config.file=ehcache.xml
  ```
 
-4. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
+#### 4. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
 
  ```
  <!-- SSOCircle.com IDP Metadata configuration: -->
@@ -135,7 +135,7 @@
     </bean>
  ```
 
-5. View (don't change) ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadata**, check out the url to idp.ssocircle.com.  This is one way to enable an IdP's metadata:
+#### 5. View (don't change) ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadata**, check out the url to idp.ssocircle.com.  This is one way to enable an IdP's metadata:
 
  ```
  <!-- SSOCircle.com IDP Metadata configuration - paths to metadata of IDPs in circle of trust is here -->
@@ -160,24 +160,24 @@
 -------------------------------------------------------------------------------
 ## Build and deploy fortress-saml-demo
 
-1. Set java and maven home env variables.
+#### 1. Set java and maven home env variables.
 
-2. Prepare tomcat to allow autodeploy of fortress-saml-demo web app:
+#### 2. Prepare tomcat to allow autodeploy of fortress-saml-demo web app:
 
  ```
  sudo vi /usr/local/tomcat8/conf/tomcat-users.xml
  ```
 
-3. Add tomcat user to deploy wicketsample:
+#### 3. Add tomcat user to deploy wicketsample:
 
  ```
  <role rolename="manager-script"/>
  <user username="tcmanager" password="m@nager123" roles="manager-script"/>
  ```
 
-4. Save and exit tomcat-users.xml file and restart tomcat.
+#### 4. Save and exit tomcat-users.xml file and restart tomcat.
 
-5. Run this command from the root package:
+#### 5. Run this command from the root package:
 
  Deploy to tomcat server:
 
@@ -260,18 +260,18 @@ mvn tomcat:redeploy
 
  If you followed the instructions, your IdP global user will be mapped to sam* in fortress which grants access to all pages/buttons in the app.  This mapping can be changed, which we'll show you how later.
 
-1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
+#### 1. Open link to [http://localhost:8080/fortress-saml-demo](http://localhost:8080/fortress-saml-demo)
 
-2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
+#### 2. You will be redirected to the Identity Provider's website.  Enter the **User Name**, **Password** values from the [REGISTER-SSOCIRCLE.md](REGISTER-SSOCIRCLE.md) steps.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-Login.png "IdP Login Page")
 
-3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
+#### 3. Click on the **I'm not a robot** checkbox, answer the questions, and finally click on the **Continue SAML Single Sign On** button.
  ![IdP Login Page](src/main/javadoc/doc-files/SSO-Circle-IdP-Login-Page.png "IdP Login Page")
 
-4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Launch Page**, where the user, sam*, has all links enabled:
+#### 4. If everything works when redirecting back to the SP, you'll see the fortress-saml-demo **Launch Page**, where the user, sam*, has all links enabled:
  ![sam*](src/main/javadoc/doc-files/Fortress-Saml-Demo-SuperUser.png "Home Page - sam*")
 
-5. Try a different user...
+#### 5. Try a different user...
  * Map to different fortress users at [**MY Profile**](https://idp.ssocircle.com/sso/hos/SelfCare.jsp) page on ssocircle.com.
  * Enter a new **Surname**.  (Originally called **Last Name** when profile first created - both refer to same field)
  * Pick from one of these: sam1, sam2, sam3 or sam*.
@@ -282,7 +282,7 @@ mvn tomcat:redeploy
  * Now, go back to Step 1 and login again.  Will be different authorizations corresponding with other userIds mapped when redirected to **Launch Page**.
 ![sam1](src/main/javadoc/doc-files/Fortress-Saml-User1-Page.png "Home Page - sam1")
 
-6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
+#### 6. Each fortress userId (mapped to **Last Name** field at IdP) has different access policy.
  * sam1 - access to page one
  * sam2 - access to page two
  * sam3 - access to page three
@@ -291,9 +291,9 @@ mvn tomcat:redeploy
 
 ## Common Errors During Testing
 
-1. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
+#### 1. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
  ![SSO Circle Invalid Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-invalid-entityid.png "Unsuccessful Redirect")
 
-2. Authentication succeeds, but keep getting routed back to SSO circle page.
+#### 2. Authentication succeeds, but keep getting routed back to SSO circle page.
  * Make sure the fortress saml test security policy was loaded, and that the SSO circle.com user profile has mapping the last name field to one of the users setup in Fortress, e.g. sam1, sam2, sam3.
  * It also *could* be a browser compatibility problem.
