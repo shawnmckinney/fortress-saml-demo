@@ -32,13 +32,25 @@
 
 ## Prepare fortress-saml-demo package
 
-1. [Download ZIP](https://github.com/shawnmckinney/fortress-saml-demo/archive/master.zip)
+1. Get the project source:
 
-2. Extract the zip archive to your local machine.
+ a. Download zip from project:
 
-3. cd fortress-saml-demo-master
+ ```
+ wget https://github.com/shawnmckinney/fortress-saml-demo/archive/master.zip
+ cd fortress-saml-demo-master
+ ```
 
-4. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
+ -OR do this-
+
+ b. Clone the project git repo:
+
+ ```
+ git clone https://github.com/shawnmckinney/fortress-saml-demo.git
+ cd fortress-saml-demo
+ ```
+
+3. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
  Pick One:
 
@@ -104,7 +116,7 @@
  ehcache.config.file=ehcache.xml
  ```
 
-5. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
+4. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
 
  ```
  <!-- SSOCircle.com IDP Metadata configuration: -->
@@ -123,7 +135,7 @@
     </bean>
  ```
 
-6. View (don't change) ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadata**, check out the url to idp.ssocircle.com.  This is one way to enable an IdP's metadata:
+5. View (don't change) ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadata**, check out the url to idp.ssocircle.com.  This is one way to enable an IdP's metadata:
 
  ```
  <!-- SSOCircle.com IDP Metadata configuration - paths to metadata of IDPs in circle of trust is here -->
@@ -281,3 +293,7 @@ mvn tomcat:redeploy
 
 1. Invalid Entity Id registered with SSO Circle.com.  If authentication succeeds with IdP, but the redirect to fortress-saml-demo fails with this error in browser.
  ![SSO Circle Invalid Metadata page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-invalid-entityid.png "Unsuccessful Redirect")
+
+2. Authentication succeeds, but keep getting routed back to SSO circle page.
+ * Make sure the fortress saml test security policy was loaded, and that the SSO circle.com user profile has mapping the last name field to one of the users setup in Fortress, e.g. sam1, sam2, sam3.
+ * It also *could* be a browser compatibility problem.
