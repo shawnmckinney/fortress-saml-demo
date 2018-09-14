@@ -10,13 +10,13 @@
 
 ## How to enable a new account on SSOCircle.com
 
-1. Goto website:
+#### 1. Goto website:
 
  [http://www.ssocircle.com](http://www.ssocircle.com)
 
-2. Click on **Signin/Register**->**Register** menu option.
+#### 2. Click on **Signin/Register**->**Register** menu option.
 
-3. Fill in the info in the web form:
+#### 3. Fill in the info in the web form:
 
  ![SSO Circle Registration page](src/main/javadoc/doc-files/SSO-Circle-Registration.png "Registration Page")
 
@@ -45,15 +45,15 @@
 
  **Note**: the *Last Name* attribute at ssocircle.com website will be used to map to a fortress *userId*, and will be sent inside the saml assertion.  Use the sam* user who will be allowed full access to fortress-saml-sample web app.
 
-4. complete the registration via confirmation message sent to email address entered above.
+#### 4. complete the registration via confirmation message sent to email address entered above.
 
-5. login into SSOCircle.com IdP
+#### 5. login into SSOCircle.com IdP
 
  Enter the **User Name** and **Password** from above.
 
  ![SSO Circle Login page](./src/main/javadoc/doc-files/SSO-Circle-Login.png "Login Page")
 
-6. Add Service Provider Metadata to SSOCircle.com
+#### 6. Add Service Provider Metadata to SSOCircle.com
 
  a. click on **Manage Metadata**
 
@@ -76,4 +76,4 @@
  g. wait for the confirmation message.  This could take a minute or two.
  ![SSO Circle Successful Metadata Import page](https://github.com/shawnmckinney/fortress-saml-demo/blob/master/src/main/javadoc/doc-files/SSO-Circle-Metadata-Success.png "Successful Import")
 
-7. The IdP should be ready for use.  Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc to complete this demo.
+#### 7. The IdP should be ready for use.  Return to the **Prepare fortress-saml-demo package** section of the [README.md](README.md) doc to complete this demo.
