@@ -52,9 +52,9 @@
 
 #### 3. Rename [fortress.properties.example](src/main/resources/fortress.properties.example) to fortress.properties.
 
- Pick One:
+ Pick either Apache Directory or OpenLDAP server:
 
- a. Prepare fortress for apacheds usage:
+ c. Prepare fortress for ApacheDS usage:
 
  ```properties
  # This param tells fortress what type of ldap server in use:
@@ -69,23 +69,11 @@
  # These credentials are used for read/write access to all nodes under suffix:
  admin.user=uid=admin,ou=system
  admin.pw=secret
-
- # This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
- min.admin.conn=1
- max.admin.conn=10
-
- # This node contains fortress properties stored on behalf of connecting LDAP clients:
- config.realm=DEFAULT
- config.root=ou=Config,dc=example,dc=com
-
- # Used by application security components:
- perms.cached=true
-
- # Fortress uses a cache:
- ehcache.config.file=ehcache.xml
  ```
 
- b. Prepare fortress for openldap usage:
+ -- Or --
+
+ d. Prepare fortress for OpenLDAP usage:
 
  ```properties
  # This param tells fortress what type of ldap server in use:
@@ -100,20 +88,6 @@
  # These credentials are used for read/write access to all nodes under suffix:
  admin.user=cn=Manager,dc=example,dc=com
  admin.pw=secret
-
- # This is min/max settings for LDAP administrator pool connections that have read/write access to all nodes under suffix:
- min.admin.conn=1
- max.admin.conn=10
-
- # This node contains fortress properties stored on behalf of connecting LDAP clients:
- config.realm=DEFAULT
- config.root=ou=Config,dc=example,dc=com
-
- # Used by application security components:
- perms.cached=true
-
- # Fortress uses a cache:
- ehcache.config.file=ehcache.xml
  ```
 
 #### 4. Edit ![securityContext.xml](src/main/webapp/WEB-INF/securityContext.xml) file, bean id **metadataGeneratorFilter**, replace the property **entityId**'s value with what you used during the [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md) setup:
