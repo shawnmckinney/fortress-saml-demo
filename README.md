@@ -144,13 +144,13 @@ This sample web app uses Java EE security.
 
   where *TOMCAT_HOME* matches your target env.
 
-#### 2. Prepare tomcat to allow autodeploy of role-engineering-sample web app:
+#### 2. Prepare tomcat to allow autodeploy of web app:
 
  ```
  sudo vi /usr/local/tomcat8/conf/tomcat-users.xml
  ```
 
-#### 3. Add tomcat user to deploy role-engineering-sample:
+#### 3. Add tomcat user for autodeploy of web app:
 
  ```
  <role rolename="manager-script"/>
@@ -168,7 +168,13 @@ This sample web app uses Java EE security.
 -------------------------------------------------------------------------------
 ## Build and deploy fortress-saml-demo
 
-#### 1. Set java and maven home env variables.
+#### 1. Verify the java and maven home env variables are set.
+
+ ```maven
+ mvn -version
+ ```
+
+ This sample requires Java 8 and Maven 3 to be setup within the execution env.
 
 #### 2. Run this command from the root package:
 
@@ -212,7 +218,7 @@ mvn tomcat:redeploy
 
 ## Test fortress security with spring saml sso enabled
 
- To get understanding of security policy, check out ![fortress-saml-demo security policy](src/main/resources/fortress-saml-sample-security-policy.xml).
+ To get understanding of security policy of this web app, check out ![fortress-saml-demo security policy](src/main/resources/fortress-saml-sample-security-policy.xml).
 
  excerpt from file:
 
@@ -280,7 +286,6 @@ mvn tomcat:redeploy
  * sam2 - access to page two
  * sam3 - access to page three
  * sam* - access to all pages
-
 
 ## Common Errors During Testing
 
