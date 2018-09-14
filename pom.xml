@@ -3,9 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <name>Fortress SAML Demo</name>
-    <description>Sample Web App combing Apache Fortress and SAML 2.0.</description>
-    <groupId>org.samlsample</groupId>
+    <name>Apache Fortress SAML Demo</name>
+    <description>Sample Web App combing RBAC and SAML 2.0.</description>
+    <groupId>net.iamfortress</groupId>
     <artifactId>fortress-saml-demo</artifactId>
     <version>2.0.2</version>
     <packaging>war</packaging>
@@ -18,16 +18,18 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/shawnmckinney/fortress-saml-demo.git</connection>
-        <developerConnection>scm:git:https://github.com/shawnmckinney/fortress-saml-demo.git
-        </developerConnection>
+        <url>https://github.com/shawnmckinney/fortress-saml-demo.git</url>
     </scm>
 
     <developers>
         <developer>
             <id>smckinney</id>
             <name>Shawn McKinney</name>
-            <email>smckinney 'at' symas.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <organization>symas.com</organization>
+            <timezone>-5</timezone>
         </developer>
     </developers>
 
