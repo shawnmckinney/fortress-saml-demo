@@ -295,3 +295,14 @@ mvn tomcat:redeploy
 #### 2. Authentication succeeds, but keep getting routed back to SSO circle page.
  * Make sure the fortress saml test security policy was loaded, and that the SSO circle.com user profile has mapping the last name field to one of the users setup in Fortress, e.g. sam1, sam2, sam3.
  * It also *could* be a browser compatibility problem.
+ 
+#### 3. Other things to watch out for... 
+ * The host machine not time synched: Synch with current and retry.
+ * The authentication token has expired: Logout of SSOCircle.com and retry.
+ * Not using *exactly* the same URL as when generating SP metadata here: [SPRING-SECURITY-SAML2-SAMPLE.md](SPRING-SECURITY-SAML2-SAMPLE.md).
+ 
+#### 4. Final notes...
+ * URL exactly same means same protocol (http/https), host name, port, context -- all must match.
+ * Authorization error means user probably doesn't have the defined role, i.e. that matching what was placed in surnamne field of SSOCircle.com user profile.
+ * Read the logs under TOMCAT_HOME/logs, default catalina.out.
+ 
