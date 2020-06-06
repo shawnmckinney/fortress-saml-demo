@@ -119,7 +119,7 @@
         <constructor-arg>
             <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
                 <!--property name="entityId" value="fortress-saml-demo"/-->
-                <property name="entityId" value="fortress-saml-demo-7"/>
+                <property name="entityId" value="fortress-saml-demo-2019-3"/>
                 <property name="extendedMetadata">
                     <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
                         <property name="signMetadata" value="false"/>

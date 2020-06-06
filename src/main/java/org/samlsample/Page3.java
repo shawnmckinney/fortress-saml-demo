@@ -38,7 +38,7 @@ public class Page3 extends SamlSampleBasePage
             add( new FtIndicatingAjaxButton( "page3.button1" )
             {
                 @Override
-                protected void onSubmit( AjaxRequestTarget target, Form form )
+                protected void onSubmit( AjaxRequestTarget target )
                 {
                     logIt( target, "Page 3, Button 1 Pressed" );
                 }
@@ -48,7 +48,7 @@ public class Page3 extends SamlSampleBasePage
             add( new FtIndicatingAjaxButton( "page3.button2" )
             {
                 @Override
-                protected void onSubmit( AjaxRequestTarget target, Form form )
+                protected void onSubmit( AjaxRequestTarget target )
                 {
                     logIt( target, "Page 3, Button 2 Pressed" );
                 }
@@ -58,7 +58,7 @@ public class Page3 extends SamlSampleBasePage
             add( new FtIndicatingAjaxButton( "page3.button3" )
             {
                 @Override
-                protected void onSubmit( AjaxRequestTarget target, Form form )
+                protected void onSubmit( AjaxRequestTarget target )
                 {
                     logIt( target, "Page 3, Button 3 Pressed" );
                 }
