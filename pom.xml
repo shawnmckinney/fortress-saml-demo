@@ -36,41 +36,17 @@
     <properties>
         <wicket.version>8.8.0</wicket.version>
         <wicket.googlecode.version>8.6.0</wicket.googlecode.version>
-<!--        <wicket.version>7.10.0</wicket.version>-->
-        <!--<wicket.jquery.version>7.10.0</wicket.jquery.version>-->
         <spring.saml.version>1.0.3.RELEASE</spring.saml.version>
         <version.ant>1.9.7</version.ant>
-        <!--<ant.version>1.8.1</ant.version>-->
         <slf4j.version>1.5.11</slf4j.version>
         <version.slf4j.log4j12>1.7.7</version.slf4j.log4j12>
         <spring.security.version>5.3.2.RELEASE</spring.security.version>
-        <!--<spring.security.version>3.1.2.RELEASE</spring.security.version>-->
         <spring.version>5.2.6.RELEASE</spring.version>
-<!--        <spring.version>5.1.4.RELEASE</spring.version>-->
         <version.log4j>1.2.17</version.log4j>
         <version.junit>4.11</version.junit>
         <javadoc.version>2.9.1</javadoc.version>
         <title>${project.name} ${project.version}</title>
     </properties>
-
-<!--
-    <properties>
-        <title>${project.name} ${project.version}</title>
-        <java.version>1.8</java.version>
-        <fortress.realm.version>2.0.5</fortress.realm.version>
-        <wicket.version>8.8.0</wicket.version>
-        <wicket.googlecode.version>8.6.0</wicket.googlecode.version>
-        <version.log4j>1.2.17</version.log4j>
-        <version.ant>1.9.7</version.ant>
-        <version.slf4j.log4j12>1.7.7</version.slf4j.log4j12>
-        <spring.security.version>5.3.2.RELEASE</spring.security.version>
-        <javadoc.version>2.9.1</javadoc.version>
-        <jetty.version>8.1.8.v20121106</jetty.version>
-        <jetty.stopKey>stopJetty</jetty.stopKey>
-        <jetty.stopPort>9081</jetty.stopPort>
-        <jetty.port>9080</jetty.port>
-    </properties>
--->
 
     <dependencies>
         <!-- FORTRESS SECURITY FRAMEWORK DEPENDENCIES -->
@@ -97,14 +73,6 @@
             <artifactId>yasson</artifactId>
             <version>1.0.6</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.security.extensions/spring-security-saml2-core -->
-<!--
-        <dependency>
-            <groupId>org.springframework.security.extensions</groupId>
-            <artifactId>spring-security-saml2-core</artifactId>
-            <version>2.0.0.M31</version>
-        </dependency>
--->
         <!--  SPRING SECURITY FRAMEWORK DEPENDENCIES -->
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -112,23 +80,12 @@
             <version>${spring.security.version}</version>
             <scope>compile</scope>
         </dependency>
-
-        <!--  SPRING FRAMEWORK DEPENDENCIES -->
-<!--
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-messaging</artifactId>
-            <version>${spring.security.version}</version>
-        </dependency>
--->
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
@@ -338,7 +295,6 @@
                 </configuration>
             </plugin>
 
-            <!-- TODO STEP 3: uncomment for auto loading of the wicket-sample security policy into ldap server: -->
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
@@ -353,9 +309,10 @@
                                 <java
                                         classname="org.apache.tools.ant.launch.Launcher"
                                         fork="true"
+                                        clonevm="true"
                                         failonerror="true"
                                         dir="${basedir}"
-                                        timeout="4000000"
+                                        timeout="120000"
                                         taskname="startAnt">
                                     <classpath>
                                         <pathelement location="./src/main/resources"/>
@@ -397,7 +354,6 @@
         </plugins>
 
     </build>
-
     <repositories>
         <repository>
             <id>Apache Nexus</id>
@@ -409,6 +365,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <!-- This repo is needed for org.opensaml:opensaml:jar:2.6.6 lib is depended on by Spring Security SAML -->
         <repository>
             <id>shibboleth</id>
             <name>Shibboleth</name>

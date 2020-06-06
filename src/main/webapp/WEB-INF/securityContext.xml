@@ -28,7 +28,6 @@
           factory-method="createInstance">
     </bean>
 
-    <!-- Unsecured pages -->
     <security:http security="none" pattern="/favicon.ico"/>
     <security:http security="none" pattern="/images/**"/>
     <security:http security="none" pattern="/logout.html"/>
@@ -39,10 +38,12 @@
         <security:intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/>
         <security:custom-filter before="FIRST" ref="metadataGeneratorFilter"/>
         <security:custom-filter after="BASIC_AUTH_FILTER" ref="samlFilter"/>
+        <!-- TODO: Determine why CSRF prevents SAML AuthN assertion from IdP -->
+        <security:csrf disabled="true" />
     </security:http>
 
     <!-- Filters for processing of SAML messages -->
-<!-- Works with Spring3:-->
+    <!-- Works with Spring3:-->
     <bean id="samlFilter" class="org.springframework.security.web.FilterChainProxy">
         <security:filter-chain-map request-matcher="ant">
             <security:filter-chain pattern="/saml/login/**" filters="samlEntryPoint"/>
@@ -51,7 +52,7 @@
             <security:filter-chain pattern="/saml/SSO/**" filters="samlWebSSOProcessingFilter"/>
             <security:filter-chain pattern="/saml/SSOHoK/**" filters="samlWebSSOHoKProcessingFilter"/>
             <security:filter-chain pattern="/saml/SingleLogout/**" filters="samlLogoutProcessingFilter"/>
-<!--            <security:filter-chain pattern="/saml/discovery/**" filters="samlIDPDiscovery"/>-->
+            <!--<security:filter-chain pattern="/saml/discovery/**" filters="samlIDPDiscovery"/>-->
         </security:filter-chain-map>
     </bean>
 
@@ -119,7 +120,7 @@
         <constructor-arg>
             <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
                 <!--property name="entityId" value="fortress-saml-demo"/-->
-                <property name="entityId" value="fortress-saml-demo-2019-3"/>
+                <property name="entityId" value="fortress-saml-demo-2020-0606-01"/>
                 <property name="extendedMetadata">
                     <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
                         <property name="signMetadata" value="false"/>
