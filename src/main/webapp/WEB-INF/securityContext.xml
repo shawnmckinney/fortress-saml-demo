@@ -39,7 +39,8 @@
         <security:custom-filter before="FIRST" ref="metadataGeneratorFilter"/>
         <security:custom-filter after="BASIC_AUTH_FILTER" ref="samlFilter"/>
         <!--This is used to disable CSRF check on SSOCircle.com requests. -->
-        <security:csrf request-matcher-ref="csrfSecurityRequestMatcher"/>
+        <security:csrf disabled="true" />
+<!--        <security:csrf request-matcher-ref="csrfSecurityRequestMatcher"/>-->
     </security:http>
 
     <!-- Filters for processing of SAML messages -->

@@ -4,16 +4,12 @@
 package org.samlsample;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import com.googlecode.wicket.jquery.ui.form.button.IndicatingAjaxButton;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
-import org.opensaml.saml2.metadata.provider.MetadataProviderException;
-import org.opensaml.xml.io.MarshallingException;
 import org.samlsample.control.FtIndicatingAjaxButton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * Fortress Saml Wicket Sample Page 1
