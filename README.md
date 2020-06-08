@@ -308,13 +308,21 @@ mvn tomcat:redeploy
  * Authorization error means user probably doesn't have the defined role, i.e. that matching what was placed in surnamne field of SSOCircle.com user profile.
  * Read the logs under TOMCAT_HOME/logs, default catalina.out.
  * As of Spring Security 4.0, CSRF protection is enabled by default with XML configuration. This has caused an issue where the IdP authN assertion gets blocked.
- The workaround, disable CSRF check in the [Spring Security Config File](src/main/webapp/WEB-INF/securityContext.xml). 
- (We wouldn't do this in production so fix is needed.)
+ The workaround, disable CSRF check on SSOCircle.com in the [Spring Security Config File](src/main/webapp/WEB-INF/securityContext.xml). 
  ```xml
     <security:http entry-point-ref="samlEntryPoint" use-expressions="false">
         ...
-        <!-- TODO: Determine why CSRF prevents SAML AuthN assertion from IdP -->
-        <security:csrf disabled="true" />
+        <security:csrf request-matcher-ref="csrfSecurityRequestMatcher"/>
     </security:http>
+```
+ Which maps to:
+ ```java
+@EnableWebSecurity
+public class CsrfSecurityRequestMatcher implements RequestMatcher
+{
+    private Pattern allowedMethods = Pattern.compile("^(GET|HEAD|TRACE|OPTIONS)$");
+    private RegexRequestMatcher unprotectedMatcher = new RegexRequestMatcher("^/saml/SSO(.*)", null);
+    ...
+}
 ```
  
