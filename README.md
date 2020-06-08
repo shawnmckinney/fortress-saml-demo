@@ -305,4 +305,14 @@ mvn tomcat:redeploy
  * URL exactly same means same protocol (http/https), host name, port, context -- all must match.
  * Authorization error means user probably doesn't have the defined role, i.e. that matching what was placed in surnamne field of SSOCircle.com user profile.
  * Read the logs under TOMCAT_HOME/logs, default catalina.out.
+ * As of Spring Security 4.0, CSRF protection is enabled by default with XML configuration. This has caused an issue where the IdP authN assertion gets blocked.
+ The workaround, disable CSRF check in the [Spring Security Config File](src/main/webapp/WEB-INF/securityContext.xml). 
+ (We wouldn't do this in production so fix is needed.)
+ ```xml
+    <security:http entry-point-ref="samlEntryPoint" use-expressions="false">
+        ...
+        <!-- TODO: Determine why CSRF prevents SAML AuthN assertion from IdP -->
+        <security:csrf disabled="true" />
+    </security:http>
+```
  
