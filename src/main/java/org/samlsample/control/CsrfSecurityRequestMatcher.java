@@ -1,6 +1,5 @@
 package org.samlsample.control;
 
-import org.samlsample.Page1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,16 +19,18 @@ public class CsrfSecurityRequestMatcher implements RequestMatcher
     @Override
     public boolean matches(HttpServletRequest request)
     {
-        LOG.info ( "CsrfSecurityRequestMatcher.matches");
+        LOG.debug ( "CsrfSecurityRequestMatcher.matches method: " + request.getMethod() );
+        LOG.debug ( "CsrfSecurityRequestMatcher.matches uri: " + request.getRequestURI() );
+        LOG.debug ( "CsrfSecurityRequestMatcher.matches context: " + request.getContextPath() );
         if (allowedMethods.matcher(request.getMethod()).matches())
         {
-            LOG.info ( "CsrfSecurityRequestMatcher.matches: false");
+            LOG.debug ( "CsrfSecurityRequestMatcher allowedMethods.matches: false");
             return false;
         }
         else
         {
-            LOG.info ( "CsrfSecurityRequestMatcher.matches: true");
-            LOG.info ( "CsrfSecurityRequestMatcher.matches: value <" + !unprotectedMatcher.matches(request) + ">");
+            LOG.debug ( "CsrfSecurityRequestMatcher allowedMethods.matches: true");
+            LOG.debug ( "CsrfSecurityRequestMatcher !unprotectedMatcher.matches: value <" + !unprotectedMatcher.matches(request) + ">");
         }
 
         return !unprotectedMatcher.matches(request);
