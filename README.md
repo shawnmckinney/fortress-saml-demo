@@ -315,9 +315,24 @@ mvn install -Dload.file
  
 2. Can login to sample, but no links or buttons are displayed on the landing page.
 
-Has another fortress sample app been tested?  It's possible that the permission grants were overridden by that other sample in which case run this sample's load again.
+    * Has another fortress sample app been tested?  It's possible that the permission grants were overridden by that other sample in which case run this sample's load again.
 
-3. Some other unidentified error.  View the Tomcat logs to get more clues.
+3. Error 'InResponseToField doesn't correspond to sent message' during SSO 
+
+    Symtoms:
+    * Get redirected to IdP, but get a 'SAML AuthZ error' before it can redirect to logon.
+    * This will be in tomcat logs:
+
+    INFO  - SAMLDefaultLogger - AuthNResponse;FAILURE;ip-address;entity id;https://idp.ssocircle.com;;;org.opensaml.common.SAMLException: InResponseToField of the Response doesn't correspond to sent message
+
+    Where ip-address and entity id's match what's being used in the runtime environment.
+
+    Remediation:
+    * Ensure the app uses the same HttpSession during sending of the request and reception of the response.
+    * Typically, this problem arises when the authentication request is initialized from localhost address or http scheme.
+    * While the response was received at a public host name or https scheme. E.g., when initializing authentication from URL https://host:port/app/saml/login, the response must be received at https://host;port/app/saml/SSO, not https://host:port/app/saml/SSO or https://localhost:port/app/saml/SSO.
+
+4. Some other unidentified error.  View the Tomcat logs to get more clues.
 
 Change the granularity of the loggers in [log4j.properties](src/main/resources/log4j.properties) and redeploy.
 
@@ -328,6 +343,7 @@ log4j.logger.org.apache.directory.fortress.core=DEBUG
 log4j.logger.org.apache.directory.fortress.realm=DEBUG
 ``` 
 #### 4. Final notes...
+ * [spring-security-saml troubleshooting](https://docs.spring.io/spring-security-saml/docs/current/reference/html/chapter-troubleshooting.html)
  * URL exactly same means same protocol (http/https), host name, port, context -- all must match.
  * Authorization error means user probably doesn't have the defined role, i.e. that matching what was placed in surnamne field of SSOCircle.com user profile.
  
@@ -358,4 +374,3 @@ public class CsrfSecurityRequestMatcher implements RequestMatcher
     ...
 }
 ```
- 
