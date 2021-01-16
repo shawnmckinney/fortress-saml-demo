@@ -338,7 +338,6 @@ Change the granularity of the loggers in [log4j2.xml](src/main/resources/log4j2.
 
 ```xml
 <Loggers>
-    <Logger name="org.openldap" level="info"/>
     <Logger name="org.apache.directory.fortress" level="info"/>
     <Logger name="org.apache.wicket" level="info"/>
     <Logger name="org.springframework.security" level="info"/>
