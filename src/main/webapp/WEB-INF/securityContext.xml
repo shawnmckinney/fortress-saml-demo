@@ -121,8 +121,7 @@
     <bean id="metadataGeneratorFilter" class="org.springframework.security.saml.metadata.MetadataGeneratorFilter">
         <constructor-arg>
             <bean class="org.springframework.security.saml.metadata.MetadataGenerator">
-                <!--property name="entityId" value="fortress-saml-demo"/-->
-                <property name="entityId" value="fortress-saml-demo-2020-0606-01"/>
+                <property name="entityId" value="fortress-saml-demo"/>
                 <property name="extendedMetadata">
                     <bean class="org.springframework.security.saml.metadata.ExtendedMetadata">
                         <property name="signMetadata" value="false"/>
