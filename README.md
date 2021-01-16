@@ -334,14 +334,24 @@ mvn install -Dload.file
 
 4. Some other unidentified error.  View the Tomcat logs to get more clues.
 
-Change the granularity of the loggers in [log4j.properties](src/main/resources/log4j.properties) and redeploy.
+Change the granularity of the loggers in [log4j2.xml](src/main/resources/log4j2.xml) and redeploy.
 
-```java
-log4j.logger.org.wicketsample=DEBUG
-log4j.logger.org.apache.directory.fortress.web=DEBUG
-log4j.logger.org.apache.directory.fortress.core=DEBUG
-log4j.logger.org.apache.directory.fortress.realm=DEBUG
+```xml
+<Loggers>
+    <Logger name="org.openldap" level="info"/>
+    <Logger name="org.apache.directory.fortress" level="info"/>
+    <Logger name="org.apache.wicket" level="info"/>
+    <Logger name="org.springframework.security" level="info"/>
+    <Logger name="org.apache.wicket.protocol.http.HttpSessionStore" level="info"/>
+    <Logger name="org.apache.wicket.version" level="info"/>
+    <Logger name="org.apache.wicket.RequestCycle" level="info"/>
+    <Logger name="org.samlsample" level="debug"/>
+    <Root level="warn">
+        <AppenderRef ref="console"/>
+    </Root>
+</Loggers>
 ``` 
+
 #### 4. Final notes...
  * [spring-security-saml troubleshooting](https://docs.spring.io/spring-security-saml/docs/current/reference/html/chapter-troubleshooting.html)
  * URL exactly same means same protocol (http/https), host name, port, context -- all must match.
