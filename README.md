@@ -319,8 +319,8 @@ mvn install -Dload.file
 
 3. Error 'InResponseToField doesn't correspond to sent message' during SSO 
 
-    Symtoms:
-    * Get redirected to IdP, but get a 'SAML AuthZ error' before it can redirect to logon.
+    Symptoms:
+    * Gets redirected to IdP initially, but a 'SAML Validation Failed' on target website instead of the expected logon process.
     * This will be in tomcat logs:
 
     INFO  - SAMLDefaultLogger - AuthNResponse;FAILURE;ip-address;entity id;https://idp.ssocircle.com;;;org.opensaml.common.SAMLException: InResponseToField of the Response doesn't correspond to sent message
@@ -332,7 +332,15 @@ mvn install -Dload.file
     * Typically, this problem arises when the authentication request is initialized from localhost address or http scheme.
     * While the response was received at a public host name or https scheme. E.g., when initializing authentication from URL https://host:port/app/saml/login, the response must be received at https://host;port/app/saml/SSO, not https://host:port/app/saml/SSO or https://localhost:port/app/saml/SSO.
 
-4. Some other unidentified error.  View the Tomcat logs to get more clues.
+4. Error 'Response doesn't have any valid assertion which would pass subject validation'
+
+    Symptoms:
+    * Caused by: org.springframework.security.authentication.CredentialsExpiredException: Authentication statement is too old to be used with value [timestamp]
+
+   Remediation:
+   * Log out of the IdP and try again. 
+    
+5. Some other unidentified error.  View the Tomcat logs to get more clues.
 
 Change the granularity of the loggers in [log4j2.xml](src/main/resources/log4j2.xml) and redeploy.
 
