@@ -34,7 +34,7 @@
     </developers>
 
     <properties>
-        <wicket.version>8.8.0</wicket.version>
+        <wicket.version>8.9.0</wicket.version>
         <wicket.googlecode.version>8.6.0</wicket.googlecode.version>
         <spring.saml.version>1.0.3.RELEASE</spring.saml.version>
         <version.ant>1.9.7</version.ant>
