@@ -5,7 +5,8 @@ package org.samlsample;
 
 import org.apache.directory.fortress.core.*;
 import org.apache.directory.fortress.realm.J2eePolicyMgr;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
@@ -113,5 +114,5 @@ public abstract class SamlSampleBasePage extends WebPage
         return SecUtils.getUserId( this );
     }
 
-    protected static final Logger LOG = Logger.getLogger( SamlSampleBasePage.class.getName() );
+    protected static final Logger LOG = LoggerFactory.getLogger( SamlSampleBasePage.class.getName() );
 }

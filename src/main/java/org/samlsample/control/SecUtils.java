@@ -26,7 +26,8 @@ import org.apache.directory.fortress.core.GlobalErrIds;
 import org.apache.directory.fortress.core.SecurityException;
 import org.apache.directory.fortress.core.util.Config;
 import org.apache.directory.fortress.realm.*;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.wicket.Component;
 import org.apache.directory.fortress.core.model.Permission;
 import org.apache.directory.fortress.core.model.Session;
@@ -45,7 +46,7 @@ import java.util.List;
  */
 public class SecUtils
 {
-    private static final Logger LOG = Logger.getLogger( SecUtils.class.getName() );
+    private static final Logger LOG = LoggerFactory.getLogger( SecUtils.class.getName() );
     private static final String PERMS_CACHED = "perms.cached";
     public static final boolean IS_PERM_CACHED = ( ( Config.getInstance().getProperty( PERMS_CACHED ) != null ) && ( Config.getInstance()
         .getProperty( PERMS_CACHED ).equalsIgnoreCase( "true" ) ) );

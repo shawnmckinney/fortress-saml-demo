@@ -4,7 +4,8 @@
 package org.samlsample;
 
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.wicket.markup.html.basic.Label;
 
 /**
@@ -15,7 +16,7 @@ import org.apache.wicket.markup.html.basic.Label;
  */
 public class LaunchPage extends SamlSampleBasePage
 {
-    private static final Logger LOG = Logger.getLogger( LaunchPage.class.getName() );
+    private static final Logger LOG = LoggerFactory.getLogger( LaunchPage.class.getName() );
     public LaunchPage()
     {
         add(new Label("label1", "Welcome " + getUserId() + " you have access to the link(s) above."));
