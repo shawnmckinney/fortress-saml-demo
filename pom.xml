@@ -41,7 +41,7 @@
     	<spring.security.version>5.5.1</spring.security.version>
 	    <spring.core.version>5.3.3</spring.core.version>
         <version.log4j>2.13.3</version.log4j>
-        <version.junit>4.11</version.junit>
+        <version.junit>4.13.2</version.junit>
         <javadoc.version>2.9.1</javadoc.version>
         <title>${project.name} ${project.version}</title>
     </properties>
