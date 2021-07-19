@@ -34,7 +34,7 @@ public class Page3 extends SamlSampleBasePage
             add( new Label( "label3", "This is " + getUserId() + "'s Page3" ) );
 
             // Maps to Permission: obj: page3, operation: button1
-            add( new FtIndicatingAjaxButton( "page3.button1" )
+            add( new FtIndicatingAjaxButton( "samlpage3.button1" )
             {
                 @Override
                 protected void onSubmit( AjaxRequestTarget target )
@@ -44,7 +44,7 @@ public class Page3 extends SamlSampleBasePage
             } );
 
             // Maps to Permission: obj: page3, operation: button2
-            add( new FtIndicatingAjaxButton( "page3.button2" )
+            add( new FtIndicatingAjaxButton( "samlpage3.button2" )
             {
                 @Override
                 protected void onSubmit( AjaxRequestTarget target )
@@ -54,7 +54,7 @@ public class Page3 extends SamlSampleBasePage
             } );
 
             // Maps to Permission: obj: page3, operation: button3
-            add( new FtIndicatingAjaxButton( "page3.button3" )
+            add( new FtIndicatingAjaxButton( "samlpage3.button3" )
             {
                 @Override
                 protected void onSubmit( AjaxRequestTarget target )
