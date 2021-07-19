@@ -238,18 +238,18 @@ mvn tomcat:redeploy
  </adduserrole>
 
  <addpermgrant>
-     <permgrant objName="Page1" opName="link" roleNm="samRole1"/>
-     <permgrant objName="Page2" opName="link" roleNm="samRole2"/>
-     <permgrant objName="Page3" opName="link" roleNm="samRole3"/>
-     <permgrant objName="Page1" opName="Button1" roleNm="samRole1"/>
-     <permgrant objName="Page1" opName="Button2" roleNm="samRole1"/>
-     <permgrant objName="Page1" opName="Button3" roleNm="samRole1"/>
-     <permgrant objName="Page2" opName="Button1" roleNm="samRole2"/>
-     <permgrant objName="Page2" opName="Button2" roleNm="samRole2"/>
-     <permgrant objName="Page2" opName="Button3" roleNm="samRole2"/>
-     <permgrant objName="Page3" opName="Button1" roleNm="samRole3"/>
-     <permgrant objName="Page3" opName="Button2" roleNm="samRole3"/>
-     <permgrant objName="Page3" opName="Button3" roleNm="samRole3"/>
+     <permgrant objName="SamlPage1" opName="link" roleNm="samRole1"/>
+     <permgrant objName="SamlPage2" opName="link" roleNm="samRole2"/>
+     <permgrant objName="SamlPage3" opName="link" roleNm="samRole3"/>
+     <permgrant objName="SamlPage1" opName="Button1" roleNm="samRole1"/>
+     <permgrant objName="SamlPage1" opName="Button2" roleNm="samRole1"/>
+     <permgrant objName="SamlPage1" opName="Button3" roleNm="samRole1"/>
+     <permgrant objName="SamlPage2" opName="Button1" roleNm="samRole2"/>
+     <permgrant objName="SamlPage2" opName="Button2" roleNm="samRole2"/>
+     <permgrant objName="SamlPage2" opName="Button3" roleNm="samRole2"/>
+     <permgrant objName="SamlPage3" opName="Button1" roleNm="samRole3"/>
+     <permgrant objName="SamlPage3" opName="Button2" roleNm="samRole3"/>
+     <permgrant objName="SamlPage3" opName="Button3" roleNm="samRole3"/>
  </addpermgrant>
  ...
  ```
