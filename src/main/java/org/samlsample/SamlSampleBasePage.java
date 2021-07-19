@@ -50,9 +50,9 @@ public abstract class SamlSampleBasePage extends WebPage
             throw new RuntimeException( error );
         }
         // TODO STEP 8c: change to FtBookmarkablePageLink:
-        add( new FtBookmarkablePageLink( "page1.link", Page1.class ) );
-        add( new FtBookmarkablePageLink( "page2.link", Page2.class ) );
-        add( new FtBookmarkablePageLink( "page3.link", Page3.class ) );
+        add( new FtBookmarkablePageLink( "samlpage1.link", Page1.class ) );
+        add( new FtBookmarkablePageLink( "samlpage2.link", Page2.class ) );
+        add( new FtBookmarkablePageLink( "samlpage3.link", Page3.class ) );
 
         // Add link to logout SAML SP only:
         final Link localLink = new Link( "logoutLocal.link" )
