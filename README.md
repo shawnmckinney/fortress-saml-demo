@@ -20,9 +20,9 @@
 
 -------------------------------------------------------------------------------
 ## Prerequisites
-1. Java 8
-2. Apache Maven 3++
-3. Apache Tomcat 8++
+1. Java >= 8
+2. Apache Maven >= 3
+3. Apache Tomcat >= 8
 4. Basic LDAP server setup by completing one of these:
     * [OpenLDAP & Fortress QUICKSTART](https://github.com/apache/directory-fortress-core/blob/master/README-QUICKSTART-SLAPD.md)
     * [OpenLDAP & Fortress QUICKSTART on DOCKER](https://github.com/apache/directory-fortress-core/blob/master/README-QUICKSTART-DOCKER-SLAPD.md)
@@ -145,7 +145,7 @@ This sample web app uses Java EE security.
 #### 1. Download the fortress realm proxy jar into tomcat/lib folder:
 
   ```
-  wget https://repo.maven.apache.org/maven2/org/apache/directory/fortress/fortress-realm-proxy/2.0.5/fortress-realm-proxy-2.0.5.jar -P $TOMCAT_HOME/lib
+  wget https://repo.maven.apache.org/maven2/org/apache/directory/fortress/fortress-realm-proxy/2.0.7/fortress-realm-proxy-2.0.7.jar -P $TOMCAT_HOME/lib
   ```
 
   where *TOMCAT_HOME* matches your target env.
@@ -180,7 +180,7 @@ This sample web app uses Java EE security.
  mvn -version
  ```
 
- This sample requires Java 8 and Maven 3 to be setup within the execution env.
+ This sample requires Java >= 8 and Maven >= 3 to be setup within the execution env.
 
 #### 2. Run this command from the root package:
 
