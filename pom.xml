@@ -39,7 +39,7 @@
         <spring.saml.version>1.0.10.RELEASE</spring.saml.version>
         <version.ant>1.10.12</version.ant>
     	<spring.security.version>5.3.10.RELEASE</spring.security.version>
-	    <spring.core.version>5.3.3</spring.core.version>
+	    <spring.core.version>5.3.14</spring.core.version>
         <version.log4j>2.17.0</version.log4j>
         <version.junit>4.13.2</version.junit>
         <javadoc.version>2.9.1</javadoc.version>
