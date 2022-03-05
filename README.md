@@ -1,5 +1,13 @@
 # Overview of the fortress-saml-demo README
 
+## End of Life
+
+    Apache Fortress SAML is EOL. It uses Spring Security SAML extensions which is also EOL:
+    [Spring Security SAML Extensions 1.x EOL on October 6, 2021](https://spring.io/blog/2020/09/22/spring-security-saml-extensions-1-x-eol-on-october-6-2021)
+
+    Therefore this project is archived. One day we may add support for the SAML that's now part of Spring Security.
+
+
  ![Fortress SAML Demo Security Layers](src/main/javadoc/doc-files/saml-demo-block-diagram-master.png  "Fortress SAML Demo")
 
  * This document demonstrates how to build and deploy the fortress saml sample.
